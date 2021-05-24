@@ -1,38 +1,38 @@
 #class qiu open
 #alias {qiu.q} {
     #class qiu.inner open;
-    #action {ÃæÂ¶½¿ĞßÖ®É«£¬ÇÄÇÄµÄµÍÏÂÍ·È¥} {
+    #action {é¢éœ²å¨‡ç¾ä¹‹è‰²ï¼Œæ‚„æ‚„çš„ä½ä¸‹å¤´å»} {
         qiu.n;
     };
 
-    #action {ÎÒÏÈÉÁÁË£¡} {
+    #action {æˆ‘å…ˆé—ªäº†ï¼} {
         rob biao dui;
         #delay {5} {war};
     };
 
-    #action {ÎÒÒÑ¾­ÅÉÁËÒ»¸öÌ½×Ó} {
+    #action {æˆ‘å·²ç»æ´¾äº†ä¸€ä¸ªæ¢å­} {
         #var qiu.type 4;
     };
 
-    #action {ôÃÇ§ÕÉÔÚÄã¶ú±ß¸æËßÁË¿ª±¦ÏäµÄ·½·¨} {
+    #action {è£˜åƒä¸ˆåœ¨ä½ è€³è¾¹å‘Šè¯‰äº†å¼€å®ç®±çš„æ–¹æ³•} {
         #var qiu.type 3;
     };
 
-    #action {ÎÒÃÇµ±¼ÒµÄÏëÕÒÒ»Î»Ñ¹Õ¯·òÈË} {
+    #action {æˆ‘ä»¬å½“å®¶çš„æƒ³æ‰¾ä¸€ä½å‹å¯¨å¤«äºº} {
         #var qiu.type 2;
     };
 
-    #action {ÄãÈ¥°Ñ%*(%*)¸øÎÒ¸Éµô£¬ÌáËûµÄÄÔ´üÀ´¼ûÎÒ} {
+    #action {ä½ å»æŠŠ%*(%*)ç»™æˆ‘å¹²æ‰ï¼Œæä»–çš„è„‘è¢‹æ¥è§æˆ‘} {
         #var qiu.type 1;
         #var qiu.killer %%1;
-        #action {%%1ËÀÁË¡£$}{
-            #unaction {%%1ËÀÁË¡£$};
+        #action {%%1æ­»äº†ã€‚$}{
+            #unaction {%%1æ­»äº†ã€‚$};
             qiu.n;
         } {1};
 
 };
 
-#action {¡¸ÈâÕÆË®µ××ê¡¹ôÃÇ§ÕÉ} {
+#action {ã€Œè‚‰æŒæ°´åº•é’»ã€è£˜åƒä¸ˆ} {
     qiu.d;
 };
 
@@ -41,7 +41,7 @@
 };
 #class qiu.inner close;
 
-ask qiu about Í¶Ãû×´;
+ask qiu about æŠ•åçŠ¶;
 };
 
 #alias {qiu.b} {
@@ -76,10 +76,10 @@ ask qiu about Í¶Ãû×´;
         bl.start Beauty;
     };
     #elseif {${qiu.type} == 3} {
-        bl.start ±¦Ïä;
+        bl.start å®ç®±;
     };
     #elseif {${qiu.type} == 4} {
-        bl.start ÌúÕÆ°ï;
+        bl.start é“æŒå¸®;
     };
 };
 
@@ -100,7 +100,7 @@ ask qiu about Í¶Ãû×´;
 };
 
 #alias {qiu.f} {
-    ask qiu about Ê§°Ü;
+    ask qiu about å¤±è´¥;
     #class qiu.inner kill;
 };
 

@@ -106,7 +106,7 @@
     wi;
 };
 
-#var shortcut F1:µ¶Æø F2:È¼ F3:ÎåË¥
+#var shortcut F1:åˆ€æ°” F2:ç‡ƒ F3:äº”è¡°
 #macro {\eOP} {
     daoqi;
 };
@@ -120,15 +120,15 @@
 };
 
 #alias {goto_lingwu} {
-    gt ¿àĞŞÔú²Ö;
+    gt è‹¦ä¿®æ‰ä»“;
 };
 
 #alias {goto_rest} {
-    gt ÇåĞÄÉá;
+    gt æ¸…å¿ƒèˆ;
 };
 
 #alias {goto_shifu} {
-    gt ·¨ÌÃ¶şÂ¥;
+    gt æ³•å ‚äºŒæ¥¼;
 };
 
 #list my_weapons_to_wield create {spear};
@@ -162,8 +162,8 @@
     wi;
 };
 
-stat.register ĞÚÓ¿ hit Ö»¾õµÃÓÌÈçÉíÏİºéÌÎ¾ŞÀË£¬µøµø×²×²;
-stat.register ĞÚÓ¿ miss ÄãµÄÁèÀ÷¹¥ÊÆ;
+stat.register æ±¹æ¶Œ hit åªè§‰å¾—çŠ¹å¦‚èº«é™·æ´ªæ¶›å·¨æµªï¼Œè·Œè·Œæ’æ’;
+stat.register æ±¹æ¶Œ miss ä½ çš„å‡Œå‰æ”»åŠ¿;
 
 #alias {gps.jue_qing_gu} {
     enter;

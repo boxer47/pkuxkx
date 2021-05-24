@@ -3,13 +3,13 @@
 #tab gem.merge;
 
 @mapcreate{gem_combine_level};
-@mapset{gem_combine_level;ĞşÎä¼×;6};
-@mapset{gem_combine_level;÷è÷ë½Ç;6};
-@mapset{gem_combine_level;·ï»ËÓğ;6};
-@mapset{gem_combine_level;ÉñÁú¹Ç;6};
+@mapset{gem_combine_level;ç„æ­¦ç”²;6};
+@mapset{gem_combine_level;éº’éºŸè§’;6};
+@mapset{gem_combine_level;å‡¤å‡°ç¾½;6};
+@mapset{gem_combine_level;ç¥é¾™éª¨;6};
 #var gem_combine_level_default 7;
 
-#list gem_types create {µØ;É½;Ë®;·ç;À×;»ğ;Ôó;Ìì};
+#list gem_types create {åœ°;å±±;æ°´;é£;é›·;ç«;æ³½;å¤©};
 #var gem.combine_count 0;
 #alias {gem} {
     #var gem_filter nil;
@@ -32,11 +32,11 @@
     };
     gem.setup;
     jiancha jin nang;
-    lock ÓÃpack <ÎïÆ·id>½«±¦Ê¯·ÅÈëÆäÖĞ;
-    #action {ÓÃpack <ÎïÆ·id>½«±¦Ê¯·ÅÈëÆäÖĞ} {
-        #unaction {ÓÃpack <ÎïÆ·id>½«±¦Ê¯·ÅÈëÆäÖĞ};
+    lock ç”¨pack <ç‰©å“id>å°†å®çŸ³æ”¾å…¥å…¶ä¸­;
+    #action {ç”¨pack <ç‰©å“id>å°†å®çŸ³æ”¾å…¥å…¶ä¸­} {
+        #unaction {ç”¨pack <ç‰©å“id>å°†å®çŸ³æ”¾å…¥å…¶ä¸­};
         gem.teardown;
-        show_to_info ±¦Ê¯¼ÛÖµ: ${gem_value};
+        show_to_info å®çŸ³ä»·å€¼: ${gem_value};
         #if {"${gem_filter}" != "nil"} {
             #foreach {${gem_filter_list}[%*]} {gem_item} {
                 #echo ${gem_item};
@@ -51,7 +51,7 @@
 
 #alias {gem.setup} {
     #class gem.inner open;
-    #action {(%s%S)%*{¡ò|¡î|¡ï}%*\*%S%s(%s%S)%*{¡ò|¡î|¡ï}%*\*%S%s(%s%S)%*{¡ò|¡î|¡ï}%*\*%S%s(%s%S)%*{¡ò|¡î|¡ï}%*\*%S%s(%s%S)%*{¡ò|¡î|¡ï}%*\*%S} {
+    #action {(%s%S)%*{â—|â˜†|â˜…}%*\*%S%s(%s%S)%*{â—|â˜†|â˜…}%*\*%S%s(%s%S)%*{â—|â˜†|â˜…}%*\*%S%s(%s%S)%*{â—|â˜†|â˜…}%*\*%S%s(%s%S)%*{â—|â˜†|â˜…}%*\*%S} {
         check_gem {%%2} {%%3} {%%4} {%%5} {%%6};
         check_gem {%%9} {%%10} {%%11} {%%12} {%%13};
         check_gem {%%16} {%%17} {%%18} {%%19} {%%20};
@@ -59,25 +59,25 @@
         check_gem {%%30} {%%31} {%%32} {%%33} {%%34};
     } {1};
 
-    #action {(%s%S)%*{¡ò|¡î|¡ï}%*\*%S%s(%s%S)%*{¡ò|¡î|¡ï}%*\*%S%s(%s%S)%*{¡ò|¡î|¡ï}%*\*%S%s(%s%S)%*{¡ò|¡î|¡ï}%*\*%S} {
+    #action {(%s%S)%*{â—|â˜†|â˜…}%*\*%S%s(%s%S)%*{â—|â˜†|â˜…}%*\*%S%s(%s%S)%*{â—|â˜†|â˜…}%*\*%S%s(%s%S)%*{â—|â˜†|â˜…}%*\*%S} {
         check_gem {%%2} {%%3} {%%4} {%%5} {%%6};
         check_gem {%%9} {%%10} {%%11} {%%12} {%%13};
         check_gem {%%16} {%%17} {%%18} {%%19} {%%20};
         check_gem {%%23} {%%24} {%%25} {%%26} {%%27};
     } {2};
 
-    #action {(%s%S)%*{¡ò|¡î|¡ï}%*\*%S%s(%s%S)%*{¡ò|¡î|¡ï}%*\*%S%s(%s%S)%*{¡ò|¡î|¡ï}%*\*%S} {
+    #action {(%s%S)%*{â—|â˜†|â˜…}%*\*%S%s(%s%S)%*{â—|â˜†|â˜…}%*\*%S%s(%s%S)%*{â—|â˜†|â˜…}%*\*%S} {
         check_gem {%%2} {%%3} {%%4} {%%5} {%%6};
         check_gem {%%9} {%%10} {%%11} {%%12} {%%13};
         check_gem {%%16} {%%17} {%%18} {%%19} {%%20};
     } {3};
 
-    #action {(%s%S)%*{¡ò|¡î|¡ï}%*\*%S%s(%s%S)%*{¡ò|¡î|¡ï}%*\*%S} {
+    #action {(%s%S)%*{â—|â˜†|â˜…}%*\*%S%s(%s%S)%*{â—|â˜†|â˜…}%*\*%S} {
         check_gem {%%2} {%%3} {%%4} {%%5} {%%6};
         check_gem {%%9} {%%10} {%%11} {%%12} {%%13};
     } {4};
 
-    #action {(%s%S)%*{¡ò|¡î|¡ï}%*\*%S} {
+    #action {(%s%S)%*{â—|â˜†|â˜…}%*\*%S} {
         check_gem {%%2} {%%3} {%%4} {%%5} {%%6};
     } {5};
     #class gem.inner close;
@@ -110,23 +110,23 @@
 
     gem.setup;
     #class gem.combine.inner open;
-    #action {±¿°¢£¬ÉíÉÏ¶«Î÷ÂúÁË£¬Ğ¡ĞÄÎŞ»¶´ò½ÙÄãµÄ±¦Ê¯£¡} {
+    #action {ç¬¨é˜¿ï¼Œèº«ä¸Šä¸œè¥¿æ»¡äº†ï¼Œå°å¿ƒæ— æ¬¢æ‰“åŠ«ä½ çš„å®çŸ³ï¼} {
         #delay {gem_combine_delay} {
             combine_gems_done;
         } {0.5};
     };
-    #action {ÄãµÄ±¦Ê¯´üÀï¿Õ¿Õµ´µ´} {
+    #action {ä½ çš„å®çŸ³è¢‹é‡Œç©ºç©ºè¡è¡} {
         combine_gems_done;
     };
 
-    #action {ÓÃpack <ÎïÆ·id>½«±¦Ê¯·ÅÈëÆäÖĞ} {
+    #action {ç”¨pack <ç‰©å“id>å°†å®çŸ³æ”¾å…¥å…¶ä¸­} {
         combine_gems;
     };
 
     #alias {combine_gems_done} {
         #class gem.combine.inner kill;
         gem.teardown;
-        #show ºÏ³ÉÍê±Ï;
+        #show åˆæˆå®Œæ¯•;
         #delay {3} {
             tmp_combine;
         };
@@ -169,19 +169,19 @@
 #alias {gem.transfer} {
     #var receiver %1;
     #class gem.transfer.inner open;
-    #action {ÄãµÄ±¦Ê¯´üÀï¿Õ¿Õµ´µ´} {
+    #action {ä½ çš„å®çŸ³è¢‹é‡Œç©ºç©ºè¡è¡} {
         #class gem.transfer.inner kill;
     };
-    #action {Äã¸ø%*Ò»¿Å} {
+    #action {ä½ ç»™%*ä¸€é¢—} {
         pickgem 1;
     };
-    #action {Äã´Ó±¦Ê¯´üÀïÃæÈ¡³ö} {
+    #action {ä½ ä»å®çŸ³è¢‹é‡Œé¢å–å‡º} {
         #delay {1} {
             give ${receiver} gem;
         };
     };
-    #action {ÕâÀïÃ»ÓĞ ${receiver}} {
-        show_to_info ¸½½üÃ»ÓĞ ${receiver};
+    #action {è¿™é‡Œæ²¡æœ‰ ${receiver}} {
+        show_to_info é™„è¿‘æ²¡æœ‰ ${receiver};
         #class gem.transfer.inner kill;
         pack gem;
     };
@@ -204,14 +204,14 @@
             #return;
         };
 
-        #if {"${gem_name}" == "ÉñÁú¹Ç" || "${gem_name}" == "·ï»ËÓğ" || "${gem_name}" == "ĞşÎä¼×" || "${gem_name}" == "÷è÷ë½Ç" } {
+        #if {"${gem_name}" == "ç¥é¾™éª¨" || "${gem_name}" == "å‡¤å‡°ç¾½" || "${gem_name}" == "ç„æ­¦ç”²" || "${gem_name}" == "éº’éºŸè§’" } {
             #var key ${gem_type}${gem_yinyang}${gem_name};
             @mapset{gem_mark;$key;${gem_id}};
-            #if {"${gem_yinyang}" == "¡î"} {
-                #var rev_gem_yinyang ¡ï;
+            #if {"${gem_yinyang}" == "â˜†"} {
+                #var rev_gem_yinyang â˜…;
             };
-            #elseif {"${gem_yinyang}" == "¡ï"} {
-                #var rev_gem_yinyang ¡î;
+            #elseif {"${gem_yinyang}" == "â˜…"} {
+                #var rev_gem_yinyang â˜†;
             };
             #else {
                 #var rev_gem_yinyang n;
@@ -230,8 +230,8 @@
             };
         };
     };
-    #action {ÓÃpack <ÎïÆ·id>½«±¦Ê¯·ÅÈëÆäÖĞ} {
-        #unaction {ÓÃpack <ÎïÆ·id>½«±¦Ê¯·ÅÈëÆäÖĞ};
+    #action {ç”¨pack <ç‰©å“id>å°†å®çŸ³æ”¾å…¥å…¶ä¸­} {
+        #unaction {ç”¨pack <ç‰©å“id>å°†å®çŸ³æ”¾å…¥å…¶ä¸­};
         #class gem.merge.inner kill;
         on_unbusy {
             merge_gems;
@@ -254,7 +254,7 @@
                         };
                     };
                     #else {
-                        show_to_info ÄÚÁ¦²»×ã, ÎŞ·¨ merge gem;
+                        show_to_info å†…åŠ›ä¸è¶³, æ— æ³• merge gem;
                         #delay {3} {
                             tmp_merge;
                         };
@@ -263,7 +263,7 @@
             };
         };
         #else {
-            show_to_info ºÏ³ÉÍê±Ï;
+            show_to_info åˆæˆå®Œæ¯•;
             #delay {3} {
                 tmp_merge;
             };
@@ -308,17 +308,17 @@
             #var gem_id_to_pick_count ${gem_count};
         };
     };
-    #action {ÓÃpack <ÎïÆ·id>½«±¦Ê¯·ÅÈëÆäÖĞ} {
+    #action {ç”¨pack <ç‰©å“id>å°†å®çŸ³æ”¾å…¥å…¶ä¸­} {
         #if {${gem_id_to_pick} == -1} {
             gem.teardown;
             #class gem.pick.inner kill;
-            show_to_info gem.pick Íê³É;
+            show_to_info gem.pick å®Œæˆ;
         };
         #else {
             pick_one_gem;
         };
     };
-    #action {Äã´Ó±¦Ê¯´üÀïÃæÈ¡³öÒ»¿Å} {
+    #action {ä½ ä»å®çŸ³è¢‹é‡Œé¢å–å‡ºä¸€é¢—} {
         on_unbusy {
             pick_one_gem;
         };

@@ -1,9 +1,9 @@
 #class highlight open
-#highlight {清心散} {green};
-#highlight {当前位置} {cyan};
-#highlight {支持遍历} {green};
-#highlight {不支持遍历} {green};
-#highlight {收工} {red};
+#highlight {娓呭績鏁 {green};
+#highlight {褰撳墠浣嶇疆} {cyan};
+#highlight {鏀寔閬嶅巻} {green};
+#highlight {涓嶆敮鎸侀亶鍘唥 {green};
+#highlight {鏀跺伐} {red};
 #highlight {GPS:%*} {bold red};
 #highlight {INFO:%*} {bold red};
 #highlight {TASK:%*} {bold red};

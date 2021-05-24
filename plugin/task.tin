@@ -12,10 +12,10 @@
     #var task_desc {};
     
     #class task.locate.inner open;
-    #action {在一个有着%*的出口的地方。} {
+    #action {鍦ㄤ竴涓湁鐫�%*鐨勫嚭鍙ｇ殑鍦版柟銆倉 {
         #var task_exits %%1;
     };
-    #action {这个地方的描述中含有这样的字眼：%*} {
+    #action {杩欎釜鍦版柟鐨勬弿杩颁腑鍚湁杩欐牱鐨勫瓧鐪硷細%*} {
         #if {"${task_desc}" != ""} {
             #var task_desc ${task_desc}:%%1;
         };
@@ -27,7 +27,7 @@
         #if {${locate_count} > 3} {
             #class task.locate.inner kill;
             INVOKE task.locate "${task_desc}" "${task_exits}";
-            #showme TASK: locate 完成: ${task.roomno}: ${task.roomname} @ ${task.zone};
+            #showme TASK: locate 瀹屾垚: ${task.roomno}: ${task.roomname} @ ${task.zone};
         };
         #else {
             #delay {1} {

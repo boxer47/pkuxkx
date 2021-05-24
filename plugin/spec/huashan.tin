@@ -59,7 +59,7 @@
                     pfm zongjue;
                 } {4.8};
                 #alias {on_skill_hit} {
-                    #if {"%%1" == "ÑøÎá"} {
+                    #if {"%%1" == "å…»å¾"} {
                         pfm jianzhang;
                     };
                 };
@@ -68,7 +68,7 @@
             #elseif {${xf.type} == 2} {
                 #class attack.inner open;
                 #alias {on_skill_hit} {
-                    #if {"%%1" == "ÑøÎá"} {
+                    #if {"%%1" == "å…»å¾"} {
                         pfm sqf;
                     };
                 };
@@ -89,11 +89,11 @@
     #var with_weapon 1;
 };
 
-#action {{¶Ô·½ÊÇ¿ÕÊÖ|¶Ô·½Ã»ÓĞÊ¹ÓÃ±øÆ÷}} {
+#action {{å¯¹æ–¹æ˜¯ç©ºæ‰‹|å¯¹æ–¹æ²¡æœ‰ä½¿ç”¨å…µå™¨}} {
     #var with_weapon 0;
 };
 
-#action {¶Ô·½²»ÊÇ¿ÕÊÖ} {
+#action {å¯¹æ–¹ä¸æ˜¯ç©ºæ‰‹} {
     #var with_weapon 1;
 };
 
@@ -108,15 +108,15 @@
 };
 
 #alias {goto_lingwu} {
-    gt »ªÉ½Á·¹¦·¿;
+    gt åå±±ç»ƒåŠŸæˆ¿;
 };
 
 #alias {goto_rest} {
-    gt »ªÉ½ĞİÏ¢ÊÒ;
+    gt åå±±ä¼‘æ¯å®¤;
 };
 
 #alias {goto_shifu} {
-    gt »ªÉ½Ğ¡Ôº;
+    gt åå±±å°é™¢;
 };
 
 #alias {pozhang} {
@@ -207,7 +207,7 @@
     wi;
 };
 
-#var shortcut F1:ÆÆÆø F3:·É½£ F4:½£ÕÆ F5:ÑøÎá F6:ÈıÇà·å F7:¿ñ·ç F8:×Ü¾ö F9: ÆÆ±ø;
+#var shortcut F1:ç ´æ°” F3:é£å‰‘ F4:å‰‘æŒ F5:å…»å¾ F6:ä¸‰é’å³° F7:ç‹‚é£ F8:æ€»å†³ F9: ç ´å…µ;
 #macro {\eOP} {
     poqi;
 };
@@ -262,17 +262,17 @@ pozhang;
     bei cuff;
 };
 
-stat.register ÆÆÆø hit ÌØÊâ¹¥»÷Ò²ÎŞ·¨Ê©Õ¹;
-stat.register ÆÆÆø hit Ö»¾õÒ»Ë¿¶·Ö¾Ò²ÎŞ;
-stat.register ÆÆÆø miss ¹ıÓÚĞÛºñ£¬Í½ÀÍÎŞÒæ¡£Ö»µÃ»Ø½£ÊØÊÆ;
-stat.register ¿ñ·ç miss Ê¹ÄãµÄ¡¸¿ñ·ç¾íµØ¡¹Ã»ÓĞÆğµ½ÈÎºÎ×÷ÓÃ;
-stat.register ¿ñ·ç hit ¶ÙÊ±¾õµÃÑ¹Á¦ÖèÔö£¬ÊÖÍóÒ»Âé;
-stat.register ĞÚÓ¿ hit Ö»¾õµÃÓÌÈçÉíÏİºéÌÎ¾ŞÀË£¬µøµø×²×²;
-stat.register ĞÚÓ¿ miss ÄãµÄÁèÀ÷¹¥ÊÆ;
-stat.register ÑøÎá hit ½á¹ûËû±»Äã¹¥ÁË¸ö´ëÊÖ²»¼°£¡;
-stat.register ÑøÎá miss ÄãµÄÑøÎá½£ÆøĞ§¹û´ó´òÕÛ¿Û¡£;
-stat.register ÆÆ±ø hit Äã³Ë%*»ú»áÁ¬·¢ÈıÕĞ£¡;
-stat.register ÆÆ±ø miss ³Ã´Ë»ú»á°µ»»ÕæÆø£¬ÇìĞÒ¶È¹ıÒ»½Ù;
-stat.register ÆÆ±ø miss »ØÊØ£¬ÁíÍ¼Ëü²ß¡£;
+stat.register ç ´æ°” hit ç‰¹æ®Šæ”»å‡»ä¹Ÿæ— æ³•æ–½å±•;
+stat.register ç ´æ°” hit åªè§‰ä¸€ä¸æ–—å¿—ä¹Ÿæ— ;
+stat.register ç ´æ°” miss è¿‡äºé›„åšï¼Œå¾’åŠ³æ— ç›Šã€‚åªå¾—å›å‰‘å®ˆåŠ¿;
+stat.register ç‹‚é£ miss ä½¿ä½ çš„ã€Œç‹‚é£å·åœ°ã€æ²¡æœ‰èµ·åˆ°ä»»ä½•ä½œç”¨;
+stat.register ç‹‚é£ hit é¡¿æ—¶è§‰å¾—å‹åŠ›éª¤å¢ï¼Œæ‰‹è…•ä¸€éº»;
+stat.register æ±¹æ¶Œ hit åªè§‰å¾—çŠ¹å¦‚èº«é™·æ´ªæ¶›å·¨æµªï¼Œè·Œè·Œæ’æ’;
+stat.register æ±¹æ¶Œ miss ä½ çš„å‡Œå‰æ”»åŠ¿;
+stat.register å…»å¾ hit ç»“æœä»–è¢«ä½ æ”»äº†ä¸ªæªæ‰‹ä¸åŠï¼;
+stat.register å…»å¾ miss ä½ çš„å…»å¾å‰‘æ°”æ•ˆæœå¤§æ‰“æŠ˜æ‰£ã€‚;
+stat.register ç ´å…µ hit ä½ ä¹˜%*æœºä¼šè¿å‘ä¸‰æ‹›ï¼;
+stat.register ç ´å…µ miss è¶æ­¤æœºä¼šæš—æ¢çœŸæ°”ï¼Œåº†å¹¸åº¦è¿‡ä¸€åŠ«;
+stat.register ç ´å…µ miss å›å®ˆï¼Œå¦å›¾å®ƒç­–ã€‚;
 
 #class huashan close

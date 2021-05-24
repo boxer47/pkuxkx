@@ -22,11 +22,11 @@
     #undelay {robber_delay};
 
     yue.watchdog.stop;
-    show_to_quest ËÍĞÅ½áÊø;
+    show_to_quest é€ä¿¡ç»“æŸ;
 };
 
 #alias {yue.restart} {
-    show_to_quest ËÍĞÅ: ×¼±¸;
+    show_to_quest é€ä¿¡: å‡†å¤‡;
     #class yue.fight.inner kill;
     #class yue.bl.inner kill;
     #class yue.check.inner kill;
@@ -44,8 +44,8 @@
     set_last_quest yue;
     #class yue.quest.inner open;
 
-    #action {ÂıÂıµØÄãÖÕÓÚÓÖÓĞÁËÖª¾õ....} {
-        notify ¹ÒÁË;
+    #action {æ…¢æ…¢åœ°ä½ ç»ˆäºåˆæœ‰äº†çŸ¥è§‰....} {
+        notify æŒ‚äº†;
         quit_and_restart;
     };
 
@@ -62,7 +62,7 @@
     } {1};
 
     #alias {on_special_state} {
-        notify ÌØÊâ×´Ì¬, Î£ÏÕ!;
+        notify ç‰¹æ®ŠçŠ¶æ€, å±é™©!;
         #class yue.fight.inner kill;
         #undelay {robber_delay};
 
@@ -82,43 +82,43 @@
         };
     } {1};
 
-    #action {°ÑÃÜº¯¸øÎÒ¹Ô¹Ô½»³öÀ´°É} {
+    #action {æŠŠå¯†å‡½ç»™æˆ‘ä¹–ä¹–äº¤å‡ºæ¥å§} {
         yue.robber;
     };
 
-    #action {ÄãÉìÊÖÏò»³ÖĞÒ»Ãş£¬·¢ÏÖÃÜº¯ÒÑ¾­²»Òí¶ø·É£¡} {
+    #action {ä½ ä¼¸æ‰‹å‘æ€€ä¸­ä¸€æ‘¸ï¼Œå‘ç°å¯†å‡½å·²ç»ä¸ç¿¼è€Œé£ï¼} {
         yue.robber;
     };
 
-    #action {ÔÀ²»ÈºËµµÀ£º¡¸²»ÊÇÒÑ¾­½»¸øÄãÈÎÎñÁËÃ´£¿¡¹} {
+    #action {å²³ä¸ç¾¤è¯´é“ï¼šã€Œä¸æ˜¯å·²ç»äº¤ç»™ä½ ä»»åŠ¡äº†ä¹ˆï¼Ÿã€} {
         ask yue about fail;
     };
 
-    #action {Äã×Ü¹²ÒÑ¾­ËÍÁË%*¼şÃÜº¯¡£} {
+    #action {ä½ æ€»å…±å·²ç»é€äº†%*ä»¶å¯†å‡½ã€‚} {
         yue.restart;
     };
 
-    #action {ÄãµÄÈÎÎñÊ§°Ü£¬¾­ÑéºÍÇ±ÄÜ½µµÍÁË¡£} {
+    #action {ä½ çš„ä»»åŠ¡å¤±è´¥ï¼Œç»éªŒå’Œæ½œèƒ½é™ä½äº†ã€‚} {
         yue.restart;
     };
 
     #var yue_requested 0;
-    #action {ÔÀ²»Èº½»¸øÄãÒ»·â¸Ç×Å»ğÆáÓ¡´ÁµÄÃÜº¯¡£} {
+    #action {å²³ä¸ç¾¤äº¤ç»™ä½ ä¸€å°ç›–ç€ç«æ¼†å°æˆ³çš„å¯†å‡½ã€‚} {
         #var yue_requested 1;
     };
 
-    #action {ÔÀ²»ÈºµÀ£º¡¸%*Äã¸Ï½ô°ÑËüËÍµ½%*¸½½üµÄ%*ÊÖÖĞ¡£¡¹} {
+    #action {å²³ä¸ç¾¤é“ï¼šã€Œ%*ä½ èµ¶ç´§æŠŠå®ƒé€åˆ°%*é™„è¿‘çš„%*æ‰‹ä¸­ã€‚ã€} {
         #if {${yue_requested} == 1} {
             yue.go %%2 %%3;
         };
     };
 
-    #action {ÔÀ²»Èº¶ÔÄãµÀ£º¡¸ÎÒÕâÀïÕıºÃÓĞ·âÃÜº¯£¬Âé·³ÄãÅÜÒ»ÌË£¬½»¸ø%*¸½½üµÄ%*¡£¡¹} {
+    #action {å²³ä¸ç¾¤å¯¹ä½ é“ï¼šã€Œæˆ‘è¿™é‡Œæ­£å¥½æœ‰å°å¯†å‡½ï¼Œéº»çƒ¦ä½ è·‘ä¸€è¶Ÿï¼Œäº¤ç»™%*é™„è¿‘çš„%*ã€‚ã€} {
         yue.go %%1 %%2;
     };
 
     #class yue.quest.inner close;
-    show_to_quest ËÍĞÅ;
+    show_to_quest é€ä¿¡;
     #if {${in_special_state} == 1} {
         on_special_state;
         #return;
@@ -129,13 +129,13 @@
 
 #alias {yue.bl} {
     #class yue.bl.inner open;
-    #action {ÕÒµ½Ä¿±ê} {
+    #action {æ‰¾åˆ°ç›®æ ‡} {
         yue.check;
     };
-    #action {GPS: ±éÀúÍê³É} {
+    #action {GPS: éå†å®Œæˆ} {
         #class yue.bl.inner kill;
         #var yue_state FAILED;
-        show_to_quest ËÍĞÅ: Ê§°Ü;
+        show_to_quest é€ä¿¡: å¤±è´¥;
         yue.b;
     };
     #class yue.bl.inner open;
@@ -153,14 +153,14 @@
 
     #action {burden.check: done} {
         #unaction {burden.check: done};
-        #if {@getburden{ÃÜº¯} == 1} {
+        #if {@getburden{å¯†å‡½} == 1} {
             songxin ${yue_real_target};
         };
         #else {
             #class yue.check.inner kill;
             #var yue_state FAILED;
             #undelay {yue_check_delay};
-            show_to_quest ËÍĞÅ: Ê§°Ü;
+            show_to_quest é€ä¿¡: å¤±è´¥;
             yue.b;
         };
     };
@@ -170,11 +170,11 @@
         burden.check;
     };
 
-    #action {ÄãµÄÈÎÎñÍê³É£¬¿ì»ØÈ¥¸´Ãü°É¡£} {
+    #action {ä½ çš„ä»»åŠ¡å®Œæˆï¼Œå¿«å›å»å¤å‘½å§ã€‚} {
         #class yue.check.inner kill;
         #var yue_state ENDED;
         #undelay {yue_check_delay};
-        show_to_quest ËÍĞÅ: ÊÕ¹¤;
+        show_to_quest é€ä¿¡: æ”¶å·¥;
         yue.b;
     };
     #class yue.check.inner close;
@@ -207,24 +207,24 @@
         } {10};
     };
 
-    #action {¡¸ÌúÊÖµ¤ĞÄ¡¹ÌúÓÎÏÄ(Tie youxia)} {
+    #action {ã€Œé“æ‰‹ä¸¹å¿ƒã€é“æ¸¸å¤(Tie youxia)} {
         #cr;
     } {1};
 
-    #action {¡¸%*¡¹%*(%* %*)} {
+    #action {ã€Œ%*ã€%*(%* %*)} {
         killall @lower{%%3 %%4};
         yue.robber.delay;
     };
 
     #list yue_robbers create {};
 
-    #action {¿´ÆğÀ´%*ÏëÉ±ËÀÄã£¡} {
+    #action {çœ‹èµ·æ¥%*æƒ³æ€æ­»ä½ ï¼} {
         #if {@ismember{%%1;yue_robbers} == 0} {
             #list yue_robbers add %%1;
         };
     } {1};
 
-    #action {%SµÄÊ¬Ìå} {
+    #action {%Sçš„å°¸ä½“} {
         #math corpse_index ${corpse_index}+1;
         #if {@ismember{%%1;yue_robbers} != 0} {
             get mi han from corpse ${corpse_index};
@@ -242,18 +242,18 @@
     yue.robber.delay;
 };
 
-#list dangerous_area create {±±¾©;ÔÀÍõÄ¹};
+#list dangerous_area create {åŒ—äº¬;å²³ç‹å¢“};
 
 #alias {yue.go} {
     yue.watchdog.kick;
     log.start;
     #var yue_requested 0;
     #unticker {yue_q_ticker};
-    show_to_quest ËÍĞÅ: %1:%2;
+    show_to_quest é€ä¿¡: %1:%2;
     #var yue_location %1;
     #var yue_target %2;
-    #if {"${xy_info}" == "on" && @startwith{${yue_location};ÏåÑô} == 1} {
-        show_to_info ±£ÎÀÆÚ¼ä: ${yue_location};
+    #if {"${xy_info}" == "on" && @startwith{${yue_location};è¥„é˜³} == 1} {
+        show_to_info ä¿å«æœŸé—´: ${yue_location};
         ask yue about fail;
     };
     #else  {

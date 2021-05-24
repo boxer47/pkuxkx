@@ -1,5 +1,5 @@
 #class menzhong_data open
-#list mz_ignore create {ÊÖĞÅ;»ªÉ½½£Æ×;ĞÅÖ½;Óæ·ò;´ó°ã;¿Õ¿Õ¶ù;ÎŞÁ¿ÊÙ¾­;´ó½ğ¸ÕÈ­·¨;ÌìÉ½Ñ©Á«;·ÉÉ³×ßÊ¯;¶¡¼á;µÀµÂ¾­;ôÕ×Ó;Ğ¡à¶†ª;Ë®¿¿;ÀîÄª³î;ºéÆß¹«;¾²µÀ;Ñ²É½µÜ×Ó;Ìú´¸};
+#list mz_ignore create {æ‰‹ä¿¡;åå±±å‰‘è°±;ä¿¡çº¸;æ¸”å¤«;å¤§èˆ¬;ç©ºç©ºå„¿;æ— é‡å¯¿ç»;å¤§é‡‘åˆšæ‹³æ³•;å¤©å±±é›ªè²;é£æ²™èµ°çŸ³;ä¸åš;é“å¾·ç»;ç²½å­;å°å–½å•°;æ°´é ;æè«æ„;æ´ªä¸ƒå…¬;é™é“;å·¡å±±å¼Ÿå­;é“é”¤};
 #foreach {${mz_ignore}[%*]} {name} {
     #action {menzhong:%*${name}} {
         #unaction {menzhong:%*${name}};
@@ -9,7 +9,7 @@
     } {2};
 };
 
-#action {menzhong:%*ôÃÍò¼Ò%*ôÃÍò¼Ò} {
+#action {menzhong:%*è£˜ä¸‡å®¶%*è£˜ä¸‡å®¶} {
     gt yz;
     on_there {
         enter shudong;
@@ -21,7 +21,7 @@
     };
 };
 
-#action {menzhong:%*¼Ò¶¡} {
+#action {menzhong:%*å®¶ä¸} {
     gt yz;
     on_there {
         e;e;e;e;s;
@@ -33,7 +33,7 @@
     };
 };
 
-#action {menzhong:%*Íõ´¦Ò»} {
+#action {menzhong:%*ç‹å¤„ä¸€} {
     gt qzh;
     on_there {
         n;n;n;n;
@@ -45,7 +45,7 @@
     };
 };
 
-#action {menzhong:%*¾ü·ş} {
+#action {menzhong:%*å†›æœ} {
     gt yz;
     on_there {
         w;w;w;w;
@@ -62,7 +62,7 @@
     };
 };
 
-#action {menzhong:%*°¢×Ï} {
+#action {menzhong:%*é˜¿ç´«} {
     gt xx;
     on_there {
         n;nu;
@@ -74,7 +74,7 @@
     };
 };
 
-#action {menzhong:%*µÀÒ»} {
+#action {menzhong:%*é“ä¸€} {
     gt fzl;
     on_there {
         w;w;n;n;w;
@@ -86,7 +86,7 @@
     };
 };
 
-#action {menzhong:%*ÍĞ²§É®} {
+#action {menzhong:%*æ‰˜é’µåƒ§} {
     gt yz;
     on_there {
         s;s;
@@ -98,7 +98,7 @@
     };
 };
 
-#action {menzhong:%*Çå·¨±ÈÇğ} {
+#action {menzhong:%*æ¸…æ³•æ¯”ä¸˜} {
     gt shaolinsi;
     on_there {
         unwi;eu;nu;nu;nu;n;wi;
@@ -110,7 +110,7 @@
     };
 };
 
-#action {menzhong:%*À×Õğµ²} {
+#action {menzhong:%*é›·éœ‡æŒ¡} {
     gt lvliu;
     on_there {
         give 10 silver to ding;
@@ -126,7 +126,7 @@
     };
 };
 
-#action {menzhong:%*»Æ²¼ôÂôÄ} {
+#action {menzhong:%*é»„å¸ƒè¢ˆè£Ÿ} {
     gt shaolinsi;
     on_there {kill xu tong;};
     on_dead {
@@ -137,7 +137,7 @@
     };
 };
 
-#action {menzhong:%*¶Ì½£} {
+#action {menzhong:%*çŸ­å‰‘} {
     gt yz;
     on_there {
         e;e;s; buy duanjian;
@@ -149,7 +149,7 @@
     };
 };
 
-#action {menzhong:%*ÂíÆ¨±¦µä} {
+#action {menzhong:%*é©¬å±å®å…¸} {
     gt zx;
     on_there {
         buy mapi baodian;
@@ -163,103 +163,103 @@
     };
 };
 
-#action {menzhong:%*Í¯°ÙĞÜ%*} {
+#action {menzhong:%*ç«¥ç™¾ç†Š%*} {
     gt ry;
     on_there {hit tong};
     on_hit {mz.b};
 };
 
-#action {menzhong:%*ÑÃÒÛ%*} {
+#action {menzhong:%*è¡™å½¹%*} {
     gt yz;
     on_there {w;n;hit ya};
     on_hit {s;e;mz.b};
 };
 
-#action {menzhong:%*±¾³¾´óÊ¦%*} {
+#action {menzhong:%*æœ¬å°˜å¤§å¸ˆ%*} {
     gt tls;
     on_there {nu;hit benchen dashi};
     on_hit {sd;mz.b};
 };
 
-#action {menzhong:%*¹ÈĞé%*} {
+#action {menzhong:%*è°·è™š%*} {
     gt wd;
     on_there {n;kill guxu};
     on_dead {s;mz.b};
 };
 
-#action {menzhong:%*±¾¹Û´óÊ¦%*} {
+#action {menzhong:%*æœ¬è§‚å¤§å¸ˆ%*} {
     gt tls;
     on_there {nu;n;n;n;w;kill benguan dashi};
     on_dead {e;s;s;s;sd;mz.b};
 };
 
-#action {menzhong:%*±¾Ïà´óÊ¦%*} {
+#action {menzhong:%*æœ¬ç›¸å¤§å¸ˆ%*} {
     gt tls;
     on_there {nu;n;n;kill benxiang dashi};
     on_dead {s;s;sd;mz.b};
 };
 
-#action {menzhong:%*±¾²Î´óÊ¦%*} {
+#action {menzhong:%*æœ¬å‚å¤§å¸ˆ%*} {
     gt tls;
     on_there {nu;n;n;n;kill bencan dashi};
     on_dead {s;s;s;sd;mz.b};
 };
 
-#action {menzhong:%*Ö¾Æ½%*} {
+#action {menzhong:%*å¿—å¹³%*} {
     gt qzh;
     on_there {kill yin};
     on_dead {mz.b};
 };
 
-#action {menzhong:%*»ô¶¼%*} {
+#action {menzhong:%*éœéƒ½%*} {
     gt ny;
-    on_there {#3 {ask he about »ô¶¼}; kill huo};
+    on_there {#3 {ask he about éœéƒ½}; kill huo};
     on_dead {mz.b};
 };
 
-#action {menzhong:%*ºÚÀÏ°å%*} {
+#action {menzhong:%*é»‘è€æ¿%*} {
     gt xz;
     on_there {se;se;wd;#path ins {open men} {open men}; kill hei};
     on_dead {back; mz.b};
 };
 
-#action {menzhong:%*´òÊÖ%*} {
+#action {menzhong:%*æ‰“æ‰‹%*} {
     gt xz;
     on_there {se;se;wd;kill dashou};
     on_dead {open men; eu; nw;nw; mz.b};
 };
 
-#action {menzhong:%*Ê¨ºğ×Ó} {
+#action {menzhong:%*ç‹®å¼å­} {
     gt xx;
     on_there {n;kill shihou zi};
     on_dead {s;mz.b};
 };
 
-#action {menzhong:%*ÈÕÔÂ½ÌÖÚ%*} {
+#action {menzhong:%*æ—¥æœˆæ•™ä¼—%*} {
     gt ry;
     on_there {kill jiaozhong};
     on_dead {mz.b};
 };
 
-#action {menzhong:%*Ìï²®¹â%*} {
+#action {menzhong:%*ç”°ä¼¯å…‰%*} {
     gt yz;
     on_there {w;w;n;n;n;kill tian};
     on_dead {s;s;s;e;e;mz.b};
 };
 
-#action {menzhong:%*ÍõÌú½³%*} {
+#action {menzhong:%*ç‹é“åŒ %*} {
     gt yz;
     on_there {e;e;s; hit wang};
     on_hit {n;w;w; mz.b};
 };
 
-#action {menzhong:%*ÌìÀÇ×Ó%*} {
+#action {menzhong:%*å¤©ç‹¼å­%*} {
     gt xx;
     on_there {kill tianlang zi};
     on_dead {mz.b};
 };
 
-#action {menzhong:%*ôÃÍò¼Ò%*ÖñÒ¶Çà} {
+#action {menzhong:%*è£˜ä¸‡å®¶%*ç«¹å¶é’} {
     gt yz;
     on_there {
         s;s;s;e;n;
@@ -274,10 +274,10 @@
     };
 };
 
-#action {menzhong:%*×¦·¨ÈëÃÅ%*} {
+#action {menzhong:%*çˆªæ³•å…¥é—¨%*} {
     gt ly;
-    #action {µÖ´ïÄ¿µÄµØ} {
-        #unaction {µÖ´ïÄ¿µÄµØ};
+    #action {æŠµè¾¾ç›®çš„åœ°} {
+        #unaction {æŠµè¾¾ç›®çš„åœ°};
         #delay {2} {
             w;n;
             buy claw book;
@@ -288,8 +288,8 @@
                 };
             };
         };
-        #action {µÖ´ïÄ¿µÄµØ} {
-            #unaction {µÖ´ïÄ¿µÄµØ};
+        #action {æŠµè¾¾ç›®çš„åœ°} {
+            #unaction {æŠµè¾¾ç›®çš„åœ°};
             #delay {2} {
                 give ${menzhong} claw book;
             };
@@ -297,12 +297,12 @@
     };
 };
 
-#action {menzhong:%*ÌìÉ½Ñ©Á«%*} {
+#action {menzhong:%*å¤©å±±é›ªè²%*} {
     mz.f;
     mz.q;
 };
 
-#action {menzhong:%*ËµÎÄ½â×Ö%*} {
+#action {menzhong:%*è¯´æ–‡è§£å­—%*} {
     gt zx;
     on_there {
         buy shu;
@@ -316,7 +316,7 @@
     };
 };
 
-#action {menzhong:%*Ò©ÆÌ»ï¼Æ%*} {
+#action {menzhong:%*è¯é“ºä¼™è®¡%*} {
     gt yz;
     on_there {
         e;e;n;
@@ -328,7 +328,7 @@
     };
 };
 
-#action {menzhong:%*ĞÇËŞÅÉºÅÊÖ%*} {
+#action {menzhong:%*æ˜Ÿå®¿æ´¾å·æ‰‹%*} {
     gt xx;
     on_there {
         kill haoshou;
@@ -338,7 +338,7 @@
     };
 };
 
-#action {menzhong:%*»¨½³%*} {
+#action {menzhong:%*èŠ±åŒ %*} {
     gt bt;
     on_there {
         nw;w;w;nw;nu;nu;n;nu;n;n;n;e;
@@ -350,7 +350,7 @@
     };
 };
 
-#action {menzhong:%*¶¾Éßµ¨%*} {
+#action {menzhong:%*æ¯’è›‡èƒ†%*} {
     gt jx;
     on_there {
         e;nd;w;
@@ -372,7 +372,7 @@
     };
 };
 
-#action {menzhong:%*´ŞÔ±Íâ%*} {
+#action {menzhong:%*å´”å‘˜å¤–%*} {
     gt yz;
     on_there {
         w;w;n;n;n;
@@ -387,7 +387,7 @@
     };
 };
 
-#action {menzhong:%*Á÷Ã¥%*} {
+#action {menzhong:%*æµæ°“%*} {
     gt yz;
     on_there {
         s;
@@ -399,7 +399,7 @@
     };
 };
 
-#action {menzhong:%*¾ŞÄ¾ÆìÖÚ%*} {
+#action {menzhong:%*å·¨æœ¨æ——ä¼—%*} {
     gt mj;
     on_there {
         nu;nu;nu;w;
@@ -411,7 +411,7 @@
     };
 };
 
-#action {menzhong:%*ÁÒ»ğÆìÖÚ%*} {
+#action {menzhong:%*çƒˆç«æ——ä¼—%*} {
     gt mj;
     on_there {
         nu;nu;nu;e;
@@ -423,7 +423,7 @@
     };
 };
 
-#action {menzhong:%*Èñ½ğÆìÖÚ%*} {
+#action {menzhong:%*é”é‡‘æ——ä¼—%*} {
     gt mj;
     on_there {
         nu;nu;nu;s;
@@ -435,7 +435,7 @@
     };
 };
 
-#action {menzhong:%*ºñÍÁÆìÖÚ%*} {
+#action {menzhong:%*åšåœŸæ——ä¼—%*} {
     gt mj;
     on_there {
         nu;nu;nu;
@@ -447,7 +447,7 @@
     };
 };
 
-#action {menzhong:%*ºéË®ÆìÖÚ%*} {
+#action {menzhong:%*æ´ªæ°´æ——ä¼—%*} {
     gt mj;
     on_there {
         nu;nu;nu;n;
@@ -459,7 +459,7 @@
     };
 };
 
-#action {menzhong:%*ÑÃÒÛ·ş%*} {
+#action {menzhong:%*è¡™å½¹æœ%*} {
     gt yz;
     on_there {
         w;n;
@@ -476,7 +476,7 @@
     };
 };
 
-#action {menzhong:%*²É»¨×Ó%*} {
+#action {menzhong:%*é‡‡èŠ±å­%*} {
     gt xx;
     on_there {
         n;nd;n;nw;w;
@@ -491,39 +491,39 @@
     };
 };
 
-#action {menzhong:%*ÖñÇàÉß%*} {
+#action {menzhong:%*ç«¹é’è›‡%*} {
     gt taihu;
     on_there {
         nu;nu;nu;w;
         hitall snake;
     };
-    #action {ÄãÕ½Ê¤ÁËÖñÇàÉß} {
-        #unaction {ÄãÕ½Ê¤ÁËÖñÇàÉß};
+    #action {ä½ æˆ˜èƒœäº†ç«¹é’è›‡} {
+        #unaction {ä½ æˆ˜èƒœäº†ç«¹é’è›‡};
         halt;back;
         mz.b;
     };
 };
 
-#action {menzhong:%*ÑÛ¾µÉß%*} {
+#action {menzhong:%*çœ¼é•œè›‡%*} {
     gt taihu;
     on_there {
         nu;nu;nu;w;
         hitall snake;
     };
-    #action {ÄãÕ½Ê¤ÁËÑÛ¾µÉß} {
-        #unaction {ÄãÕ½Ê¤ÁËÑÛ¾µÉß};
+    #action {ä½ æˆ˜èƒœäº†çœ¼é•œè›‡} {
+        #unaction {ä½ æˆ˜èƒœäº†çœ¼é•œè›‡};
         halt;back;
         mz.b;
     };
 };
 
-#action {menzhong:%*½ğ»·Éß%*} {
+#action {menzhong:%*é‡‘ç¯è›‡%*} {
     gt tls;
     on_there {ed;nw; hit jin she};
     on_hit {se;wu;mz.b};
 };
 
-#action {menzhong:%*Ñ¬Ìï¼¦%*} {
+#action {menzhong:%*ç†ç”°é¸¡%*} {
     gt taohua;
     on_there {
         n;n;nu;nu;nu;n;n;n;n;e;e;e;e;
@@ -537,25 +537,25 @@
     };
 };
 
-#action {menzhong:%*¾»´È%*} {
+#action {menzhong:%*å‡€æ…ˆ%*} {
     gt fzl;
     on_there {u;n; hit xiao shami};
     on_hit {s;d; mz.b};
 };
 
-#action {menzhong:%*µÀ³É%*} {
+#action {menzhong:%*é“æˆ%*} {
     gt fzl;
     on_there {n; kill daocheng chanshi};
     on_dead {s; mz.b};
 };
 
-#action {menzhong:%*°¢ÄÁ%*} {
+#action {menzhong:%*é˜¿ç‰§%*} {
     gt guiyun;
     on_there {e;e;e;e;e;s;hit a mu};
     on_hit {n;w;w;w;w;w;mz.b};
 };
 
-#action {menzhong:%*ÉÌÈË%*»Æ½ğ%*} {
+#action {menzhong:%*å•†äºº%*é»„é‡‘%*} {
     gt taihu;
     on_there{
         w;w;give 1 gold to shang ren;e;e;
@@ -563,11 +563,11 @@
     };
 };
 
-#action {menzhong:%*ôÕ×Ó%*} {
+#action {menzhong:%*ç²½å­%*} {
     give ${menzhong} zongzi;
 };
 
-#action {menzhong:%*Æß´ç×ÓÉß%*} {
+#action {menzhong:%*ä¸ƒå¯¸å­è›‡%*} {
     gt taihu;
     on_there {
         nu;nu;nu;w;
@@ -579,13 +579,13 @@
     };
 };
 
-#action {menzhong:%*ÎèÉßÈË%*} {
+#action {menzhong:%*èˆè›‡äºº%*} {
     gt bt;
     on_there {nw;w; kill snaker};
     on_dead {e;se;mz.b};
 };
 
-#action {menzhong:%*»ªÉ½µÜ×Ó%*} {
+#action {menzhong:%*åå±±å¼Ÿå­%*} {
     gt cll;
     on_there {
         sd;su;s;
@@ -597,7 +597,7 @@
     };
 };
 
-#action {menzhong:%*ÔÀÁéÉº%*} {
+#action {menzhong:%*å²³çµçŠ%*} {
     gt cll;
     on_there {
         sd;su;s;s;
@@ -609,7 +609,7 @@
     };
 };
 
-#action {menzhong:%*ÉÕ·¹É®%*} {
+#action {menzhong:%*çƒ§é¥­åƒ§%*} {
     gt fzl;
     on_there {
         s;s;sd;s;w;n;n;
@@ -621,7 +621,7 @@
     };
 };
 
-#action {menzhong:%*ÓñÖñÕÈ} {
+#action {menzhong:%*ç‰ç«¹æ–} {
     gt yz;
     on_there {
         s;e;
@@ -633,19 +633,19 @@
     };
 };
 
-#action {menzhong:%*»Û¿Õ%*} {
+#action {menzhong:%*æ…§ç©º%*} {
     gt fzl;
     on_there {s;s;sd; kill zunzhe};
     on_dead {back;mz.b};
 };
 
-#action {menzhong:%*»ÛÉ«%*} {
+#action {menzhong:%*æ…§è‰²%*} {
     gt fzl;
     on_there {e;n;n;n; kill zunzhe};
     on_dead {back; mz.b};
 };
 
-#action {menzhong:%*»ÛÕæ%*} {
+#action {menzhong:%*æ…§çœŸ%*} {
     gt fzl;
     on_there {w;w;n;n;w;kill daoyi};
     on_dead {
@@ -655,13 +655,13 @@
     };
 };
 
-#action {menzhong:%*×¯ÆÍ%*} {
+#action {menzhong:%*åº„ä»†%*} {
     gt guiyun;
     on_there {e;e;n;n;w;n;hit pu};
     on_hit {s;e;s;s;w;w;mz.b};
 };
 
-#action {menzhong:%*ÀÎ·¿Ô¿³×%*} {
+#action {menzhong:%*ç‰¢æˆ¿é’¥åŒ™%*} {
     gt yz;
     on_there {
         w;w;n;n;n;

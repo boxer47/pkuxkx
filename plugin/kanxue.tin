@@ -5,7 +5,7 @@
         l snow;
     } {6};
 
-    #action {你突然发现在路旁的一片积雪上行走} {
+    #action {浣犵獊鐒跺彂鐜板湪璺梺鐨勪竴鐗囩Н闆笂琛岃蛋} {
         walk snow;
     };
     #class kx.inner close;

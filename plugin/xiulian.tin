@@ -5,25 +5,25 @@
 #alias {xl.start} {
     set_last_quest xl;
     #class xl.inner open;
-    #action {¶Ù¾õÄÚ¹¦ĞŞÎªÔö½ø²»Ğ¡} {
+    #action {é¡¿è§‰å†…åŠŸä¿®ä¸ºå¢è¿›ä¸å°} {
         xiulian ${xl_gongfu}
     };
-    #action {ÓÉÓÚÈ±·¦ÊµÕ½¾­Ñé} {
+    #action {ç”±äºç¼ºä¹å®æˆ˜ç»éªŒ} {
         #showme MISSION_COMPLETE: xl;
         xl.stop;
     };
-    #action {ÄãµÄÇ±ÄÜ±ØĞë´óÓÚ%*²ÅÄÜĞŞÁ¶¡£} {
+    #action {ä½ çš„æ½œèƒ½å¿…é¡»å¤§äº%*æ‰èƒ½ä¿®ç‚¼ã€‚} {
         #showme MISSION_COMPLETE: xl;
         xl.stop;
     };
 
-    #action {¡õ%* (%*)%*  %d/} {
+    #action {â–¡%* (%*)%*  %d/} {
         #if {"%%2" == "${xl_gongfu}"} {
             #var xiulian_level %%4;
         };
     };
 
-    #action {ÄãµÄ¼¼ÄÜµÈ¼¶×î¶àÄÜ´ïµ½%*¼¶} {
+    #action {ä½ çš„æŠ€èƒ½ç­‰çº§æœ€å¤šèƒ½è¾¾åˆ°%*çº§} {
         #var max_level @ctd{%%1};
     };
 
@@ -36,7 +36,7 @@
                 xt.stop;
             };
             #else {
-                show_to_quest ĞŞÁ¶ ${xl_gongfu}: ${xiulian_level} -> ${max_level};
+                show_to_quest ä¿®ç‚¼ ${xl_gongfu}: ${xiulian_level} -> ${max_level};
             };
         };
     };
@@ -59,6 +59,6 @@
 #alias {xl.stop} {
     unset_last_quest;
     #class xl.inner kill;
-    show_to_quest ĞŞÁ¶½áÊø;
+    show_to_quest ä¿®ç‚¼ç»“æŸ;
 };
 #class xiulian close

@@ -1,16 +1,16 @@
 #class chainless open
 #list busy_actions create {
-    Äãö®Ê±±»µ¶ÆøËù±Æ£¬Ö±Ã°Àäº¹£¬¶¯µ¯²»µÃ;
-    Äã×óÖ§ÓÒç©¿à¿àÖ§³Å;
-    µãÖÐÁË¼¸¸öÑ¨Î»;
-    µãÖÐ¼¸´¦Ñ¨µÀ;
-    ÄãÖ»¾õ½£ÊÆÁ¬Ãà²»¾ø;
-    ÄãÒÑÍêÈ«ÏÝÈëÊÀË×Õù¶·µÄ×ÔÔðÖÐÎÞ·¨×Ô°Î;
-    ÉíÐÎÒÑ²»¿É±æ;
-    ÄãÔÚ»ÆÉ³ÂþÌìÖÐÊ²Ã´Ò²¿´²»¼û;
-    ´òÁË¸ö´ëÊÖ²»¼°;
-    ³¹µ×ÉñÖ¾²»ÇåÁË;
-    ÒÑ¾­·â×¡ÁËÄãËÄÖ«¸÷´óÒªÑ¨;
+    ä½ éœŽæ—¶è¢«åˆ€æ°”æ‰€é€¼ï¼Œç›´å†’å†·æ±—ï¼ŒåŠ¨å¼¹ä¸å¾—;
+    ä½ å·¦æ”¯å³ç»Œè‹¦è‹¦æ”¯æ’‘;
+    ç‚¹ä¸­äº†å‡ ä¸ªç©´ä½;
+    ç‚¹ä¸­å‡ å¤„ç©´é“;
+    ä½ åªè§‰å‰‘åŠ¿è¿žç»µä¸ç»;
+    ä½ å·²å®Œå…¨é™·å…¥ä¸–ä¿—äº‰æ–—çš„è‡ªè´£ä¸­æ— æ³•è‡ªæ‹”;
+    èº«å½¢å·²ä¸å¯è¾¨;
+    ä½ åœ¨é»„æ²™æ¼«å¤©ä¸­ä»€ä¹ˆä¹Ÿçœ‹ä¸è§;
+    æ‰“äº†ä¸ªæŽªæ‰‹ä¸åŠ;
+    å½»åº•ç¥žå¿—ä¸æ¸…äº†;
+    å·²ç»å°ä½äº†ä½ å››è‚¢å„å¤§è¦ç©´;
 };
 
 #foreach {${busy_actions}[%*]} {busy_action} {
@@ -22,7 +22,7 @@
     special chainless;
 };
 
-stat.register ½ð²õ miss ÄãÎ´ÄÜ°ÚÍÑÐÄÖÐèäèô£¬ÐÐ¶¯ÈÔ²»Áé±ã£¡;
-stat.register ½ð²õ hit ÄãÐÄ³¬ÎïÍâ£¬²»ÖÍÓÚÍâÁ¦£¬ÖÕÓÚÄÜ¹»×ÔÓÉÐÐ¶¯ÁË£¡;
+stat.register é‡‘è‰ miss ä½ æœªèƒ½æ‘†è„±å¿ƒä¸­æ¡Žæ¢ï¼Œè¡ŒåŠ¨ä»ä¸çµä¾¿ï¼;
+stat.register é‡‘è‰ hit ä½ å¿ƒè¶…ç‰©å¤–ï¼Œä¸æ»žäºŽå¤–åŠ›ï¼Œç»ˆäºŽèƒ½å¤Ÿè‡ªç”±è¡ŒåŠ¨äº†ï¼;
 
 #class chainless close

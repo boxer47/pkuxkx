@@ -1,41 +1,41 @@
 #class newbie_wd open;
 #alias {newbie.q} {
     #class newbie.inner open;
-    #action {%1Ïò³åĞéµÀ³¤´òÌıÓĞ¹Ø} {#var character  %1}
-    #action {½ñÌìÈ«ÅÉµÜ×ÓÒªÔÚ} {
-        #if {"$character" == "Äã"} {
+    #action {%1å‘å†²è™šé“é•¿æ‰“å¬æœ‰å…³} {#var character  %1}
+    #action {ä»Šå¤©å…¨æ´¾å¼Ÿå­è¦åœ¨} {
+        #if {"$character" == "ä½ "} {
             #delay {2} {
                 ask chongxu about cancel;
                 ask chongxu about quest;
             }
         };
     };
-    #action {µ½ÌìÖù·å½ÅÏÂ²ÉÆø} {
-        #IF {"$character" == "Äã"} {
+    #action {åˆ°å¤©æŸ±å³°è„šä¸‹é‡‡æ°”} {
+        #IF {"$character" == "ä½ "} {
             #delay {2} {
                 ask chongxu about cancel;
                 ask chongxu about quest;
             };
         };
     };
-    #action {ÏÖÔÚ»¹Ã»ÓĞĞÂµÄ¹¤×÷¿ÉÒÔ·ÖÅä¸øÄã} {
-        #IF {"$character" == "Äã"} {
-            #var character  ¿Õ;
+    #action {ç°åœ¨è¿˜æ²¡æœ‰æ–°çš„å·¥ä½œå¯ä»¥åˆ†é…ç»™ä½ } {
+        #IF {"$character" == "ä½ "} {
+            #var character  ç©º;
             #delay {get_request} {ask chongxu about quest} {20};
         };
     };
-    #action {¸Ï½ôÏòÓáá·ÑÒ±¨¸æ£¡} {zhan; n; ask yu about Á¶µ¤; w;w;s;s;s;s;ask chongxu about success; ask chongxu about quest;};
-    #action {Äãµ½Óáá·ÑÒÄÇÀï°ïËû¿´¿´Â¯»ğ°É} {
-        #IF {"$character" == "Äã"} {
+    #action {èµ¶ç´§å‘ä¿å²±å²©æŠ¥å‘Šï¼} {zhan; n; ask yu about ç‚¼ä¸¹; w;w;s;s;s;s;ask chongxu about success; ask chongxu about quest;};
+    #action {ä½ åˆ°ä¿å²±å²©é‚£é‡Œå¸®ä»–çœ‹çœ‹ç‚‰ç«å§} {
+        #IF {"$character" == "ä½ "} {
             #delay {kanluhuo} {
                 n;n;n;n;e;e;
-                ask yu about Á¶µ¤;
+                ask yu about ç‚¼ä¸¹;
                 s;zuo;kan;
             } {3}
         };
     };
 
-    #action {ÎÒ»¹Ã»ÓĞ¿ªÊ¼Á¶µ¤ÄØ£¬²»Òª×Å¼±} {
+    #action {æˆ‘è¿˜æ²¡æœ‰å¼€å§‹ç‚¼ä¸¹å‘¢ï¼Œä¸è¦ç€æ€¥} {
         zhan;n;
         w;w;s;s;s;s;ask chongxu about cancel; ask chongxu about quest;
     };
@@ -44,8 +44,8 @@
     #action {~*********[1;31m^[2;37;0m********} {change L}; #nop ]];
     #action {~*********[1;33m^[2;37;0m********} {change H}; #nop ]];
 
-    #action {³åĞéµÀ³¤ËµµÀ£º¡¸½ñÌìÈ«ÅÉµÜ×ÓÒªÔÚ%1Êì¶Áµä¼®£¬¾İËµÒªËĞ³ª%2µÄ%3(%4)} { #nop ];
-        #IF {"$character" == "Äã"} {
+    #action {å†²è™šé“é•¿è¯´é“ï¼šã€Œä»Šå¤©å…¨æ´¾å¼Ÿå­è¦åœ¨%1ç†Ÿè¯»å…¸ç±ï¼Œæ®è¯´è¦è¯µå”±%2çš„%3(%4)} { #nop ];
+        #IF {"$character" == "ä½ "} {
             #var sj_address %1;
             #var sj_book %2;
             #var sj_article %3;
@@ -55,55 +55,55 @@
         };
     }
 
-    #action {³åĞéµÀ³¤ËµµÀ£º¡¸½ñÌìÈ«ÅÉµÜ×ÓÒªÔÚ%1Êì¶Áµä¼®£¬¾İËµÒªËĞ³ª%2µÄµÚ%3ÕÂ} { #nop ];
-        #IF {"$character" == "Äã"} {
+    #action {å†²è™šé“é•¿è¯´é“ï¼šã€Œä»Šå¤©å…¨æ´¾å¼Ÿå­è¦åœ¨%1ç†Ÿè¯»å…¸ç±ï¼Œæ®è¯´è¦è¯µå”±%2çš„ç¬¬%3ç« } { #nop ];
+        #IF {"$character" == "ä½ "} {
             #var sj_address %1;
             #var sj_book %2;
             #var sj_article %2;
 
             #var sj_page 0;
-            #IF {"%3" == "Ò»"} {#var sj_page 1};
-            #ELSEIF {"%3" == "¶ş"} {#var sj_page 2};
-            #ELSEIF {"%3" == "Èı"} {#var sj_page 3};
-            #ELSEIF {"%3" == "ËÄ"} {#var sj_page 4};
-            #ELSEIF {"%3" == "Îå"} {#var sj_page 5};
-            #ELSEIF {"%3" == "Áù"} {#var sj_page 6};
-            #ELSEIF {"%3" == "Æß"} {#var sj_page 7};
-            #ELSEIF {"%3" == "°Ë"} {#var sj_page 8};
-            #ELSEIF {"%3" == "¾Å"} {#var sj_page 9};
-            #ELSEIF {"%3" == "Ê®"} {#var sj_page 10};
+            #IF {"%3" == "ä¸€"} {#var sj_page 1};
+            #ELSEIF {"%3" == "äºŒ"} {#var sj_page 2};
+            #ELSEIF {"%3" == "ä¸‰"} {#var sj_page 3};
+            #ELSEIF {"%3" == "å››"} {#var sj_page 4};
+            #ELSEIF {"%3" == "äº”"} {#var sj_page 5};
+            #ELSEIF {"%3" == "å…­"} {#var sj_page 6};
+            #ELSEIF {"%3" == "ä¸ƒ"} {#var sj_page 7};
+            #ELSEIF {"%3" == "å…«"} {#var sj_page 8};
+            #ELSEIF {"%3" == "ä¹"} {#var sj_page 9};
+            #ELSEIF {"%3" == "å"} {#var sj_page 10};
 
             tell erq $sj_address $sj_book $sj_article $sj_page;
             check_jing;
         };
     }
 
-    #action {³åĞéµÀ³¤ËµµÀ£º¡¸½ñÌìÈ«ÅÉµÜ×ÓÒªÔÚ%1Êì¶Áµä¼®£¬¾İËµÒªËĞ³ª%2µÄµÚ%3Ê®%4ÕÂ} { #nop ];
-        #IF {"$character" == "Äã"} {
+    #action {å†²è™šé“é•¿è¯´é“ï¼šã€Œä»Šå¤©å…¨æ´¾å¼Ÿå­è¦åœ¨%1ç†Ÿè¯»å…¸ç±ï¼Œæ®è¯´è¦è¯µå”±%2çš„ç¬¬%3å%4ç« } { #nop ];
+        #IF {"$character" == "ä½ "} {
             #var sj_address %1;
             #var sj_book %2;
             #var sj_article %2;
 
             #var sj_page 0;
-            #IF {"%3" == "Ò»"} {#var sj_page 10};
-            #ELSEIF {"%3" == "¶ş"} {#var sj_page 20};
-            #ELSEIF {"%3" == "Èı"} {#var sj_page 30};
-            #ELSEIF {"%3" == "ËÄ"} {#var sj_page 40};
-            #ELSEIF {"%3" == "Îå"} {#var sj_page 50};
-            #ELSEIF {"%3" == "Áù"} {#var sj_page 60};
-            #ELSEIF {"%3" == "Æß"} {#var sj_page 70};
-            #ELSEIF {"%3" == "°Ë"} {#var sj_page 80};
-            #ELSEIF {"%3" == "¾Å"} {#var sj_page 90};
+            #IF {"%3" == "ä¸€"} {#var sj_page 10};
+            #ELSEIF {"%3" == "äºŒ"} {#var sj_page 20};
+            #ELSEIF {"%3" == "ä¸‰"} {#var sj_page 30};
+            #ELSEIF {"%3" == "å››"} {#var sj_page 40};
+            #ELSEIF {"%3" == "äº”"} {#var sj_page 50};
+            #ELSEIF {"%3" == "å…­"} {#var sj_page 60};
+            #ELSEIF {"%3" == "ä¸ƒ"} {#var sj_page 70};
+            #ELSEIF {"%3" == "å…«"} {#var sj_page 80};
+            #ELSEIF {"%3" == "ä¹"} {#var sj_page 90};
 
-            #IF {"%4" == "Ò»"} {#math sj_page $sj_page+1};
-            #ELSEIF {"%4" == "¶ş"} {#math sj_page $sj_page+2};
-            #ELSEIF {"%4" == "Èı"} {#math sj_page $sj_page+3};
-            #ELSEIF {"%4" == "ËÄ"} {#math sj_page $sj_page+4};
-            #ELSEIF {"%4" == "Îå"} {#math sj_page $sj_page+5};
-            #ELSEIF {"%4" == "Áù"} {#math sj_page $sj_page+6};
-            #ELSEIF {"%4" == "Æß"} {#math sj_page $sj_page+7};
-            #ELSEIF {"%4" == "°Ë"} {#math sj_page $sj_page+8};
-            #ELSEIF {"%4" == "¾Å"} {#math sj_page $sj_page+9};
+            #IF {"%4" == "ä¸€"} {#math sj_page $sj_page+1};
+            #ELSEIF {"%4" == "äºŒ"} {#math sj_page $sj_page+2};
+            #ELSEIF {"%4" == "ä¸‰"} {#math sj_page $sj_page+3};
+            #ELSEIF {"%4" == "å››"} {#math sj_page $sj_page+4};
+            #ELSEIF {"%4" == "äº”"} {#math sj_page $sj_page+5};
+            #ELSEIF {"%4" == "å…­"} {#math sj_page $sj_page+6};
+            #ELSEIF {"%4" == "ä¸ƒ"} {#math sj_page $sj_page+7};
+            #ELSEIF {"%4" == "å…«"} {#math sj_page $sj_page+8};
+            #ELSEIF {"%4" == "ä¹"} {#math sj_page $sj_page+9};
 
             tell erq $sj_address $sj_book $sj_article $sj_page;
             check_jing;
@@ -112,81 +112,81 @@
 
     #alias {check_jing} {
         #var sj_start_page 0;
-        #IF {"$sj_book" == "×¯×Ó¡¤ÍâÆª¡¸ÉÏ¾í¡¹"} {
-            #IF {"$sj_article" == "×¯×Ó¡¤ÍâÆª¡¤æéÄ´"} {#math sj_start_page $sj_page+0};
-            #ELSEIF {"$sj_article" == "×¯×Ó¡¤ÍâÆª¡¤ÂíÌã"} {#math sj_start_page $sj_page+3};
-            #ELSEIF {"$sj_article" == "×¯×Ó¡¤ÍâÆª¡¤Ãlóæ"} {#math sj_start_page $sj_page+11};
-            #ELSEIF {"$sj_article" == "×¯×Ó¡¤ÍâÆª¡¤ÔÚå¶"} {#math sj_start_page $sj_page+30};
-            #ELSEIF {"$sj_article" == "×¯×Ó¡¤ÍâÆª¡¤ÌìµØ"} {#math sj_start_page $sj_page+65};
-            #ELSEIF {"$sj_article" == "×¯×Ó¡¤ÍâÆª¡¤ÌìµÀ"} {#math sj_start_page $sj_page+115};
-            #ELSEIF {"$sj_article" == "×¯×Ó¡¤ÍâÆª¡¤ÌìÔË"} {#math sj_start_page $sj_page+150};
-            #ELSEIF {"$sj_article" == "×¯×Ó¡¤ÍâÆª¡¤¿ÌÒâ"} {#math sj_start_page $sj_page+189};
-            #ELSEIF {"$sj_article" == "×¯×Ó¡¤ÍâÆª¡¤ÉÉĞÔ"} {#math sj_start_page $sj_page+200};
+        #IF {"$sj_book" == "åº„å­Â·å¤–ç¯‡ã€Œä¸Šå·ã€"} {
+            #IF {"$sj_article" == "åº„å­Â·å¤–ç¯‡Â·éªˆæ‹‡"} {#math sj_start_page $sj_page+0};
+            #ELSEIF {"$sj_article" == "åº„å­Â·å¤–ç¯‡Â·é©¬è¹„"} {#math sj_start_page $sj_page+3};
+            #ELSEIF {"$sj_article" == "åº„å­Â·å¤–ç¯‡Â·èƒ ç®§"} {#math sj_start_page $sj_page+11};
+            #ELSEIF {"$sj_article" == "åº„å­Â·å¤–ç¯‡Â·åœ¨å®¥"} {#math sj_start_page $sj_page+30};
+            #ELSEIF {"$sj_article" == "åº„å­Â·å¤–ç¯‡Â·å¤©åœ°"} {#math sj_start_page $sj_page+65};
+            #ELSEIF {"$sj_article" == "åº„å­Â·å¤–ç¯‡Â·å¤©é“"} {#math sj_start_page $sj_page+115};
+            #ELSEIF {"$sj_article" == "åº„å­Â·å¤–ç¯‡Â·å¤©è¿"} {#math sj_start_page $sj_page+150};
+            #ELSEIF {"$sj_article" == "åº„å­Â·å¤–ç¯‡Â·åˆ»æ„"} {#math sj_start_page $sj_page+189};
+            #ELSEIF {"$sj_article" == "åº„å­Â·å¤–ç¯‡Â·ç¼®æ€§"} {#math sj_start_page $sj_page+200};
         };
-        #ELSEIF {"$sj_book" == "×¯×Ó¡¤ÍâÆª¡¸ÏÂ¾í¡¹"} {
-            #IF {"$sj_article" == "×¯×Ó¡¤ÍâÆª¡¤ÇïË®"} {#math sj_start_page $sj_page+0};
-            #ELSEIF {"$sj_article" == "×¯×Ó¡¤ÍâÆª¡¤ÖÁÀÖ"} {#math sj_start_page $sj_page+50};
-            #ELSEIF {"$sj_article" == "×¯×Ó¡¤ÍâÆª¡¤´ïÉú"} {#math sj_start_page $sj_page+68};
-            #ELSEIF {"$sj_article" == "×¯×Ó¡¤ÍâÆª¡¤É½Ä¾"} {#math sj_start_page $sj_page+106};
-            #ELSEIF {"$sj_article" == "×¯×Ó¡¤ÍâÆª¡¤Ìï×Ó·½"} {#math sj_start_page $sj_page+142};
-            #ELSEIF {"$sj_article" == "×¯×Ó¡¤ÍâÆª¡¤Öª±±ÓÎ"} {#math sj_start_page $sj_page+176};
+        #ELSEIF {"$sj_book" == "åº„å­Â·å¤–ç¯‡ã€Œä¸‹å·ã€"} {
+            #IF {"$sj_article" == "åº„å­Â·å¤–ç¯‡Â·ç§‹æ°´"} {#math sj_start_page $sj_page+0};
+            #ELSEIF {"$sj_article" == "åº„å­Â·å¤–ç¯‡Â·è‡³ä¹"} {#math sj_start_page $sj_page+50};
+            #ELSEIF {"$sj_article" == "åº„å­Â·å¤–ç¯‡Â·è¾¾ç”Ÿ"} {#math sj_start_page $sj_page+68};
+            #ELSEIF {"$sj_article" == "åº„å­Â·å¤–ç¯‡Â·å±±æœ¨"} {#math sj_start_page $sj_page+106};
+            #ELSEIF {"$sj_article" == "åº„å­Â·å¤–ç¯‡Â·ç”°å­æ–¹"} {#math sj_start_page $sj_page+142};
+            #ELSEIF {"$sj_article" == "åº„å­Â·å¤–ç¯‡Â·çŸ¥åŒ—æ¸¸"} {#math sj_start_page $sj_page+176};
         };
-        #ELSEIF {"$sj_book" == "×¯×Ó¡¤ÄÚÆª¡¸ÉÏ¾í¡¹"} {
-            #IF {"$sj_article" == "×¯×Ó¡¤ÄÚÆª¡¤åĞÒ£ÓÎ"} {#math sj_start_page $sj_page+0};
-            #ELSEIF {"$sj_article" == "×¯×Ó¡¤ÄÚÆª¡¤ÆëÎïÂÛ"} {#math sj_start_page $sj_page+20};
-            #ELSEIF {"$sj_article" == "×¯×Ó¡¤ÄÚÆª¡¤ÑøÉúÖ÷"} {#math sj_start_page $sj_page+68};
+        #ELSEIF {"$sj_book" == "åº„å­Â·å†…ç¯‡ã€Œä¸Šå·ã€"} {
+            #IF {"$sj_article" == "åº„å­Â·å†…ç¯‡Â·é€é¥æ¸¸"} {#math sj_start_page $sj_page+0};
+            #ELSEIF {"$sj_article" == "åº„å­Â·å†…ç¯‡Â·é½ç‰©è®º"} {#math sj_start_page $sj_page+20};
+            #ELSEIF {"$sj_article" == "åº„å­Â·å†…ç¯‡Â·å…»ç”Ÿä¸»"} {#math sj_start_page $sj_page+68};
         };
-        #ELSEIF {"$sj_book" == "×¯×Ó¡¤ÄÚÆª¡¸ÏÂ¾í¡¹"} {
-            #IF {"$sj_article" == "×¯×Ó¡¤ÄÚÆª¡¤ÈË¼äÊÀ"} {#math sj_start_page $sj_page+0};
-            #ELSEIF {"$sj_article" == "×¯×Ó¡¤ÄÚÆª¡¤µÂ³ä·û"} {#math sj_start_page $sj_page+45};
-            #ELSEIF {"$sj_article" == "×¯×Ó¡¤ÄÚÆª¡¤´ó×ÚÊ¦"} {#math sj_start_page $sj_page+76};
-            #ELSEIF {"$sj_article" == "×¯×Ó¡¤ÄÚÆª¡¤Ó¦µÛÍõ"} {#math sj_start_page $sj_page+123};
+        #ELSEIF {"$sj_book" == "åº„å­Â·å†…ç¯‡ã€Œä¸‹å·ã€"} {
+            #IF {"$sj_article" == "åº„å­Â·å†…ç¯‡Â·äººé—´ä¸–"} {#math sj_start_page $sj_page+0};
+            #ELSEIF {"$sj_article" == "åº„å­Â·å†…ç¯‡Â·å¾·å……ç¬¦"} {#math sj_start_page $sj_page+45};
+            #ELSEIF {"$sj_article" == "åº„å­Â·å†…ç¯‡Â·å¤§å®—å¸ˆ"} {#math sj_start_page $sj_page+76};
+            #ELSEIF {"$sj_article" == "åº„å­Â·å†…ç¯‡Â·åº”å¸ç‹"} {#math sj_start_page $sj_page+123};
         };
-        #ELSEIF {"$sj_book" == "×¯×Ó¡¤ÔÓÆª¡¸ÉÏ¾í¡¹"} {
-            #IF {"$sj_article" == "×¯×Ó¡¤ÔÓÆª¡¤¸ıÉ£³ş"} {#math sj_start_page $sj_page+0};
-            #ELSEIF {"$sj_article" == "×¯×Ó¡¤ÔÓÆª¡¤ĞìÎŞ¹í"} {#math sj_start_page $sj_page+41};
-            #ELSEIF {"$sj_article" == "×¯×Ó¡¤ÔÓÆª¡¤ÔòÑô"} {#math sj_start_page $sj_page+97};
-            #ELSEIF {"$sj_article" == "×¯×Ó¡¤ÔÓÆª¡¤ÍâÎï"} {#math sj_start_page $sj_page+140};
-            #ELSEIF {"$sj_article" == "×¯×Ó¡¤ÔÓÆª¡¤Ô¢ÑÔ"} {#math sj_start_page $sj_page+167};
+        #ELSEIF {"$sj_book" == "åº„å­Â·æ‚ç¯‡ã€Œä¸Šå·ã€"} {
+            #IF {"$sj_article" == "åº„å­Â·æ‚ç¯‡Â·åºšæ¡‘æ¥š"} {#math sj_start_page $sj_page+0};
+            #ELSEIF {"$sj_article" == "åº„å­Â·æ‚ç¯‡Â·å¾æ— é¬¼"} {#math sj_start_page $sj_page+41};
+            #ELSEIF {"$sj_article" == "åº„å­Â·æ‚ç¯‡Â·åˆ™é˜³"} {#math sj_start_page $sj_page+97};
+            #ELSEIF {"$sj_article" == "åº„å­Â·æ‚ç¯‡Â·å¤–ç‰©"} {#math sj_start_page $sj_page+140};
+            #ELSEIF {"$sj_article" == "åº„å­Â·æ‚ç¯‡Â·å¯“è¨€"} {#math sj_start_page $sj_page+167};
         };
-        #ELSEIF {"$sj_book" == "×¯×Ó¡¤ÔÓÆª¡¸ÏÂ¾í¡¹"} {
-            #IF {"$sj_article" == "×¯×Ó¡¤ÔÓÆª¡¤ÈÃÍõ"} {#math sj_start_page $sj_page+0};
-            #ELSEIF {"$sj_article" == "×¯×Ó¡¤ÔÓÆª¡¤µÁõÅ"} {#math sj_start_page $sj_page+46};
-            #ELSEIF {"$sj_article" == "×¯×Ó¡¤ÔÓÆª¡¤Ëµ½£"} {#math sj_start_page $sj_page+98};
-            #ELSEIF {"$sj_article" == "×¯×Ó¡¤ÔÓÆª¡¤Óæ¸¸"} {#math sj_start_page $sj_page+1113};
-            #ELSEIF {"$sj_article" == "×¯×Ó¡¤ÔÓÆª¡¤ÁĞÓù¿Ü"} {#math sj_start_page $sj_page+138};
-            #ELSEIF {"$sj_article" == "×¯×Ó¡¤ÔÓÆª¡¤ÌìÏÂ"} {#math sj_start_page $sj_page+164};
+        #ELSEIF {"$sj_book" == "åº„å­Â·æ‚ç¯‡ã€Œä¸‹å·ã€"} {
+            #IF {"$sj_article" == "åº„å­Â·æ‚ç¯‡Â·è®©ç‹"} {#math sj_start_page $sj_page+0};
+            #ELSEIF {"$sj_article" == "åº„å­Â·æ‚ç¯‡Â·ç›—è·–"} {#math sj_start_page $sj_page+46};
+            #ELSEIF {"$sj_article" == "åº„å­Â·æ‚ç¯‡Â·è¯´å‰‘"} {#math sj_start_page $sj_page+98};
+            #ELSEIF {"$sj_article" == "åº„å­Â·æ‚ç¯‡Â·æ¸”çˆ¶"} {#math sj_start_page $sj_page+1113};
+            #ELSEIF {"$sj_article" == "åº„å­Â·æ‚ç¯‡Â·åˆ—å¾¡å¯‡"} {#math sj_start_page $sj_page+138};
+            #ELSEIF {"$sj_article" == "åº„å­Â·æ‚ç¯‡Â·å¤©ä¸‹"} {#math sj_start_page $sj_page+164};
         };
-        #ELSEIF {"$sj_book" == "µÀµÂ¾­¡¸ÉÏ¾í¡¹"} {
+        #ELSEIF {"$sj_book" == "é“å¾·ç»ã€Œä¸Šå·ã€"} {
             #IF {$sj_page <= 15} {#var sj_start_page $sj_page};
             #ELSEIF {$sj_page >=16 && $sj_page <= 20} {#math sj_start_page $sj_page+1};
             #ELSE {#math sj_start_page $sj_page+2};
             #var sj_start_page $sj_page;
         };
-        #ELSEIF {"$sj_book" == "µÀµÂ¾­¡¸ÏÂ¾í¡¹"} {
+        #ELSEIF {"$sj_book" == "é“å¾·ç»ã€Œä¸‹å·ã€"} {
             #math sj_start_page $sj_page-40;
         };
-        #ELSEIF {"$sj_book" == "µÀµÂ¾­¡¸ÉÏ¾í¡¹"} {
+        #ELSEIF {"$sj_book" == "é“å¾·ç»ã€Œä¸Šå·ã€"} {
             #var sj_start_page $sj_page;
         };
 
         #var sj_content {};
-        tell erq "ÇëÇ°Íù¸´Õæ¹Û¶ş²ã, È»ºó jieshu";
-        #nop #map run "¸´Õæ¹Û¶ş²ã";
+        tell erq "è¯·å‰å¾€å¤çœŸè§‚äºŒå±‚, ç„¶å jieshu";
+        #nop #map run "å¤çœŸè§‚äºŒå±‚";
         #nop jie $sj_book;
         #nop #delay {delay} {#map run "${sj_address}";page $sj_start_page;} {5};
     }
 
     #alias {jieshu} {
         jie $sj_book;
-        tell erq "ÇëÇ°Íù${sj_address}, È»ºó songjing";
+        tell erq "è¯·å‰å¾€${sj_address}, ç„¶å songjing";
     }
 
     #alias {songjing} {
         page $sj_start_page;
     };
 
-    #ACTION {ÄãËĞ¾­µÄÄÚÈİºÍ} {
+    #ACTION {ä½ è¯µç»çš„å†…å®¹å’Œ} {
         #delay (3) {
             #math sj_chanted {$sj_chanted + 1};
             #IF {$sj_chanted > 2} {sj_fail;};
@@ -196,23 +196,23 @@
 
     #alias {sj_fail} {
         #delay {3} {
-            #nop #map run "¸´Õæ¹Û¶ş²ã";
+            #nop #map run "å¤çœŸè§‚äºŒå±‚";
             #nop give zhike jing;
-            #nop ask zhike about ÒÅÊ§;
-            tell erq "ÇëÇ°Íù¸´Õæ¹Û¶ş²ã, È»ºó songjing_fail";
+            #nop ask zhike about é—å¤±;
+            tell erq "è¯·å‰å¾€å¤çœŸè§‚äºŒå±‚, ç„¶å songjing_fail";
         };
     };
 
     #alias {songjing_fail} {
         give zhike jing;
-        ask zhike about ÒÅÊ§;
+        ask zhike about é—å¤±;
     };
 
-    #ACTION {Õâ±¾%1Ò»¹²Ö»ÓĞ} {
+    #ACTION {è¿™æœ¬%1ä¸€å…±åªæœ‰} {
         sj_fail;
     }
 
-    #ACTION {ËĞ¾­ÈÎÎñÒªÇóÄãÄÃ×Å} {
+    #ACTION {è¯µç»ä»»åŠ¡è¦æ±‚ä½ æ‹¿ç€} {
         sj_fail;
     }
 
@@ -228,18 +228,18 @@
         } {5};
     }
 
-    #ACTION {Ì«ÀÛÁË%*ËĞ¾­} {
+    #ACTION {å¤ªç´¯äº†%*è¯µç»} {
         #delay {sj_tired} {#showme =============================;} {15};
     }
 
-    #ACTION {ÄãËĞ³ªÍêÁËÕû¶Î¾­Êé£¬¶ÔµÀ¼ÒÑøÉúÊõµÄÀí½âÓÖ½øÁËÒ»²½} {
+    #ACTION {ä½ è¯µå”±å®Œäº†æ•´æ®µç»ä¹¦ï¼Œå¯¹é“å®¶å…»ç”Ÿæœ¯çš„ç†è§£åˆè¿›äº†ä¸€æ­¥} {
         #delay {3} {
-            #map run "¸´Õæ¹Û¶ş²ã";
+            #map run "å¤çœŸè§‚äºŒå±‚";
             give zhike jing;
         };
     }
 
-    #action {ÄãÏÖÔÚÏÂÉ½Ò»ÌË°ïËû½â¾öÂé·³} {
+    #action {ä½ ç°åœ¨ä¸‹å±±ä¸€è¶Ÿå¸®ä»–è§£å†³éº»çƒ¦} {
         xiashan;
     }
 
@@ -250,7 +250,7 @@
             e;s;se;w;
             #delay {1} {
                 w;
-                ask cui about Âé·³;
+                ask cui about éº»çƒ¦;
             };
             #delay {2} {
                 e; enter;
@@ -279,13 +279,13 @@
 
     #var last_direction 0;
 
-    #action {ÄãÏûÃğÁËÎäµ±É½ÖÜÎ§ÎŞ¶ñ²»×÷µÄÍÁ·Ë} {
+    #action {ä½ æ¶ˆç­äº†æ­¦å½“å±±å‘¨å›´æ— æ¶ä¸ä½œçš„åœŸåŒª} {
         #delay {mak} {
             move_and_kill;
         } {1}
     };
 
-    #action {ÄãÔÚĞ¡Ê÷ÁÖÀïÃæ´ıÁËÌ«³¤Ê±¼ä} {
+    #action {ä½ åœ¨å°æ ‘æ—é‡Œé¢å¾…äº†å¤ªé•¿æ—¶é—´} {
         #var done 1;
         #unticker {zoudong};
         #undelay {mak};
@@ -317,98 +317,98 @@
         }
     };
 
-    #action {ÍÁ·Ë°ÑÂ·Ò»µ²£¬ÄüĞ¦µÀ£ºÔõÃ´£¬ÏëÁï£¬Ã»ÄÇÃ´ÈİÒ×£¡} {
+    #action {åœŸåŒªæŠŠè·¯ä¸€æŒ¡ï¼Œç‹ç¬‘é“ï¼šæ€ä¹ˆï¼Œæƒ³æºœï¼Œæ²¡é‚£ä¹ˆå®¹æ˜“ï¼} {
         kill tu fei;
     };
     #class wudang.xiake close
 
     #class wudang.zhenfa open
 
-    #action {%1Ïò³åĞéµÀ³¤´òÌıÓĞ¹Ø} {#var character  %1}
-    #ACTION {È»ºó×¢Òâ°´ÕÕ¡º%1ÎåĞĞÕó¡»¿ªÊ¼×ßÎ»}
+    #action {%1å‘å†²è™šé“é•¿æ‰“å¬æœ‰å…³} {#var character  %1}
+    #ACTION {ç„¶åæ³¨æ„æŒ‰ç…§ã€%1äº”è¡Œé˜µã€å¼€å§‹èµ°ä½}
     {
         #var myvar %1;
     }
 
-    #ACTION {¶şÇòÒ»»á¶ùÕ¾ÔÚ%2Î»}
+    #ACTION {äºŒçƒä¸€ä¼šå„¿ç«™åœ¨%2ä½}
     {
         #var loc %2;
         zouwei $loc;
     }
-    #ACTION {Î»ÖÃ°´ÕÕ¡º%3ÎåĞĞÕó¡»µÄÒªÇóÍùÏÂ×ßÒ»²½}
+    #ACTION {ä½ç½®æŒ‰ç…§ã€%3äº”è¡Œé˜µã€çš„è¦æ±‚å¾€ä¸‹èµ°ä¸€æ­¥}
     {
         #var myvar %3;
-        #IF {"$myvar" == "Õı" && "$loc" == "½ğ"}
+        #IF {"$myvar" == "æ­£" && "$loc" == "é‡‘"}
         {
-            zouwei Ë®;
-            #var loc Ë®;
+            zouwei æ°´;
+            #var loc æ°´;
         };
-        #ELSEIF {"$myvar" == "Õı" && "$loc" == "Ë®"}
+        #ELSEIF {"$myvar" == "æ­£" && "$loc" == "æ°´"}
         {
-            zouwei Ä¾;
-            #var loc Ä¾;
+            zouwei æœ¨;
+            #var loc æœ¨;
         };
-        #ELSEIF {"$myvar" == "Õı" && "$loc" == "Ä¾"}
+        #ELSEIF {"$myvar" == "æ­£" && "$loc" == "æœ¨"}
         {
-            zouwei »ğ;
-            #var loc »ğ;
+            zouwei ç«;
+            #var loc ç«;
         };
-        #ELSEIF {"$myvar" == "Õı" && "$loc" == "»ğ"}
+        #ELSEIF {"$myvar" == "æ­£" && "$loc" == "ç«"}
         {
-            zouwei ÍÁ;
-            #var loc ÍÁ;
+            zouwei åœŸ;
+            #var loc åœŸ;
         };
-        #ELSEIF {"$myvar" == "Õı" && "$loc" == "ÍÁ"}
+        #ELSEIF {"$myvar" == "æ­£" && "$loc" == "åœŸ"}
         {
-            zouwei ½ğ;
-            #var loc ½ğ;
+            zouwei é‡‘;
+            #var loc é‡‘;
         };
-        #ELSEIF {"$myvar" == "·´" && "$loc" == "½ğ"}
+        #ELSEIF {"$myvar" == "å" && "$loc" == "é‡‘"}
         {
-            zouwei Ä¾;
-            #var loc Ä¾;
+            zouwei æœ¨;
+            #var loc æœ¨;
         };
-        #ELSEIF {"$myvar" == "·´" && "$loc" == "Ä¾"}
+        #ELSEIF {"$myvar" == "å" && "$loc" == "æœ¨"}
         {
-            zouwei ÍÁ;
-            #var loc ÍÁ;
+            zouwei åœŸ;
+            #var loc åœŸ;
         };
-        #ELSEIF {"$myvar" == "·´" && "$loc" == "ÍÁ"}
+        #ELSEIF {"$myvar" == "å" && "$loc" == "åœŸ"}
         {
-            zouwei Ë®;
-            #var loc Ë®;
+            zouwei æ°´;
+            #var loc æ°´;
         };
-        #ELSEIF {"$myvar" == "·´" && "$loc" == "Ë®"}
+        #ELSEIF {"$myvar" == "å" && "$loc" == "æ°´"}
         {
-            zouwei »ğ;
-            #var loc »ğ;
+            zouwei ç«;
+            #var loc ç«;
         };
-        #ELSEIF {"$myvar" == "·´" && "$loc" == "»ğ"}
+        #ELSEIF {"$myvar" == "å" && "$loc" == "ç«"}
         {
-            zouwei ½ğ;
-            #var loc ½ğ;
+            zouwei é‡‘;
+            #var loc é‡‘;
         };
     }
 
-    #ACTION {ÎåĞĞÕóÑİÁ·µ½´Ë½áÊø}
+    #ACTION {äº”è¡Œé˜µæ¼”ç»ƒåˆ°æ­¤ç»“æŸ}
     {
         e;
         ask chongxu about success;
         ask chongxu about quest;
     }
 
-    #ACTION {ÅÔ±ßĞ¡Ğ£³¡ÉÏÓĞ½ÌÏ°½Ì´ó¼ÒÔõÃ´ĞĞ×ßÎåĞĞÕó}
+    #ACTION {æ—è¾¹å°æ ¡åœºä¸Šæœ‰æ•™ä¹ æ•™å¤§å®¶æ€ä¹ˆè¡Œèµ°äº”è¡Œé˜µ}
     {
-        #IF {"$character" == "Äã"} {
+        #IF {"$character" == "ä½ "} {
             #delay {lianzhenfa} {
                 w;zhenfa;
             } {2};
         };
     }
 
-    #ACTION {ÑİÏ°Õó·¨µÄ½ÌÏ°¶¼ÔÚÊ¹ÓÃÖĞ}
+    #ACTION {æ¼”ä¹ é˜µæ³•çš„æ•™ä¹ éƒ½åœ¨ä½¿ç”¨ä¸­}
     {
-        #IF {"$character" == "Äã"} {
+        #IF {"$character" == "ä½ "} {
             #delay {5} {
                 e;
                 ask chongxu about cancel;

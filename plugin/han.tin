@@ -4,20 +4,20 @@
     ask han about job;
 };
 
-#action {韩员外说道：%1} {
+#action {闊╁憳澶栬閬擄細%1} {
     #var han_quest %0;
 };
 
-#action {其人奸诈似鬼，疑心甚重，你须变换容貌前去将其刺杀。} {
-    show_to_quest 奸诈似鬼: ${han_quest};
+#action {鍏朵汉濂歌瘓浼奸锛岀枒蹇冪敋閲嶏紝浣犻』鍙樻崲瀹硅矊鍓嶅幓灏嗗叾鍒烘潃銆倉 {
+    show_to_quest 濂歌瘓浼奸: ${han_quest};
 };
 
-#action {其人轻功甚是了得，就地诛杀，不可让他逃脱} {
-    show_to_quest 轻功高手: ${han_quest};
+#action {鍏朵汉杞诲姛鐢氭槸浜嗗緱锛屽氨鍦拌瘺鏉�锛屼笉鍙浠栭�冭劚} {
+    show_to_quest 杞诲姛楂樻墜: ${han_quest};
 };
 
-#ation {其人不足为惧，只是真凶的爪牙，你把他就地处决即可。} {
-    show_to_quest 沙袋: ${han_quest};
+#ation {鍏朵汉涓嶈冻涓烘儳锛屽彧鏄湡鍑剁殑鐖墮锛屼綘鎶婁粬灏卞湴澶勫喅鍗冲彲銆倉 {
+    show_to_quest 娌欒: ${han_quest};
 };
 
 #alias {han.d} {

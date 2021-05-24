@@ -67,15 +67,15 @@
 };
 
 #alias {goto_lingwu} {
-    gt Ê¯±Ú;
+    gt çŸ³å£;
 };
 
 #alias {goto_rest} {
-    gt ×óÄÚµî;
+    gt å·¦å†…æ®¿;
 };
 
 #alias {goto_shifu} {
-    gt É½¹È¿Ú;
+    gt å±±è°·å£;
 };
 
 #list my_weapons_to_wield create {staff};
@@ -119,7 +119,7 @@
     wi;
 };
 
-#var shortcut F1:»îÉ« F2:³éËè F3:»ğÇò F4:»ğÇ½ F5:´©ĞÄ F6:É¢¶¾;
+#var shortcut F1:æ´»è‰² F2:æŠ½é«“ F3:ç«çƒ F4:ç«å¢™ F5:ç©¿å¿ƒ F6:æ•£æ¯’;
 #macro {\eOP} {
     huose;
 };
@@ -154,8 +154,8 @@
 
 #alias {qudu} {
     yun qudu;
-    #action {Õ½¶·ÖĞÔË¹¦Çı¶¾} {
-        #unaction {Õ½¶·ÖĞÔË¹¦Çı¶¾};
+    #action {æˆ˜æ–—ä¸­è¿åŠŸé©±æ¯’} {
+        #unaction {æˆ˜æ–—ä¸­è¿åŠŸé©±æ¯’};
         eat san;
     };
 };
@@ -173,9 +173,9 @@
 #var menzhong dizi;
 #var menzhong_didian txg;
 
-#nop stat.register Ä¾Áé¶Ü hit Äã¿ø¼×ÉÏÏâÇ¶µÄ×êÊ¯·¢»ÓÁË×÷ÓÃ;
-#nop stat.register Ä¾Áé¶Ü hit ¹¥»÷ÂäÔÚÄãÉíÉÏÏÔµÃÈíÈõÎŞÁ¦;
-#nop stat.register Ä¾Áé¶Ü hit ¹¥»÷Á¦ËÆºõÓĞËù¼õÈõ¡£;
+#nop stat.register æœ¨çµç›¾ hit ä½ ç›”ç”²ä¸Šé•¶åµŒçš„é’»çŸ³å‘æŒ¥äº†ä½œç”¨;
+#nop stat.register æœ¨çµç›¾ hit æ”»å‡»è½åœ¨ä½ èº«ä¸Šæ˜¾å¾—è½¯å¼±æ— åŠ›;
+#nop stat.register æœ¨çµç›¾ hit æ”»å‡»åŠ›ä¼¼ä¹æœ‰æ‰€å‡å¼±ã€‚;
 
 #alias {suck} {
     unwi;

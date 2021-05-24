@@ -70,7 +70,7 @@
     };
 };
 
-#var shortcut F1:²ø F2:ÉãĞÄ F3:ËØĞÄ F4:×¥ F5:ĞÚÓ¿ F6:ÆßĞÇ F7:°µÆ÷;
+#var shortcut F1:ç¼  F2:æ‘„å¿ƒ F3:ç´ å¿ƒ F4:æŠ“ F5:æ±¹æ¶Œ F6:ä¸ƒæ˜Ÿ F7:æš—å™¨;
 #macro {\eOP} {
     chan;
 };
@@ -140,15 +140,15 @@
 };
 
 #alias {goto_lingwu} {
-    gt ÑİÎä¶´;
+    gt æ¼”æ­¦æ´;
 };
 
 #alias {goto_rest} {
-    gt ¹ÅÄ¹ĞİÏ¢ÊÒ;
+    gt å¤å¢“ä¼‘æ¯å®¤;
 };
 
 #alias {goto_shifu} {
-    gt  ¹ÅÄ¹´óÌü;
+    gt  å¤å¢“å¤§å…;
 };
 
 #alias {chan} {
@@ -165,10 +165,10 @@
 #list my_weapons_to_wield create {spear; spear 2};
 #list special_sword create {zidian; qingshuang};
 
-stat.register ²ø miss ¿ÉÊÇËû¿´ÆÆÁËÄãµÄÆóÍ¼£¬²¢Ã»ÓĞÉÏµ±;
-stat.register ²ø hit ½á¹ûËû±»Äã¹¥ÁË¸ö´ëÊÖ²»¼°£¡
-stat.register ĞÚÓ¿ hit Ö»¾õµÃÓÌÈçÉíÏİºéÌÎ¾ŞÀË£¬µøµø×²×²;
-stat.register ĞÚÓ¿ miss ÄãµÄÁèÀ÷¹¥ÊÆ;
+stat.register ç¼  miss å¯æ˜¯ä»–çœ‹ç ´äº†ä½ çš„ä¼å›¾ï¼Œå¹¶æ²¡æœ‰ä¸Šå½“;
+stat.register ç¼  hit ç»“æœä»–è¢«ä½ æ”»äº†ä¸ªæªæ‰‹ä¸åŠï¼
+stat.register æ±¹æ¶Œ hit åªè§‰å¾—çŠ¹å¦‚èº«é™·æ´ªæ¶›å·¨æµªï¼Œè·Œè·Œæ’æ’;
+stat.register æ±¹æ¶Œ miss ä½ çš„å‡Œå‰æ”»åŠ¿;
 
 #var shifu yang;
 

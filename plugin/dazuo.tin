@@ -37,10 +37,10 @@
     #alias tmp_dz #cr;
     #alias tmp_dz %1;
     #class dz.full.inner open;
-    #action {你现在精不够} {
+    #action {浣犵幇鍦ㄧ簿涓嶅} {
         heal 1;
     };
-    #action {你的内力增加了} {
+    #action {浣犵殑鍐呭姏澧炲姞浜唥 {
         dz.rest;
     };
     #ticker {dz} {
@@ -58,10 +58,10 @@
     #alias tmp_dz #cr;
     #alias tmp_dz %1;
     #class dz.full.inner open;
-    #action {你现在精不够} {
+    #action {浣犵幇鍦ㄧ簿涓嶅} {
         heal 1;
     };
-    #action {你的内力增加了} {
+    #action {浣犵殑鍐呭姏澧炲姞浜唥 {
         #class dz.full.inner kill;
         #delay {dz_delay} {
             tmp_dz;
@@ -84,7 +84,7 @@
     #alias tmp_dz #cr;
     #alias tmp_dz %1;
     #class dz.full.inner open;
-    #action {你现在精不够} {
+    #action {浣犵幇鍦ㄧ簿涓嶅} {
         heal 1;
     };
     #class dz.full.inner close;
@@ -121,7 +121,7 @@
         #unticker {dz};
     };
 
-    #action {你现在的气太少了} {
+    #action {浣犵幇鍦ㄧ殑姘斿お灏戜簡} {
         stop_ticker;
         sleep;
         on_wakeup {
@@ -129,7 +129,7 @@
         };
     };
 
-    #action {你的内力增加了} {
+    #action {浣犵殑鍐呭姏澧炲姞浜唥 {
         #math dz_total_count ${dz_total_count}+1;
         show_to_info force +${dz_total_count};
         #send {jifa};
@@ -162,16 +162,16 @@
     #if {${max_neili} < ${hpbrief_max_nl}} {
         dz.stop;
         #showme MISSION_COMPLETE: dz;
-        show_to_quest 内力到达瓶颈: ${hpbrief_max_nl} => ${max_neili};
+        show_to_quest 鍐呭姏鍒拌揪鐡堕: ${hpbrief_max_nl} => ${max_neili};
     };
     #else {
-        #if {@getburden{酥油茶} < 30} {
+        #if {@getburden{閰ユ补鑼秨 < 30} {
             dz.stop;
             chain get.qian get.fan dz.start;
             #return;
         };
         start_ticker;
-        show_to_quest 打坐: ${hpbrief_max_nl} => ${max_neili} 还需: ${dz_remain_time};
+        show_to_quest 鎵撳潗: ${hpbrief_max_nl} => ${max_neili} 杩橀渶: ${dz_remain_time};
     };
 };
 
@@ -179,7 +179,7 @@
     unset_last_quest;
     autoheal.on;
     stop_ticker;
-    show_to_quest 打坐完毕;
+    show_to_quest 鎵撳潗瀹屾瘯;
     #class dz.inner kill;
 };
 

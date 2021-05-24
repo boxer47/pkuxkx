@@ -11,25 +11,25 @@
         wudao;
     } {180};
 
-    #action {ÄãĞÄÉñÎŞ·¨×¨Ò»£¬ÔõÄÜ²ÎÎòµÀÑ§ÖÁÀí£¿} {
+    #action {ä½ å¿ƒç¥æ— æ³•ä¸“ä¸€ï¼Œæ€èƒ½å‚æ‚Ÿé“å­¦è‡³ç†ï¼Ÿ} {
         wd.stop;
     };
 
-    #action {ÄãµÄ¡¸µÀ¼ÒÑøÉúÊõ¡¹½ø²½ÁË£¡} {
+    #action {ä½ çš„ã€Œé“å®¶å…»ç”Ÿæœ¯ã€è¿›æ­¥äº†ï¼} {
         #math level_up ${level_up}+1;
-        show_to_quest µÀ¼ÒÑøÉúÊõ +${level_up};
+        show_to_quest é“å®¶å…»ç”Ÿæœ¯ +${level_up};
     };
 
-    #action {ÄãĞŞĞĞÍê±Ï} {
+    #action {ä½ ä¿®è¡Œå®Œæ¯•} {
         #delay {wd.done} {
             chifan;
             wudao;
         } {0.1};
     };
     #class wudao.inner close;
-    gt ¾²ĞŞ¸ó¶şÂ¥;
+    gt é™ä¿®é˜äºŒæ¥¼;
     on_there {
-        show_to_quest ÎòµÀ;
+        show_to_quest æ‚Ÿé“;
         wudao;
     };
 };
@@ -38,7 +38,7 @@
     #class wudao.inner kill;
     on_unbusy {
         unset_last_quest;
-        show_to_quest ÎòµÀ½áÊø;
+        show_to_quest æ‚Ÿé“ç»“æŸ;
     };
 };
 

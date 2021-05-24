@@ -2,7 +2,7 @@
 
 #alias {zhuxi.start} {
     #var tired 0;
-    show_to_quest ¿ªÊ¼¶ÁÊé;
+    show_to_quest å¼€å§‹è¯»ä¹¦;
     #class zx.inner open;
     #ticker {xue} {
         #if {$tired == 0} {
@@ -10,21 +10,21 @@
         };
     } {0.5};
 
-    #action {ÇĞ´è} {
+    #action {åˆ‡ç£‹} {
         zhuxi.stop;
         #showme zhuxin done;
     };
 
-    #action {ÄãµÄÇ±ÄÜÒÑ¾­·¢»Óµ½¼«ÏŞÁË} {
+    #action {ä½ çš„æ½œèƒ½å·²ç»å‘æŒ¥åˆ°æé™äº†} {
         zhuxi.stop;
         #showme zhuxin done;
     };
 
-    #action {Äã½ñÌìÌ«ÀÛÁË} {
+    #action {ä½ ä»Šå¤©å¤ªç´¯äº†} {
         yun regenerate;
     };
 
-    #action {ÄãµÄÄÚÁ¦²»¹»} {
+    #action {ä½ çš„å†…åŠ›ä¸å¤Ÿ} {
         #if {${tired} == 0} {
             #var tired 1;
             e;
@@ -32,13 +32,13 @@
         };
     };
 
-    #action {¶àË¯¶ÔÉíÌåÓĞº¦ÎŞÒæ! } {
+    #action {å¤šç¡å¯¹èº«ä½“æœ‰å®³æ— ç›Š! } {
         #delay {shui} {
             sleep;
         } {10};
     };
 
-    #action {ÄãÒ»¾õĞÑÀ´} {
+    #action {ä½ ä¸€è§‰é†’æ¥} {
         chifan;
         w;
         #var tired 0;
@@ -48,7 +48,7 @@
 
 #alias {zhuxi.stop} {
     #class zx.inner kill;
-    show_to_quest ¶ÁÊé½áÊø;
+    show_to_quest è¯»ä¹¦ç»“æŸ;
 };
 
 #class zhuxi close

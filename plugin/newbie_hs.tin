@@ -1,89 +1,89 @@
 #class newbie_hs open
 #alias {xunshan.start} {
     #class xunshan.inner open;
-    #action {岳灵珊拿出一张地图} {
+    #action {宀崇伒鐝婃嬁鍑轰竴寮犲湴鍥緘 {
         n;
     };
-    #action {你在练武场巡弋} {
+    #action {浣犲湪缁冩鍦哄贰寮媫 {
         n;
     };
 
-    #action {你在玉女峰巡弋} {
+    #action {浣犲湪鐜夊コ宄板贰寮媫 {
         e;
     };
-    #action {你在玉女祠巡弋} {
+    #action {浣犲湪鐜夊コ绁犲贰寮媫 {
         sd;
     };
 
-    #action {你在后山小路巡弋} {
+    #action {浣犲湪鍚庡北灏忚矾宸″紜} {
         sd;
     };
 
-    #action {你在小院巡弋} {
+    #action {浣犲湪灏忛櫌宸″紜} {
         nu;nu;nu;w;nd;
     };
 
-    #action {你在镇岳宫巡弋} {
+    #action {浣犲湪闀囧渤瀹贰寮媫 {
         eu;
-        #action {不能移动} {
-            #unaction {不能移动};
+        #action {涓嶈兘绉诲姩} {
+            #unaction {涓嶈兘绉诲姩};
             #delay {d} {eu} {5};
         };
     };
 
-    #action {你在朝阳峰巡弋} {
+    #action {浣犲湪鏈濋槼宄板贰寮媫 {
         wd;nu;
-        #action {不能移动} {
-            #unaction {不能移动};
+        #action {涓嶈兘绉诲姩} {
+            #unaction {涓嶈兘绉诲姩};
             #delay {d} {nu} {5};
         };
     };
 
-    #action {你在苍龙岭巡弋} {
+    #action {浣犲湪鑻嶉緳宀贰寮媫 {
         wu;
     };
 
-    #action {你在舍身崖巡弋} {
+    #action {浣犲湪鑸嶈韩宕栧贰寮媫 {
         ed;nd;
     };
 
-    #action {你在猢狲愁巡弋} {
+    #action {浣犲湪鐚㈢嫴鎰佸贰寮媫 {
         nd;
     };
 
-    #action {你在老君沟巡弋} {
+    #action {浣犲湪鑰佸悰娌熷贰寮媫 {
         nu;
     };
 
-    #action {你在华山别院巡弋} {
+    #action {浣犲湪鍗庡北鍒櫌宸″紜} {
         sd;wd;
     };
 
-    #action {你在百尺峡巡弋} {
+    #action {浣犲湪鐧惧昂宄″贰寮媫 {
         nd;
     };
 
-    #action {你在千尺幢巡弋} {
+    #action {浣犲湪鍗冨昂骞㈠贰寮媫 {
         wd;
     };
 
-    #action {你在青柯坪巡弋} {
+    #action {浣犲湪闈掓煰鍧贰寮媫 {
         nd;
     };
 
-    #action {你在莎萝坪巡弋} {
+    #action {浣犲湪鑾庤悵鍧贰寮媫 {
         nw;
     };
 
-    #action {你在华山脚下巡弋} {
+    #action {浣犲湪鍗庡北鑴氫笅宸″紜} {
         n;
     };
 
-    #action {你在玉泉院巡弋} {
+    #action {浣犲湪鐜夋硥闄㈠贰寮媫 {
         s;se;su;eu;su;eu;su;su;sd;
         su;s;s; xunshan.d;
-        #action {不能移动} {
-            #unaction {不能移动};
+        #action {涓嶈兘绉诲姩} {
+            #unaction {涓嶈兘绉诲姩};
             #delay {d} {su;s;s; xunshan.d} {5};
         };
     };
@@ -92,19 +92,19 @@
         give ling pai to yue;
     };
 
-    #action {这么快就回来了} {
+    #action {杩欎箞蹇氨鍥炴潵浜唥 {
         #delay {5} {
             xunshan.d;
         };
     };
 
-    #action {你给岳灵珊一块令牌} {
+    #action {浣犵粰宀崇伒鐝婁竴鍧椾护鐗寎 {
         #delay {5} {
             ask yue about job;
         };
     };
 
-    #action {你刚刚做过任务} {
+    #action {浣犲垰鍒氬仛杩囦换鍔 {
         #delay {5} {
             ask yue about job;
         };

@@ -4,15 +4,15 @@
 
 #alias {xt.start} {
     set_last_quest xt;
-    show_to_quest ½­ÖĞÁ·½£;
+    show_to_quest æ±Ÿä¸­ç»ƒå‰‘;
     #send {jifa sword xuantie-jian};
     #class xuantie.inner open;
 
-    #action {¡õĞşÌú½£·¨ (xuantie-jian)%*  %d/} {
+    #action {â–¡ç„é“å‰‘æ³• (xuantie-jian)%*  %d/} {
         #var xuantie_level %%2;
     };
 
-    #action {ÄãµÄ¼¼ÄÜµÈ¼¶×î¶àÄÜ´ïµ½%*¼¶} {
+    #action {ä½ çš„æŠ€èƒ½ç­‰çº§æœ€å¤šèƒ½è¾¾åˆ°%*çº§} {
         #var max_level @ctd{%%1};
     };
 
@@ -24,7 +24,7 @@
                 xt.stop;
             };
             #else {
-                show_to_quest ½­ÖĞÁ·½£: ${xuantie_level} -> ${max_level};
+                show_to_quest æ±Ÿä¸­ç»ƒå‰‘: ${xuantie_level} -> ${max_level};
             };
         };
     };
@@ -55,19 +55,19 @@
         start_lian;
     } {400};
 
-    #action {Äã¼ûº£³±ÍËÈ¥} {
+    #action {ä½ è§æµ·æ½®é€€å»} {
         #delay {5} {
             lianjian;
         };
     };
     #class xuantie.inner close;
     #alias {burden_check_done} {
-        #if {@getburden{ĞşÌú½£} == 0} {
+        #if {@getburden{ç„é“å‰‘} == 0} {
             xt.stop;
             #showme MISSION_COMPLETE: xt;
         };
         #else {
-            gt Ç®ÌÁ½­¿Ú;
+            gt é’±å¡˜æ±Ÿå£;
             on_there {
                 check_xuantie_level;
                 start_lian;
@@ -88,7 +88,7 @@
     on_unbusy {
         jump out;
     };
-    show_to_quest Á·½£½áÊø;
+    show_to_quest ç»ƒå‰‘ç»“æŸ;
 };
 
 #class xuantie close

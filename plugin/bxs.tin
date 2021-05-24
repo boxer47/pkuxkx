@@ -4,30 +4,30 @@
     ask bai about cancel;
     #class bxs.inner kill;
     #unticker {bxs};
-    show_to_quest °ÙÏşÉú: ½áÊø;
+    show_to_quest ç™¾æ™“ç”Ÿ: ç»“æŸ;
 };
 
 #alias {bxs.q} {
     #class bxs.inner open;
 
-    #action {¿ÚÁîÎŞÎó£¬Çë½ÓÊÜÌôÕ½°É} {
+    #action {å£ä»¤æ— è¯¯ï¼Œè¯·æ¥å—æŒ‘æˆ˜å§} {
         #var bxs_time 0;
-        show_to_quest °ÙÏşÉú: ºÄÊ±: ${bxs_time} ·ÖÖÓ;
+        show_to_quest ç™¾æ™“ç”Ÿ: è€—æ—¶: ${bxs_time} åˆ†é’Ÿ;
         #ticker {bxs} {
             #math bxs_time ${bxs_time}+1;
-            show_to_quest °ÙÏşÉú: ºÄÊ±: ${bxs_time} ·ÖÖÓ;
+            show_to_quest ç™¾æ™“ç”Ÿ: è€—æ—¶: ${bxs_time} åˆ†é’Ÿ;
         } {60};
     };
 
     #class bxs.inner close;
-    ask bai about ÌôÕ½;
+    ask bai about æŒ‘æˆ˜;
 };
 
 #alias {bxs.d} {
     ask bai about finish;
     #class bxs.inner kill;
     #unticker {bxs};
-    show_to_quest °ÙÏşÉú: ½áÊø;
+    show_to_quest ç™¾æ™“ç”Ÿ: ç»“æŸ;
 };
 
 #class bxs close

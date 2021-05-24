@@ -27,18 +27,18 @@
         };
     } {1.5};
 
-    #action {你的%*等级已经高于} {
+    #action {浣犵殑%*绛夌骇宸茬粡楂樹簬} {
         ds.stop;
     };
 
     #class dushu.inner close;
 
-    show_to_quest 读书: ${ds_book};
+    show_to_quest 璇讳功: ${ds_book};
 };
 
 #alias {ds.stop} {
     #class dushu.inner kill;
-    show_to_quest 读书结束;
+    show_to_quest 璇讳功缁撴潫;
 };
 
 #class dushu close

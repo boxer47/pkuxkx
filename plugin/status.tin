@@ -48,24 +48,24 @@
     };
 };
 
-#action {ÏÀ¿ÍĞĞÒÑ¾­Ö´ĞĞÁË%1·Ö%2Ãë} {
+#action {ä¾ å®¢è¡Œå·²ç»æ‰§è¡Œäº†%1åˆ†%2ç§’} {
     zhengdian %1;
     check_uptime @ctd{%1};
 } {4};
 
-#action {ÏÀ¿ÍĞĞÒÑ¾­Ö´ĞĞÁË%1Ğ¡Ê±%2·Ö%3Ãë} {
+#action {ä¾ å®¢è¡Œå·²ç»æ‰§è¡Œäº†%1å°æ—¶%2åˆ†%3ç§’} {
     zhengdian %2;
     #math uptime {@ctd{%1}*60+@ctd{%2}};
     check_uptime ${uptime};
 } {3};
 
-#action {ÏÀ¿ÍĞĞÒÑ¾­Ö´ĞĞÁË%1Ìì%2·Ö%3Ãë} {
+#action {ä¾ å®¢è¡Œå·²ç»æ‰§è¡Œäº†%1å¤©%2åˆ†%3ç§’} {
     zhengdian %2;
     #math uptime {@ctd{%1}*24*60+@ctd{%2}};
     check_uptime ${uptime};
 } {2};
 
-#action {ÏÀ¿ÍĞĞÒÑ¾­Ö´ĞĞÁË%1Ìì%2Ğ¡Ê±%3·Ö%4Ãë} {
+#action {ä¾ å®¢è¡Œå·²ç»æ‰§è¡Œäº†%1å¤©%2å°æ—¶%3åˆ†%4ç§’} {
     zhengdian %3;
     #math uptime {@ctd{%1}*24*60+@ctd{%2}*60+@ctd{%3}};
     check_uptime ${uptime};
@@ -83,19 +83,19 @@
     };
 } {350};
 
-#action {É±    Æø£º  %*} {
+#action {æ€    æ°”ï¼š  %*} {
     #var shaqi_info %1;
 };
 
-#action { µÈ    ¼¶£º%s%d/%d} {
+#action { ç­‰    çº§ï¼š%s%d/%d} {
     #var level_info %2;
 };
 
-#action {ÒøĞĞ´æ¿î£º  %*Á½»Æ½ğ} {
+#action {é“¶è¡Œå­˜æ¬¾ï¼š  %*ä¸¤é»„é‡‘} {
     #var money_info @ctd{%1} G;
 } {3};
 
-#action {ÒøĞĞ´æ¿î£º  %*¸ù½ğÌõ%*Á½»Æ½ğ} {
+#action {é“¶è¡Œå­˜æ¬¾ï¼š  %*æ ¹é‡‘æ¡%*ä¸¤é»„é‡‘} {
     #math money_amount @ctd{%1}*100 + @ctd{%2};
     #var money_info ${money_amount} G;
 } {2};
@@ -104,7 +104,7 @@
 #alias {zhengdian} {
     #showme guaji.update %1;
     #var tmp_minute @ctd{%1};
-    #var uptime_info ${tmp_minute}·Ö;
+    #var uptime_info ${tmp_minute}åˆ†;
     update_status;
     #if {${tmp_minute} == 0 || ${tmp_minute} == 30 || ${tmp_minute} == 15 || ${tmp_minute} == 45} {
         #showme npc refreshed;
@@ -119,20 +119,20 @@
         #var naijiu_info ${min_naijiu}/${special_min_naijiu};
     };
     #if {"${naijiu_info}" == "10000"} {
-        #var naijiu_info ÎŞ±øÆ÷;
+        #var naijiu_info æ— å…µå™¨;
     };
     #else {
-        #var naijiu_info ${naijiu_info} ÄÍ¾Ã;
+        #var naijiu_info ${naijiu_info} è€ä¹…;
     }
     #var status_content ${char_name}: ${shaqi_info} | ${health_info} | ${exp_info} | ${naijiu_info} | ${money_info} | ${daytime_info} | ${uptime_info} | ${week_info} | ${fm_remaining_time};
     #if {"${xy_info}" == "on"} {
-        #var status_content ${status_content} | ±£ÎÀ;
+        #var status_content ${status_content} | ä¿å«;
     };
     show_to_status ${status_content};
     drawhp;
 };
 
-#action {ÄãÉíÉÏ%*¶«Î÷%*(¸ºÖØ %*\%)£º} {
+#action {ä½ èº«ä¸Š%*ä¸œè¥¿%*(è´Ÿé‡ %*\%)ï¼š} {
     #var fuzhong %3;
     drawhp;
 };
@@ -153,7 +153,7 @@
     };
 } {3};
 
-#action {ÄÚ¹¦ (force)%*ÓĞĞ§µÈ¼¶£º{ *}%d} {
+#action {å†…åŠŸ (force)%*æœ‰æ•ˆç­‰çº§ï¼š{ *}%d} {
     #var youxiao_neigong %3;
     #math dazuo_count ${youxiao_neigong}*3/10+1;
     #if {${dazuo_count} < 10} {
@@ -192,7 +192,7 @@
         #math nl_percent ${hpbrief_curr_nl} * 100 / ${hpbrief_max_nl};
         #math jl_percent ${hpbrief_curr_jl} * 100 / ${hpbrief_max_jl};
 
-        #nop #var exp_info Æø: ${qx_percent} Éñ: ${js_percent} ÄÚ: ${nl_percent} ¾«: ${jl_percent} ¾­Ñé: ${hpbrief_exp};
+        #nop #var exp_info æ°”: ${qx_percent} ç¥: ${js_percent} å†…: ${nl_percent} ç²¾: ${jl_percent} ç»éªŒ: ${hpbrief_exp};
         #var exp_info ${hpbrief_exp};
         update_status;
         check_heart_beat;
@@ -216,18 +216,18 @@
 
 #var prev_daytime nil;
 
-#action {±±´óÏÀ¿ÍĞĞÓÎÏ·Ê±¼äÊÇ%*ÈÕ%*Ê±·Ö¡£} {
+#action {åŒ—å¤§ä¾ å®¢è¡Œæ¸¸æˆæ—¶é—´æ˜¯%*æ—¥%*æ—¶åˆ†ã€‚} {
     #var curr_daytime %2;
     #if {"${curr_daytime}" != "${prev_daytime}"} {
-        #showme ${curr_daytime}µ½ÁË;
+        #showme ${curr_daytime}åˆ°äº†;
         #var daytime_info ${curr_daytime};
         update_status;
         #var prev_daytime ${curr_daytime};
-        #if {"${curr_daytime}" == "Áè³¿" ||
-        "${curr_daytime}" == "Ôç³¿" ||
-        "${curr_daytime}" == "ÕıÎç" ||
-        "${curr_daytime}" == "ÉÎÎç" ||
-        "${curr_daytime}" == "ÏÂÎç" } {
+        #if {"${curr_daytime}" == "å‡Œæ™¨" ||
+        "${curr_daytime}" == "æ—©æ™¨" ||
+        "${curr_daytime}" == "æ­£åˆ" ||
+        "${curr_daytime}" == "æ™Œåˆ" ||
+        "${curr_daytime}" == "ä¸‹åˆ" } {
             #var daytime 1;
         };
         #else {
@@ -236,7 +236,7 @@
     };
 };
 
-#action {±¾ÖÜÎª%*Ö®ÖÜ£¬} {
+#action {æœ¬å‘¨ä¸º%*ä¹‹å‘¨ï¼Œ} {
     #var week_info %1;
     update_status;
 };
@@ -246,20 +246,20 @@
 #var water 0;
 #var maxwater 100;
 
-#action {¡¾ Ê³Îï ¡¿%s%S%s/ %S} {
+#action {ã€ é£Ÿç‰© ã€‘%s%S%s/ %S} {
     #var food %2;
     #var maxfood %4;
     drawhp;
 };
 
-#action {¡¾ ÒûË® ¡¿%s%S%s/ %S} {
+#action {ã€ é¥®æ°´ ã€‘%s%S%s/ %S} {
     #var water %2;
     #var maxwater %4;
     drawhp;
 };
 
 #alias {drawhp} {
-    #echo {{<099>@hpcolor{ÆøÑª[;$hpbrief_curr_qx}@hpdraw{$hpbrief_curr_qx;$hpbrief_max_qx}@hpcolor{];$hpbrief_curr_qx} @hpcolor{¾«Éñ[;$hpbrief_curr_js}@hpdraw{$hpbrief_curr_js;$hpbrief_max_js}@hpcolor{];$hpbrief_curr_js} @hpcolor{¾«Á¦[;$hpbrief_curr_jl}@hpdraw{$hpbrief_curr_jl;$hpbrief_max_jl}@hpcolor{];$hpbrief_curr_jl} @hpcolor{ÄÚÁ¦[;$hpbrief_curr_nl}@hpdraw{$hpbrief_curr_nl;$hpbrief_max_nl}@hpcolor{];$hpbrief_curr_nl} @hpcolor{Ê³Îï[;$food}@hpdraw{$food;$maxfood}@hpcolor{];$food} @hpcolor{ÒûË®[;$water}@hpdraw{$water;$maxwater}@hpcolor{];$water} @hpcolor{¸ºÖØ[;$fuzhong}@fzdraw{$fuzhong;100}@hpcolor{];$fuzhong}<099>} {${show_status_pos}}};
+    #echo {{<099>@hpcolor{æ°”è¡€[;$hpbrief_curr_qx}@hpdraw{$hpbrief_curr_qx;$hpbrief_max_qx}@hpcolor{];$hpbrief_curr_qx} @hpcolor{ç²¾ç¥[;$hpbrief_curr_js}@hpdraw{$hpbrief_curr_js;$hpbrief_max_js}@hpcolor{];$hpbrief_curr_js} @hpcolor{ç²¾åŠ›[;$hpbrief_curr_jl}@hpdraw{$hpbrief_curr_jl;$hpbrief_max_jl}@hpcolor{];$hpbrief_curr_jl} @hpcolor{å†…åŠ›[;$hpbrief_curr_nl}@hpdraw{$hpbrief_curr_nl;$hpbrief_max_nl}@hpcolor{];$hpbrief_curr_nl} @hpcolor{é£Ÿç‰©[;$food}@hpdraw{$food;$maxfood}@hpcolor{];$food} @hpcolor{é¥®æ°´[;$water}@hpdraw{$water;$maxwater}@hpcolor{];$water} @hpcolor{è´Ÿé‡[;$fuzhong}@fzdraw{$fuzhong;100}@hpcolor{];$fuzhong}<099>} {${show_status_pos}}};
 };
 
 #function {hpdraw}

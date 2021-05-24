@@ -8,7 +8,7 @@
     #else {
         #var quest wat;
         on_health {
-            ask ke about ½øËþ;
+            ask ke about è¿›å¡”;
             detect_mingjiao wushi;
             killall wushi;
         };
@@ -30,7 +30,7 @@
     #class wat.auto.inner open;
     #var wat_count 0;
     #var wat_level 1;
-    #action {Èç¹ûÄã¼ÌÐøÉÏÂ¥´³¹Ø} {
+    #action {å¦‚æžœä½ ç»§ç»­ä¸Šæ¥¼é—¯å…³} {
         #math wat_level ${wat_level}+1;
         #if {${wat_level} <= ${wat_max_level}} {
             on_health {
@@ -39,7 +39,7 @@
         };
         #else {
             #math wat_count ${wat_count}+1;
-            show_to_info wat ´ÎÊý: ${wat_count};
+            show_to_info wat æ¬¡æ•°: ${wat_count};
             wat.d;
             #delay {5} {
                 jq;
@@ -47,26 +47,26 @@
         };
     };
 
-    #action {¸óÏÂ¸Õ¸ÕÀ´¹ý} {
+    #action {é˜ä¸‹åˆšåˆšæ¥è¿‡} {
         jq;
     };
 
-    #action {Íò°²ËþÈÎÎñ%*ÈÔÐè%*Ãë²ÅÄÜ½Óµ½ÏÂ¸öÈÎÎñ} {
+    #action {ä¸‡å®‰å¡”ä»»åŠ¡%*ä»éœ€%*ç§’æ‰èƒ½æŽ¥åˆ°ä¸‹ä¸ªä»»åŠ¡} {
         #var wat_level 1;
         #var second @ctd{%%2};
         #math delay_time ${second}+10;
-        show_to_info wat µÈ´ý ${delay_time} Ãë;
+        show_to_info wat ç­‰å¾… ${delay_time} ç§’;
         #delay {wat} {
             wat.q;
         } {${delay_time}};
     } {2};
 
-    #action {Íò°²ËþÈÎÎñ%*ÈÔÐè%S·Ö%SÃë²ÅÄÜ½Óµ½ÏÂ¸öÈÎÎñ¡£} {
+    #action {ä¸‡å®‰å¡”ä»»åŠ¡%*ä»éœ€%Såˆ†%Sç§’æ‰èƒ½æŽ¥åˆ°ä¸‹ä¸ªä»»åŠ¡ã€‚} {
         #var wat_level 1;
         #var minute @ctd{%%2};
         #var second @ctd{%%3};
         #math delay_time ${minute}*60+${second}+10;
-        show_to_info wat µÈ´ý ${delay_time} Ãë;
+        show_to_info wat ç­‰å¾… ${delay_time} ç§’;
         #delay {wat} {
             wat.q;
         } {${delay_time}};
@@ -75,17 +75,17 @@
     #class wat.auto.inner close;
     gt wat;
     on_there {
-        show_to_quest ÅÀËþ;
+        show_to_quest çˆ¬å¡”;
         wat.q;
     };
 };
 
 #alias {wat.stop} {
     #class wat.auto.inner kill;
-    show_to_quest ÅÀËþ½áÊø;
+    show_to_quest çˆ¬å¡”ç»“æŸ;
 };
 
-#action {^¹§Ï²Äã£¬´ð¶ÔÁË¿ÚÁî£¬Äã¿ÉÒÔÇÃÂàÀë¿ªÁË} {
+#action {^æ­å–œä½ ï¼Œç­”å¯¹äº†å£ä»¤ï¼Œä½ å¯ä»¥æ•²é”£ç¦»å¼€äº†} {
     wat.d;
 };
 #class wat close

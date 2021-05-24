@@ -16,7 +16,7 @@
     #var skill_index 1;
     #list skills get $skill_index skill;
 
-    #action {(%*)%s£º %S[»¥±¸]%sÓĞĞ§µÈ¼¶£º} {
+    #action {(%*)%sï¼š %S[äº’å¤‡]%sæœ‰æ•ˆç­‰çº§ï¼š} {
         #var basic_skill %%1;
         #var special_skill %%3;
         #list special_skills find ${special_skill} tmp;
@@ -26,7 +26,7 @@
         };
     } {1};
 
-    #action {(%*)%s£º %S%sÓĞĞ§µÈ¼¶£º} {
+    #action {(%*)%sï¼š %S%sæœ‰æ•ˆç­‰çº§ï¼š} {
         #var basic_skill %%1;
         #var special_skill %%3;
         #list special_skills find ${special_skill} tmp;
@@ -36,20 +36,20 @@
         };
     } {2};
 
-    #action {©¦%s%S%s©¦%S%s©¦%S©¦%s%d©¦%*} {
+    #action {â”‚%s%S%sâ”‚%S%sâ”‚%Sâ”‚%s%dâ”‚%*} {
         #var basic_skill %%4;
         #var basic_skill_level %%8;
         record_level_a  ${basic_skill} ${basic_skill_level};
     } {3};
 
-    #action {©¦¡õ%S%s©¦%S%s©¦%S©¦%s%d©¦%*} {
+    #action {â”‚â–¡%S%sâ”‚%S%sâ”‚%Sâ”‚%s%dâ”‚%*} {
         #var special_skill %%1;
         #var special_skill_level %%7;
         #list special_skills add ${special_skill};
         #list special_skills_level add ${special_skill_level};
     } {2};
 
-    #action {ÄãµÄ¼¼ÄÜµÈ¼¶×î¶àÄÜ´ïµ½%*¼¶} {
+    #action {ä½ çš„æŠ€èƒ½ç­‰çº§æœ€å¤šèƒ½è¾¾åˆ°%*çº§} {
         #var max_level @ctd{%%1};
     };
 
@@ -119,18 +119,18 @@
         #unticker {lw_ticker};
     };
 
-    #action {±ØĞë¿ÕÊÖ} {
+    #action {å¿…é¡»ç©ºæ‰‹} {
         unwi;
     };
 
-    #action {ÄãµÄ»ù±¾¹¦·ò±ÈÄãµÄ¸ß¼¶¹¦·ò»¹¸ß} {
+    #action {ä½ çš„åŸºæœ¬åŠŸå¤«æ¯”ä½ çš„é«˜çº§åŠŸå¤«è¿˜é«˜} {
         #if {"${skill}" == "force"} {
             #math skill_index ${skill_index}+1;
         };
         lw.restart;
     };
 
-    #action {ÄãĞèÒªÌá¸ß»ù±¾¹¦} {
+    #action {ä½ éœ€è¦æé«˜åŸºæœ¬åŠŸ} {
         lw.restart;
     };
 
@@ -146,22 +146,22 @@
         };
     };
 
-    #action {±ØĞëÊ¹ÓÃØ°Ê×ÀàÎäÆ÷} {
+    #action {å¿…é¡»ä½¿ç”¨åŒ•é¦–ç±»æ­¦å™¨} {
         wield dagger;
     };
 
     #list {lw_next_actions} create {
-        µÀµÂĞ¡ÓÚÁã²ÅÄÜÁ·ÕâÖÖÒõ¶¾¹¦·ò;
-        Ç¬À¤´óÅ²ÒÆĞÄ·¨Ö»ÄÜÓÃÑ§Ï°;
-        ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô;
-        »ğºòÌ«Ç³;
-        Äã²»ÄÜÁ·;
-        ÌØÊâÄÚ¹¦ÎŞ·¨Á·Ï°;
-        ÄãÏÖÔÚÖ»ÄÜÔÚÔÀÍõÄ¹ÖĞ¹Û¿´Ç½±Ú²ÅÄÜ¼ÌĞøÌá¸ßÔÀ¼ÒÇ¹·¨;
-        ÄãÒª×°±¸ %* ÀàÎäÆ÷²ÅÄÜÁ·Ï°;
-        Äã±ØĞëÏÈÕÒÒ»¸ËÇ¹²ÅÄÜÁ·´ËÇ¹·¨;
-        Äã»¹Ã»Ñ§¹ıÕâÏî¼¼ÄÜ°É;
-        ĞşÌú½£·¨Ö»ÄÜÊÇÓÉÑî¹ı½øĞĞµã²¦»òÇ××Ôµ½´óº£ÖĞ²ÅÄÜ¶ÍÁ¶Ìá¸ß£¡
+        é“å¾·å°äºé›¶æ‰èƒ½ç»ƒè¿™ç§é˜´æ¯’åŠŸå¤«;
+        ä¹¾å¤å¤§æŒªç§»å¿ƒæ³•åªèƒ½ç”¨å­¦ä¹ ;
+        ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å¯¹;
+        ç«å€™å¤ªæµ…;
+        ä½ ä¸èƒ½ç»ƒ;
+        ç‰¹æ®Šå†…åŠŸæ— æ³•ç»ƒä¹ ;
+        ä½ ç°åœ¨åªèƒ½åœ¨å²³ç‹å¢“ä¸­è§‚çœ‹å¢™å£æ‰èƒ½ç»§ç»­æé«˜å²³å®¶æªæ³•;
+        ä½ è¦è£…å¤‡ %* ç±»æ­¦å™¨æ‰èƒ½ç»ƒä¹ ;
+        ä½ å¿…é¡»å…ˆæ‰¾ä¸€æ†æªæ‰èƒ½ç»ƒæ­¤æªæ³•;
+        ä½ è¿˜æ²¡å­¦è¿‡è¿™é¡¹æŠ€èƒ½å§;
+        ç„é“å‰‘æ³•åªèƒ½æ˜¯ç”±æ¨è¿‡è¿›è¡Œç‚¹æ‹¨æˆ–äº²è‡ªåˆ°å¤§æµ·ä¸­æ‰èƒ½é”»ç‚¼æé«˜ï¼
     };
 
     #foreach {${lw_next_actions}[%*]} {lw_next_action} {
@@ -169,12 +169,12 @@
             lw_next;
         } {1};
     };
-    #action {ÄãµÄ¡¸%*¡¹½ø²½ÁË£¡} {
+    #action {ä½ çš„ã€Œ%*ã€è¿›æ­¥äº†ï¼} {
         lw.restart;
     };
 
     #class lingwu.inner close;
-    show_to_quest ÁìÎò;
+    show_to_quest é¢†æ‚Ÿ;
     on_there {
         lw.restart;
     };
@@ -186,7 +186,7 @@
     stop_ticker;
     #undelay {lw.restart};
     #class lingwu.inner kill;
-    show_to_quest ÁìÎò½áÊø;
+    show_to_quest é¢†æ‚Ÿç»“æŸ;
 };
 
 #alias {lw.restart} {
@@ -197,7 +197,7 @@
 };
 
 #alias {lw.restart.inner} {
-    #if {@getburden{ËÖÓÍ²è} < 30} {
+    #if {@getburden{é…¥æ²¹èŒ¶} < 30} {
         lw.stop;
         chain get.qian get.fan lw.start;
         #return;
@@ -211,12 +211,12 @@
         get_level_a $skill;
         get_level_b $skill;
         #if {${skill_level_a == 0} || ${skill_level_b} == 0} {
-            #showme {»ğºòÌ«Ç³};
+            #showme {ç«å€™å¤ªæµ…};
             #return;
         };
-        show_to_quest ÁìÎò $skill: $skill_level_a / $skill_level_b -> ${max_level};
+        show_to_quest é¢†æ‚Ÿ $skill: $skill_level_a / $skill_level_b -> ${max_level};
         #if {$skill_level_a >= $max_level && $skill_level_b >= $max_level} {
-            #showme {»ğºòÌ«Ç³};
+            #showme {ç«å€™å¤ªæµ…};
             #return;
         };
 

@@ -67,7 +67,7 @@
         #alias {gps_check_room_done} {
             #if {${gps.roomno} == -1} {
                 #delay {1} {
-                    notify µ±Ç°·¿¼äÎ´¼ÇÂ¼, ÎŞ·¨±éÀú»ï¼Æ;
+                    notify å½“å‰æˆ¿é—´æœªè®°å½•, æ— æ³•éå†ä¼™è®¡;
                 };
             };
             #else {
@@ -81,7 +81,7 @@
                         hb.back_and_forth;
                     };
                     #else {
-                        notify ÎŞ·¨±éÀú»ï¼Æ @ ${gps_traverse_location};
+                        notify æ— æ³•éå†ä¼™è®¡ @ ${gps_traverse_location};
                     };
                 };
                 #else {
@@ -90,7 +90,7 @@
             };
         };
         #if {"${gps_traverse_location}" == "nil"} {
-            show_to_info »ï¼Æ²»´æÔÚ;
+            show_to_info ä¼™è®¡ä¸å­˜åœ¨;
             hb.b;
         };
         #else {
@@ -168,8 +168,8 @@
     #var hb_remaining_path_size ${hb_max_path_size};
     #var hb_path_index 1;
     #class hb_setup_inner open;
-    #action {ÄãÒÑ¾­ÔÚĞÂÊÖïÚ¾Ö»ñµÃ×ã¹»¾­ÑéÁË£¬¿ìµ½´ó³ÇÊĞÈ¥´³µ´Ò»·¬°É¡£} {
-        show_to_info ÒÑ¾­ÔÚĞÂÊÖïÚ¾Ö»ñµÃ×ã¹»¾­Ñé;
+    #action {ä½ å·²ç»åœ¨æ–°æ‰‹é•–å±€è·å¾—è¶³å¤Ÿç»éªŒäº†ï¼Œå¿«åˆ°å¤§åŸå¸‚å»é—¯è¡ä¸€ç•ªå§ã€‚} {
+        show_to_info å·²ç»åœ¨æ–°æ‰‹é•–å±€è·å¾—è¶³å¤Ÿç»éªŒ;
         hb.stop;
     };
 
@@ -178,26 +178,26 @@
         #ticker {sw/yell_boat} {
             yell boat;
         } {5};
-        #action {ÕıµÈ×ÅÄãÄØ£¬ÉÏÀ´°É¡£} {
+        #action {æ­£ç­‰ç€ä½ å‘¢ï¼Œä¸Šæ¥å§ã€‚} {
             gan che to enter;
         };
-        #action {ô¹¹«½«Ò»¿éÌ¤½Å°å´îÉÏµÌ°¶£¬} {
+        #action {è‰„å…¬å°†ä¸€å—è¸è„šæ¿æ­ä¸Šå ¤å²¸ï¼Œ} {
             gan che to enter;
         };
         #alias {shangchuan} {
             #unticker {sw/yell_boat};
-            #action {ËùÓĞÈË±»¸ÏÏÂÁË¶É´¬} {
-                #unaction {ËùÓĞÈË±»¸ÏÏÂÁË¶É´¬};
+            #action {æ‰€æœ‰äººè¢«èµ¶ä¸‹äº†æ¸¡èˆ¹} {
+                #unaction {æ‰€æœ‰äººè¢«èµ¶ä¸‹äº†æ¸¡èˆ¹};
                 #class guohe.inner kill;
                 #math hb_path_index ${hb_path_index}+1;
                 #var hb_paused 0;
                 hb.run;
             };
         };
-        #action {^»ÆºÓ¶É´¬$} {
+        #action {^é»„æ²³æ¸¡èˆ¹$} {
             shangchuan;
         };
-        #action {^³¤½­¶É´¬$} {
+        #action {^é•¿æ±Ÿæ¸¡èˆ¹$} {
             shangchuan;
         };
         #class guohe.inner close;
@@ -234,7 +234,7 @@
     #alias {hb.force_clear} {
         #var hb_tmp_blocker %%0;
         #class clear_blocker.inner open;
-        #action {ÄãÏëÉ±Ë­} {
+        #action {ä½ æƒ³æ€è°} {
             #class clear_blocker.inner kill;
             #math hb_path_index ${hb_path_index}+1;
             hb.run;
@@ -247,35 +247,35 @@
         killall ${hb_tmp_blocker};
     };
 
-    #action {¿´À´¸ÃÕÒ»ú»áÌÓÅÜÁË} {
+    #action {çœ‹æ¥è¯¥æ‰¾æœºä¼šé€ƒè·‘äº†} {
         hb.pause;
-        show_to_tuiche ¶ªïÚ;
-        notify ¶ªïÚ;
+        show_to_tuiche ä¸¢é•–;
+        notify ä¸¢é•–;
         hb.teardown;
         hb.b;
     };
 
-    #action {^ÂıÂıµØÄãÖÕÓÚÓÖÓĞÁËÖª¾õ....} {
-        show_to_tuiche ¹ÒÁË;
-        notify ¹ÒÁË;
+    #action {^æ…¢æ…¢åœ°ä½ ç»ˆäºåˆæœ‰äº†çŸ¥è§‰....} {
+        show_to_tuiche æŒ‚äº†;
+        notify æŒ‚äº†;
         hb.teardown;
         hb.b;
     };
 
-    #action {^ÄãµÄÑÛÇ°Ò»ºÚ£¬½ÓÖøÊ²Ã´Ò²²»ÖªµÀÁË} {
+    #action {^ä½ çš„çœ¼å‰ä¸€é»‘ï¼Œæ¥è‘—ä»€ä¹ˆä¹Ÿä¸çŸ¥é“äº†} {
         hb.pause;
     };
 
-    #action {¡º½Ù·Ë%*ÆøÑª%*¡»} {
+    #action {ã€åŠ«åŒª%*æ°”è¡€%*ã€} {
         #nop #var hb_retry_count 0;
         #cr;
     } {1};
 
-    #action {ÄãÏëÉ±Ë­£¿} {
+    #action {ä½ æƒ³æ€è°ï¼Ÿ} {
         hb.retry;
     };
 
-    #action {ïÚ³µ»¹Ã»ÓĞ¸úÉÏÀ´ÄØ,×ßÂıµã.} {
+    #action {é•–è½¦è¿˜æ²¡æœ‰è·Ÿä¸Šæ¥å‘¢,èµ°æ…¢ç‚¹.} {
         hb.retry;
     };
 
@@ -287,14 +287,14 @@
         };
     };
 
-    #action {Äã»¹ÊÇÏÈ°Ñ¶ÔÊÖ½â¾öÁËÔÙËµ°É} {
+    #action {ä½ è¿˜æ˜¯å…ˆæŠŠå¯¹æ‰‹è§£å†³äº†å†è¯´å§} {
         hb.maybe_kill;
         hb.retry;
     } {1};
 
-    #action {ïÚ³µºôÀ²Ò»ÉùÉ¢ÁË¼Ü} {
+    #action {é•–è½¦å‘¼å•¦ä¸€å£°æ•£äº†æ¶} {
         hb.pause;
-        notify ïÚ³µºôÀ²Ò»ÉùÉ¢ÁË¼Ü;
+        notify é•–è½¦å‘¼å•¦ä¸€å£°æ•£äº†æ¶;
         hb.b;
     };
 
@@ -302,7 +302,7 @@
         hb.retry;
     };
 
-    #action {^Äã¸Ï×ÅïÚ³µÊ»ÁË¹ıÀ´¡£$} {
+    #action {^ä½ èµ¶ç€é•–è½¦é©¶äº†è¿‡æ¥ã€‚$} {
         #var hb_retry_count 0;
         #if {${hb_paused} == 0} {
             #math hb_path_index ${hb_path_index}+1;
@@ -310,19 +310,19 @@
         };
     };
 
-    #action {½Ù·Ë¸öÆğ×İ¶İÈë°µÀï²»¼ûÁË} {
+    #action {åŠ«åŒªä¸ªèµ·çºµéå…¥æš—é‡Œä¸è§äº†} {
         hb.detect_enemy;
         hb.retry;
     };
 
-    #action {^Õâ¸ö·½Ïò} {
+    #action {^è¿™ä¸ªæ–¹å‘} {
         #if {${hb_paused} == 0} {
             hb.pause;
             hb.resume;
         };
     };
 
-    #action {½Ù·Ë³ÃÄã²»×¢Òâ£¬ÍÆ×ÅïÚ³µ¾ÍÅÜ£¬Äã¸Ï½ô×·ÁËÉÏÈ¥¡£} {
+    #action {åŠ«åŒªè¶ä½ ä¸æ³¨æ„ï¼Œæ¨ç€é•–è½¦å°±è·‘ï¼Œä½ èµ¶ç´§è¿½äº†ä¸Šå»ã€‚} {
         hb.pause;
         @setenv{hb_mixin_lunci;6};
         #delay {hb_delay} {
@@ -330,17 +330,17 @@
         } {3};
     };
 
-    #action {½Ù·ËÉìÊÖÒ»À¹µÀ} {
+    #action {åŠ«åŒªä¼¸æ‰‹ä¸€æ‹¦é“} {
         war;
         hb.maybe_kill;
         hb.retry;
     } {1};
 
-    #action {Äã³¤Ğ¦Ò»Éù£¬¿ªÊ¼¶ÔÖÜÎ§ÖÚÈËÍ´ÏÂÉ±ÊÖ£¡} {
+    #action {ä½ é•¿ç¬‘ä¸€å£°ï¼Œå¼€å§‹å¯¹å‘¨å›´ä¼—äººç—›ä¸‹æ€æ‰‹ï¼} {
         #var hb_need_kill 0;
     };
 
-    #action {½Ù·ËÍ»È»´Ó°µ´¦ÌøÁË³öÀ´} {
+    #action {åŠ«åŒªçªç„¶ä»æš—å¤„è·³äº†å‡ºæ¥} {
         hb.detect_enemy;
         #if {${hb_need_kill} == 1} {
             killall robber;
@@ -350,11 +350,11 @@
         };
     };
 
-    #action {Î§ÉÏÀ´¼¸¸ö»ï¼Æ½«ïÚ³µÀ­ÁË½øÈ¥} {
+    #action {å›´ä¸Šæ¥å‡ ä¸ªä¼™è®¡å°†é•–è½¦æ‹‰äº†è¿›å»} {
         @setenv{hb_state;ENDED};
         hb.pause;
         raw;
-        show_to_tuiche ÈÎÎñÍê³É;
+        show_to_tuiche ä»»åŠ¡å®Œæˆ;
         hb.teardown;
 
         #alias {on_taopao_done} {
@@ -401,16 +401,16 @@
 
     #alias {get_pos_done} {
         @setenv{hb_owner_loc;${pos.room}};
-        #if {"${pos.room}" == "²ıÂ¡ïÚ¾Ö"} {
+        #if {"${pos.room}" == "æ˜Œéš†é•–å±€"} {
             @setenv{hb_owner;zuo erba};
         };
-        #elseif {"${pos.room}" == "¾£Î÷ïÚ¾Ö"} {
+        #elseif {"${pos.room}" == "è†è¥¿é•–å±€"} {
             @setenv{hb_owner;zhang zhi};
         };
-        #elseif {"${pos.room}" == "·É»¢ïÚ¾Ö"} {
+        #elseif {"${pos.room}" == "é£è™é•–å±€"} {
             @setenv{hb_owner;chu daye};
         };
-        #elseif {"${pos.room}" == "Ìì¸£ïÚ¾Ö"} {
+        #elseif {"${pos.room}" == "å¤©ç¦é•–å±€"} {
             @setenv{hb_owner;wang xiaoyue};
         };
         #else {
@@ -437,7 +437,7 @@
         xian mixin;
     };
     #elseif {"${hb_state}" == "nil"} {
-        show_to_info Ã»ÓĞÍÆ³µÈÎÎñ;
+        show_to_info æ²¡æœ‰æ¨è½¦ä»»åŠ¡;
     };
     #else {
         hb.f;
@@ -492,7 +492,7 @@
     set_last_quest hb;
     set brief 2;
     #var hb_auto 1;
-    #action {×ªÍ·¶ÔÄãµÀ£º¡¸ĞÁ¿àÁË£¬ÓĞ¼¸Á½Òø×ÓÂÔ±íĞÄÒâ£¬ÒÑ¾­·Ô¸ÀÈË´æÈëÄãµÄÇ®×¯ÕË»§¡£¡¹} {
+    #action {è½¬å¤´å¯¹ä½ é“ï¼šã€Œè¾›è‹¦äº†ï¼Œæœ‰å‡ ä¸¤é“¶å­ç•¥è¡¨å¿ƒæ„ï¼Œå·²ç»å©å’äººå­˜å…¥ä½ çš„é’±åº„è´¦æˆ·ã€‚ã€} {
         #if {"@getenv{hb_state}" == "ENDED"} {
             @setenv{hb_state;nil};
             #delay {hb_auto_delay} {
@@ -503,16 +503,16 @@
         };
     };
 
-    #action {µİ¸øÄãÒ»·âÃÜĞÅ} {
+    #action {é€’ç»™ä½ ä¸€å°å¯†ä¿¡} {
         @setenv{hb_state;GOT_MIXIN};
         @setenv{hb_lunci_total;@eval{@getenv{hb_lunci_total}+1}};
         @setenv{hb_lunci;0};
-        show_to_tuiche ÃÜĞÅ;
+        show_to_tuiche å¯†ä¿¡;
         xian mixin;
     };
 
-    #action {Äã¸ø%*Ò»Ğ©Ê§×ÙµÄ²ÆÎï} {
-        show_to_tuiche ÃÜĞÅÍê³É;
+    #action {ä½ ç»™%*ä¸€äº›å¤±è¸ªçš„è´¢ç‰©} {
+        show_to_tuiche å¯†ä¿¡å®Œæˆ;
         @setenv{hb_state;nil};
         @setenv{hb_mixin_lunci;5};
         #delay {hb_auto_delay} {
@@ -529,43 +529,43 @@
         };
     } {1};
 
-    #action {^Äã²»ÊÇ²ÅÒªÁËÈÎÎñÂğ} {
+    #action {^ä½ ä¸æ˜¯æ‰è¦äº†ä»»åŠ¡å—} {
         hb.f;
         hb.restart;
     };
 
-    #action {ÄãÒ»¹²±»½±ÀøÁË£º} {
+    #action {ä½ ä¸€å…±è¢«å¥–åŠ±äº†ï¼š} {
         #class tmp.inner open;
-        #action {%*µã¾­Ñé£»} {
+        #action {%*ç‚¹ç»éªŒï¼›} {
             #class tmp.inner kill;
-            show_to_info @ctd{%%%1} µã¾­Ñé;
+            show_to_info @ctd{%%%1} ç‚¹ç»éªŒ;
         };
      #class tmp.inner close;
     };
 
-    #action {${char_name}°ï%*×·»Ø²ÆÎï£¬¶îÍâ»ñµÃ%*µã¾­Ñé} {
-        show_to_info ¶îÍâ»ñµÃ @ctd{%%2} µã¾­Ñé;
+    #action {${char_name}å¸®%*è¿½å›è´¢ç‰©ï¼Œé¢å¤–è·å¾—%*ç‚¹ç»éªŒ} {
+        show_to_info é¢å¤–è·å¾— @ctd{%%2} ç‚¹ç»éªŒ;
     };
 
     #alias {got_gem} {
-        #action {Äã½«ÊÖÖĞ%*{¡ò|¡î|¡ï}%*·Å½øÁË±¦Ê¯´ü} {
+        #action {ä½ å°†æ‰‹ä¸­%*{â—|â˜†|â˜…}%*æ”¾è¿›äº†å®çŸ³è¢‹} {
             gem.record %%%1 %%%2 %%%3;
         };
         pack gem;
         #delay {pack_gem} {
-            #unaction {Äã½«ÊÖÖĞ%*{¡ò|¡î|¡ï}%*·Å½øÁË±¦Ê¯´ü};
+            #unaction {ä½ å°†æ‰‹ä¸­%*{â—|â˜†|â˜…}%*æ”¾è¿›äº†å®çŸ³è¢‹};
         } {3};
     };
 
-    #action {ÍÛ£¬ÄãÌ«À÷º¦ÁË£¬ÕâÃ´¿ì¾Í°ÑÕâĞ©²ÆÎï×·»Ø£¬ÎÒÓĞÖØĞ»£¡} {
+    #action {å“‡ï¼Œä½ å¤ªå‰å®³äº†ï¼Œè¿™ä¹ˆå¿«å°±æŠŠè¿™äº›è´¢ç‰©è¿½å›ï¼Œæˆ‘æœ‰é‡è°¢ï¼} {
         got_gem;
     };
 
-    #action {µôÁË³öÀ´Ò»¿Å} {
+    #action {æ‰äº†å‡ºæ¥ä¸€é¢—} {
         got_gem;
     };
 
-    #action {%d%s%S%s%S%s´ıÈÏÁì} {
+    #action {%d%s%S%s%S%så¾…è®¤é¢†} {
         #var getesc_id %%1;
         #var getesc_address %%3;
         #if {${getesc_current_id} == 0 && @should_accept_quest{${getesc_address}} == 1} {
@@ -574,7 +574,7 @@
         };
     };
 
-    #action {À´ÈÏÁìÑºïÚÈÎÎñ} {
+    #action {æ¥è®¤é¢†æŠ¼é•–ä»»åŠ¡} {
         #var hb_state @getenv{hb_state};
         #if {"${hb_state}" == "nil"} {
             #if {${getesc_current_id} != 0} {
@@ -594,8 +594,8 @@
         };
     };
 
-    #action {%*Ïò%*´òÌıÓĞ¹Ø%*µÄÏûÏ¢} {
-        #if {"%%1" == "Äã"} {
+    #action {%*å‘%*æ‰“å¬æœ‰å…³%*çš„æ¶ˆæ¯} {
+        #if {"%%1" == "ä½ "} {
             #var hb_requested 1;
         };
         #else {
@@ -603,14 +603,14 @@
         };
     };
 
-    #action {%*ËµµÀ£º¡¸ïÚ³µÃ»ÓĞËÍµ½µØÍ·£¬Äª·ÇÊÇÄãÍÌÁË£¡£¿¡¹} {
+    #action {%*è¯´é“ï¼šã€Œé•–è½¦æ²¡æœ‰é€åˆ°åœ°å¤´ï¼Œè«éæ˜¯ä½ åäº†ï¼ï¼Ÿã€} {
         #if {${hb_requested} == 1} {
             hb.f;
             hb.start;
         };
     } {1};
 
-    #action {${char_name}°ÑÕâÅúºì»õËÍµ½%*ËûÒÑ¾­ÅÉÁË¸ö»ï¼ÆÃû½Ğ%*µ½%*¸½½ü½ÓÄã} {
+    #action {${char_name}æŠŠè¿™æ‰¹çº¢è´§é€åˆ°%*ä»–å·²ç»æ´¾äº†ä¸ªä¼™è®¡åå«%*åˆ°%*é™„è¿‘æ¥ä½ } {
         #unticker {hb_q_ticker};
         @setenv{hb_state;STARTED};
         @setenv{hb_lunci;@eval{@getenv{hb_lunci}+1}};
@@ -644,11 +644,11 @@
         #var hb_dest @getenv{hb_dest};
         #var hb_info @getenv{hb_info};
         #if {"${hb_huoji}" == "nil" || "${hb_dest}" == "nil"} {
-            show_to_info ÍÆ³µÊ§°Ü;
+            show_to_info æ¨è½¦å¤±è´¥;
             hb.f;
         };
         #else {
-            show_to_info ¼ÌĞøÍÆ³µ;
+            show_to_info ç»§ç»­æ¨è½¦;
             show_to_tuiche ${hb_info};
             autopp.set ${hb_huoji};
             #var hb_remaining_path_size 0;
@@ -659,11 +659,11 @@
         };
     };
     #elseif {"${hb_state}" == "GOT_MIXIN"} {
-        notify ÓĞÃÜĞÅ;
+        notify æœ‰å¯†ä¿¡;
     };
     #elseif {"${hb_state}" == "nil"} {
         #if {"${hb_location}" == "nil"} {
-            show_to_info ÇëÖ¸¶¨ïÚ¾Ö: zz, zuo, tf, fh, fm;
+            show_to_info è¯·æŒ‡å®šé•–å±€: zz, zuo, tf, fh, fm;
             hb.stop;
         };
         #else {
@@ -678,7 +678,7 @@
 #alias {hb.restart} {
     drop_garbage;
     #math next_lunci @getenv{hb_lunci}+1;
-    show_to_tuiche ×¼±¸;
+    show_to_tuiche å‡†å¤‡;
     on_health {hb.q};
 };
 
@@ -697,7 +697,7 @@
     @clearenv{hb_info};
     @clearenv{hb_owner};
     @clearenv{hb_state};
-    show_to_tuiche ÍÆ³µ½áÊø;
+    show_to_tuiche æ¨è½¦ç»“æŸ;
 };
 
 #alias {mx} {
@@ -710,26 +710,26 @@
     #ticker {mx_q} {
         zhaoxun;
     } {5};
-    #action {Äã³¶¿ªÉ¤×Ó£¬¿ªÊ¼´óº°£ºĞ¡Íõ°Ëµ°£¬Äã¸øÎÒ¹ö³öÀ´} {
+    #action {ä½ æ‰¯å¼€å—“å­ï¼Œå¼€å§‹å¤§å–Šï¼šå°ç‹å…«è›‹ï¼Œä½ ç»™æˆ‘æ»šå‡ºæ¥} {
         #class mx.inner kill;
-        notify ÃÜĞÅµØµã²»¶Ô;
+        notify å¯†ä¿¡åœ°ç‚¹ä¸å¯¹;
     };
-    #action {Ò»¸ö»ï¼ÆÍÚ×Å±ÇÊº×ßÁË³öÀ´£¬µÀ£ºÄãÕÒÎÒÉ¶ÊÂ} {
+    #action {ä¸€ä¸ªä¼™è®¡æŒ–ç€é¼»å±èµ°äº†å‡ºæ¥ï¼Œé“ï¼šä½ æ‰¾æˆ‘å•¥äº‹} {
         #unticker {mx_q};
         #delay {3} {
-            gps.traverse ²ÆÎïµÄ»ï¼Æ bfs;
+            gps.traverse è´¢ç‰©çš„ä¼™è®¡ bfs;
         };
     };
-    #action {GPS: ±éÀúÍê³É} {
+    #action {GPS: éå†å®Œæˆ} {
         #class mx.inner kill;
-        notify Ã»ÕÒµ½»ï¼Æ;
+        notify æ²¡æ‰¾åˆ°ä¼™è®¡;
     };
-    #action {ÕÒµ½Ä¿±ê} {
+    #action {æ‰¾åˆ°ç›®æ ‡} {
         mx.check;
     };
     #alias {mx.got_caiwu} {
         @setenv{hb_state;GOT_CAIWU};
-        show_to_tuiche ÄÃµ½²Æ±¦;
+        show_to_tuiche æ‹¿åˆ°è´¢å®;
         play get_item.wav;
         #class mx.inner kill;
         hb.b;
@@ -737,10 +737,10 @@
     #alias {mx.check} {
         l;
         #class mx.inner open;
-        #action {²ÆÎïµÄ»ï¼Æ %S(%S)} {
+        #action {è´¢ç‰©çš„ä¼™è®¡ %S(%S)} {
             #format {tmp_huoji} {%l} {%%%2};
             #class mx.inner open;
-            #action {°ÑÒ»°ü²ÆÎïÔÒÏòÄã£¬Ò»×ªÑÛ²»¼ûÁË¡£} {
+            #action {æŠŠä¸€åŒ…è´¢ç‰©ç ¸å‘ä½ ï¼Œä¸€è½¬çœ¼ä¸è§äº†ã€‚} {
                 #undelay {mx_delay};
                 mx.got_caiwu;
             };
@@ -762,7 +762,7 @@
 #alias {hb.p} {
     #alias tmp_hb_p #cr;
     #alias tmp_hb_p %1;
-    show_to_tuiche ×¼±¸;
+    show_to_tuiche å‡†å¤‡;
     #var chain_action_hb_p sell.all get.qian get.san get.bao jianding.all donate.all repair special_repair gem.combine hb.spec tmp_hb_p;
     #if {${need_reload} == 1} {
         #var chain_action_hb_p reload ${chain_action_hb_p};
@@ -771,7 +771,7 @@
 };
 
 #alias {show_to_tuiche} {
-    show_to_quest ÍÆ³µ: @getenv{hb_lunci_total}+@getenv{hb_lunci}: %0;
+    show_to_quest æ¨è½¦: @getenv{hb_lunci_total}+@getenv{hb_lunci}: %0;
 };
 
 #alias {hb.check_robber} {
@@ -817,7 +817,7 @@
     #alias {gps_check_room_done} {
         #if {${gps.roomno} == -1} {
             #delay {1} {
-                #show {GPS: µ±Ç°·¿¼äÎ´¼ÇÂ¼, ÎŞ·¨ĞĞ×ß};
+                #show {GPS: å½“å‰æˆ¿é—´æœªè®°å½•, æ— æ³•è¡Œèµ°};
             };
         };
         #else {
@@ -833,7 +833,7 @@
             #var hb_path_index 1;
             #list hb_path size hb_path_size;
             #if {${hb_path_size} == 0} {
-                #show {GPS: Ä¿±ê·¿¼ä²»¿É´ï, ÎŞ·¨ĞĞ×ß: ${hb_dest}:${gps.roomno}};
+                #show {GPS: ç›®æ ‡æˆ¿é—´ä¸å¯è¾¾, æ— æ³•è¡Œèµ°: ${hb_dest}:${gps.roomno}};
                 #return;
             };
             #if {@getenv{hb_mixin_lunci} == 5} {
@@ -862,25 +862,25 @@
 
 #alias {hb.detect_enemy} {
     #class detect_enemy.inner open;
-    #action {~ÄãÏëÒªÊÕ[1;31m½Ù·Ë[2;37;0mÎªµÜ×Ó} {
+    #action {~ä½ æƒ³è¦æ”¶[1;31måŠ«åŒª[2;37;0mä¸ºå¼Ÿå­} {
         hb.check_robber quanzhen;
     };
-    #action {~ÄãÏëÒªÊÕ[1;32m½Ù·Ë[2;37;0mÎªµÜ×Ó} {
+    #action {~ä½ æƒ³è¦æ”¶[1;32måŠ«åŒª[2;37;0mä¸ºå¼Ÿå­} {
         hb.check_robber shaolin;
     };
-    #action {~ÄãÏëÒªÊÕ[1;33m½Ù·Ë[2;37;0mÎªµÜ×Ó} {
+    #action {~ä½ æƒ³è¦æ”¶[1;33måŠ«åŒª[2;37;0mä¸ºå¼Ÿå­} {
         hb.check_robber gaibang;
     };
-    #action {~ÄãÏëÒªÊÕ[1;34m½Ù·Ë[2;37;0mÎªµÜ×Ó} {
+    #action {~ä½ æƒ³è¦æ”¶[1;34måŠ«åŒª[2;37;0mä¸ºå¼Ÿå­} {
         hb.check_robber xingxiu;
     };
-    #action {~ÄãÏëÒªÊÕ[1;35m½Ù·Ë[2;37;0mÎªµÜ×Ó} {
+    #action {~ä½ æƒ³è¦æ”¶[1;35måŠ«åŒª[2;37;0mä¸ºå¼Ÿå­} {
         hb.check_robber huashan;
     };
-    #action {~ÄãÏëÒªÊÕ[1;36m½Ù·Ë[2;37;0mÎªµÜ×Ó} {
+    #action {~ä½ æƒ³è¦æ”¶[1;36måŠ«åŒª[2;37;0mä¸ºå¼Ÿå­} {
         hb.check_robber taohua;
     };
-    #action {~ÄãÏëÒªÊÕ[1;37m½Ù·Ë[2;37;0mÎªµÜ×Ó} {
+    #action {~ä½ æƒ³è¦æ”¶[1;37måŠ«åŒª[2;37;0mä¸ºå¼Ÿå­} {
         hb.check_robber wudang;
     };
     #class detect_enemy.inner close;
@@ -896,40 +896,40 @@
     #nop ]]]]]]]]]]]]]];
 };
 
-#list hb_blacklist_baowei:¾£Î÷ïÚ¾Ö create {
-    Îäµ±ÈıÇåµî;ÉÙÁÖ·ğĞÄ¾®;ÑïÖİ×íÏÉÂ¥;ÏåÑôµ±ÆÌ;
+#list hb_blacklist_baowei:è†è¥¿é•–å±€ create {
+    æ­¦å½“ä¸‰æ¸…æ®¿;å°‘æ—ä½›å¿ƒäº•;æ‰¬å·é†‰ä»™æ¥¼;è¥„é˜³å½“é“º;
 };
 
-#list hb_blacklist:¾£Î÷ïÚ¾Ö create {
-    È«ÕæÌì×ğ½²¾­ÌÃ;
+#list hb_blacklist:è†è¥¿é•–å±€ create {
+    å…¨çœŸå¤©å°Šè®²ç»å ‚;
 };
 
-#list hb_blacklist:·ÉÂíïÚ¾Ö create {
-    ½úÑôÏô¸®;³É¶¼µ±ÆÌ;ÔŞÆÕÀ´¸£ÔÓ»õ;´óÀíÌ«ºÍ¾Ó;Îäµ±¾£Î÷ïÚ¾Ö;À¥Ã÷ÉñÍşïÚ¾Ö;È«ÕæÌì×ğ½²¾­ÌÃ;
+#list hb_blacklist:é£é©¬é•–å±€ create {
+    æ™‹é˜³è§åºœ;æˆéƒ½å½“é“º;èµæ™®æ¥ç¦æ‚è´§;å¤§ç†å¤ªå’Œå±…;æ­¦å½“è†è¥¿é•–å±€;æ˜†æ˜ç¥å¨é•–å±€;å…¨çœŸå¤©å°Šè®²ç»å ‚;
 };
 
-#list hb_blacklist_baowei:·ÉÂíïÚ¾Ö create {
-    ÏåÑôµ±ÆÌ;Îäµ±¾£Î÷ïÚ¾Ö;
+#list hb_blacklist_baowei:é£é©¬é•–å±€ create {
+    è¥„é˜³å½“é“º;æ­¦å½“è†è¥¿é•–å±€;
 };
 
-#list hb_blacklist:·É»¢ïÚ¾Ö create {
-    ½úÑôÏô¸®;ÔŞÆÕÀ´¸£ÔÓ»õ;
+#list hb_blacklist:é£è™é•–å±€ create {
+    æ™‹é˜³è§åºœ;èµæ™®æ¥ç¦æ‚è´§;
 };
 
-#list hb_blacklist_baowei:·É»¢ïÚ¾Ö create {
-    Îäµ±¾£Î÷ïÚ¾Ö;
+#list hb_blacklist_baowei:é£è™é•–å±€ create {
+    æ­¦å½“è†è¥¿é•–å±€;
 };
 
-#list hb_blacklist:Ìì¸£ïÚ¾Ö create {
-    ³¤°²·ÉÂíïÚ¾Ö;ÔŞÆÕÀ´¸£ÔÓ»õ;¶ëáÒÅşÂ¬µî;
+#list hb_blacklist:å¤©ç¦é•–å±€ create {
+    é•¿å®‰é£é©¬é•–å±€;èµæ™®æ¥ç¦æ‚è´§;å³¨åµ‹æ¯—å¢æ®¿;
 };
 
-#list hb_blacklist_baowei:Ìì¸£ïÚ¾Ö create {
-    Îäµ±¾£Î÷ïÚ¾Ö;ÏåÑôµ±ÆÌ;
+#list hb_blacklist_baowei:å¤©ç¦é•–å±€ create {
+    æ­¦å½“è†è¥¿é•–å±€;è¥„é˜³å½“é“º;
 };
 
-#list hb_blacklist:²ıÂ¡ïÚ¾Ö create {
-    ¹éÔÆ×¯Ì«ºş½Ö;¶ëáÒÅşÂ¬µî;ËÕÖİ¾Û±¦Õ«;
+#list hb_blacklist:æ˜Œéš†é•–å±€ create {
+    å½’äº‘åº„å¤ªæ¹–è¡—;å³¨åµ‹æ¯—å¢æ®¿;è‹å·èšå®æ–‹;
 };
 
 #class hubiao close

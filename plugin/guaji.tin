@@ -3,11 +3,11 @@
 #alias {guatieqiao.start} {
     #var tq_count 0;
     #class guatieqiao.inner open;
-    #action {(%*)¸æËßÄã£ºtq} {
+    #action {(%*)å‘Šè¯‰ä½ ï¼štq} {
         burden.check;
         #action {burden.check: done} {
             #unaction {burden.check: done};
-            tell %%1 ÏÖÔÚÓĞ @getburden{ÌúÇÂ} ±úÌúÇÂ;
+            tell %%1 ç°åœ¨æœ‰ @getburden{é“é”¹} æŸ„é“é”¹;
             give %%1 tie qiao;
         };
     } {1};
@@ -40,7 +40,7 @@
     #class guasan.inner open;
     #alias {san_report} {
         #alias {burden_check_done} {
-            show_to_quest ÇåĞÄÉ¢: @getburden{ÇåĞÄÉ¢};
+            show_to_quest æ¸…å¿ƒæ•£: @getburden{æ¸…å¿ƒæ•£};
         };
         burden.check {
             burden_check_done;
@@ -49,15 +49,15 @@
     #ticker {san_report} {
       san_report;
     } {300};
-    #action {%*(%*)¸æËßÄã£ºsan} {
+    #action {%*(%*)å‘Šè¯‰ä½ ï¼šsan} {
         #var dummy @lower{%%2};
         #if {@ismember{${dummy};dummy_list} == 0} {
             #return;
         };
         #alias {burden_check_done} {
-            tell ${dummy} ÏÖÔÚÓĞ @getburden{ÇåĞÄÉ¢} °üÇåĞÄÉ¢;
+            tell ${dummy} ç°åœ¨æœ‰ @getburden{æ¸…å¿ƒæ•£} åŒ…æ¸…å¿ƒæ•£;
             give ${dummy} qingxin san;
-            #nop show_to_info %%1: @getburden{ÇåĞÄÉ¢} °üÇåĞÄÉ¢;
+            #nop show_to_info %%1: @getburden{æ¸…å¿ƒæ•£} åŒ…æ¸…å¿ƒæ•£;
         };
         burden.check {
             burden_check_done;
@@ -76,7 +76,7 @@
 
     #class guasan.inner close;
 
-    gt ĞÇËŞÅÉ´¢²ØÊÒ;
+    gt æ˜Ÿå®¿æ´¾å‚¨è—å®¤;
     on_there {
         san_report;
         guaji.start qingxin san;
@@ -91,7 +91,7 @@
 
 #alias {guaji.start} {
     #var guaji_item %0;
-    show_to_quest ¹Ò»ú: %0;
+    show_to_quest æŒ‚æœº: %0;
     #class guaji.inner open;
     #action {guaji.update %*} {
         #var tmp_minute @ctd{%%1};
@@ -110,13 +110,13 @@
 #alias {guaji.stop} {
     #var guaji_item nil;
     #class guaji.inner kill;
-    show_to_quest ¹Ò»ú½áÊø;
+    show_to_quest æŒ‚æœºç»“æŸ;
 };
 
 #alias {guaxt.start} {
     set_last_quest guaxt;
     #class xtj_inner open;
-    #action {ÄÃµ½ĞşÌú½£} {
+    #action {æ‹¿åˆ°ç„é“å‰‘} {
         cun_xtj;
     };
 
@@ -124,25 +124,25 @@
         gt wm;
         on_there {
             put xuantie sword in xiang;
-            chat ĞşÌú½£;
+            chat ç„é“å‰‘;
             #delay {1200} {
                 quit_and_restart;
             };
         };
     };
 
-    #action {ĞşÌú½£Ã»ÁË} {
+    #action {ç„é“å‰‘æ²¡äº†} {
         #delay {1200} {
             quit_and_restart;
         };
     };
     #class xtj_inner close;
-    show_to_quest ¿ªÊ¼¹ÒĞşÌú½£;
+    show_to_quest å¼€å§‹æŒ‚ç„é“å‰‘;
     get.xuan_tie_jian;
 };
 
 #alias {guaxt.stop} {
     unset_last_quest;
-    show_to_quest ¹ÒĞşÌú½£½áÊø;
+    show_to_quest æŒ‚ç„é“å‰‘ç»“æŸ;
 };
 #class guaji close

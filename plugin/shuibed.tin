@@ -5,7 +5,7 @@
     #var dz_total_count 0;
 
     #class shuibed.inner open;
-    #action {Ò»ÖÜÌì} {
+    #action {ä¸€å‘¨å¤©} {
         #math dz_total_count  ${dz_total_count}+1;
         show_to_info force +${dz_total_count};
         #delay {1} {
@@ -14,17 +14,17 @@
         };
     };
 
-    #action {ÄãÉîÉîÎüÁË¼¸¿ÚÆø£¬Á³É«¿´ÆğÀ´ºÃ¶àÁË¡£} {shui bed};
-    #action {ÄÚ¹¦ (force)%*ÓĞĞ§µÈ¼¶£º%d} {
+    #action {ä½ æ·±æ·±å¸äº†å‡ å£æ°”ï¼Œè„¸è‰²çœ‹èµ·æ¥å¥½å¤šäº†ã€‚} {shui bed};
+    #action {å†…åŠŸ (force)%*æœ‰æ•ˆç­‰çº§ï¼š%d} {
         #var youxiao_neigong %%2;
         #math max_neili ${youxiao_neigong} * 10;
         #if {${max_neili} < ${hpbrief_max_nl}} {
             sb.stop;
-            show_to_quest ÄÚÁ¦µ½´ïÆ¿¾±: ${hpbrief_max_nl} => ${max_neili};
-            notify Ë¯´²Íê±Ï;
+            show_to_quest å†…åŠ›åˆ°è¾¾ç“¶é¢ˆ: ${hpbrief_max_nl} => ${max_neili};
+            notify ç¡åºŠå®Œæ¯•;
         };
         #else {
-            show_to_quest Ë¯´²: ${hpbrief_max_nl} => ${max_neili};
+            show_to_quest ç¡åºŠ: ${hpbrief_max_nl} => ${max_neili};
         };
     };
 
@@ -33,7 +33,7 @@
 
 #alias {sb.stop} {
     #class shuibed.inner kill;
-    show_to_quest Ë¯´²½áÊø;
+    show_to_quest ç¡åºŠç»“æŸ;
 };
 
 #class shuibed close;

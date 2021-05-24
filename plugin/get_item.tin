@@ -13,35 +13,35 @@
 #alias {get.xuan_tie_jian} {
     gt jx;
     on_there {
-        e;nd;ask diao about ¶À¹ÂÇó°Ü;nu;
-        ask yu about ¹ıºÓ;
-        ask yu about ¶Ô°¶;
-        ask yu about ·è×Ó;
+        e;nd;ask diao about ç‹¬å­¤æ±‚è´¥;nu;
+        ask yu about è¿‡æ²³;
+        ask yu about å¯¹å²¸;
+        ask yu about ç–¯å­;
         se; catch fish;
     };
     #class xuetie.inner open;
-    #action {Äã½«Ğ¡Óã×½ÁËÆğÀ´} {
+    #action {ä½ å°†å°é±¼æ‰äº†èµ·æ¥} {
         nw;
         give fish to yu;
     };
 
-    #action {Óæ·òËµµÀ£º¸øÄã¸öË®¿¿£¬¿ÉÒÔÓÎµ½¶Ô°¶¡£} {
+    #action {æ¸”å¤«è¯´é“ï¼šç»™ä½ ä¸ªæ°´é ï¼Œå¯ä»¥æ¸¸åˆ°å¯¹å²¸ã€‚} {
         #delay {1} {
             swim river;
             pick sword;
         };
     };
 
-    #action {ÄãÔËÆğÄÚÁ¦½«ĞşÌú½£ÄÃÁËÆğÀ´} {
-        show_to_info ĞşÌú½£!;
+    #action {ä½ è¿èµ·å†…åŠ›å°†ç„é“å‰‘æ‹¿äº†èµ·æ¥} {
+        show_to_info ç„é“å‰‘!;
         xtj_back;
-        #showme ÄÃµ½ĞşÌú½£;
+        #showme æ‹¿åˆ°ç„é“å‰‘;
     };
 
-    #action {½£ÒÑ±»ÄÃ×ßÁË¡£} {
-        show_to_info ĞşÌú½£Ã»ÁË;
+    #action {å‰‘å·²è¢«æ‹¿èµ°äº†ã€‚} {
+        show_to_info ç„é“å‰‘æ²¡äº†;
         xtj_back;
-        #showme ĞşÌú½£Ã»ÁË;
+        #showme ç„é“å‰‘æ²¡äº†;
     };
     #alias {xtj_back} {
         swim river;
@@ -57,7 +57,7 @@
 
     #class get.qian.inner open;
     #alias {burden.check.done} {
-        #var qian_count @getburden{Ò»Ç§Á½ÒøÆ±};
+        #var qian_count @getburden{ä¸€åƒä¸¤é“¶ç¥¨};
         #if {${qian_count} > 5} {
             #math delta ${qian_count}-2;
             #class get.qian.inner open;
@@ -79,18 +79,18 @@
             tmp_get_qian;
         };
     };
-    #action {Äã´ÓÒøºÅÀïÈ¡³ö} {
+    #action {ä½ ä»é“¶å·é‡Œå–å‡º} {
         #class get.qian.inner kill;
         tmp_get_qian;
     };
-    #action {ÄãÄÃ³ö%*´æ½øÁËÒøºÅ¡£} {
+    #action {ä½ æ‹¿å‡º%*å­˜è¿›äº†é“¶å·ã€‚} {
         #class get.qian.inner kill;
         tmp_get_qian;
     };
     #class get.qian.inner close;
 
 
-    gt ÑïÖİÇ®×¯;
+    gt æ‰¬å·é’±åº„;
     on_there {
         burden.check {
             burden.check.done;
@@ -102,18 +102,18 @@
     #alias tmp_get_bao #cr;
     #alias tmp_get_bao %1;
     #class get.bao.inner open;
-    #action {ÄãÉíÉÏÃ»ÓĞbao} {
+    #action {ä½ èº«ä¸Šæ²¡æœ‰bao} {
         buy im_110;
     };
-    #action {Äã°ÑÉíÉÏµÄÒ»¸ö°ü¸¤Âôµô} {
+    #action {ä½ æŠŠèº«ä¸Šçš„ä¸€ä¸ªåŒ…è¢±å–æ‰} {
         #delay {1} {
             buy im_110;
         };
     };
-    #action {ÕÆ¹ñµÄËµ£º¿Í¹ÙÄúÕâ°ü¸¤ÀïÃæ»¹ÓĞ¶«Î÷ÄØ¡£} {
-        #showme ÄãÏòµ±ÆÌÂòÏÂÒ»¸ö°ü¸¤;
+    #action {æŒæŸœçš„è¯´ï¼šå®¢å®˜æ‚¨è¿™åŒ…è¢±é‡Œé¢è¿˜æœ‰ä¸œè¥¿å‘¢ã€‚} {
+        #showme ä½ å‘å½“é“ºä¹°ä¸‹ä¸€ä¸ªåŒ…è¢±;
     };
-    #action {ÄãÏòµ±ÆÌÂòÏÂÒ»¸ö°ü¸¤} {
+    #action {ä½ å‘å½“é“ºä¹°ä¸‹ä¸€ä¸ªåŒ…è¢±} {
         #class get.bao.inner kill;
         on_unbusy {
             tmp_get_bao;
@@ -131,23 +131,23 @@
     #alias tmp_get_fan #cr;
     #alias tmp_get_fan %1;
     #class get.fan.inner open;
-    #action {Ó´£¬±§Ç¸°¡£¬ÎÒÕâ¶ùÕıÃ¦×ÅÄØ¡­¡­ÄúÇëÉÔºò¡£} {
+    #action {å“Ÿï¼ŒæŠ±æ­‰å•Šï¼Œæˆ‘è¿™å„¿æ­£å¿™ç€å‘¢â€¦â€¦æ‚¨è¯·ç¨å€™ã€‚} {
         #delay {get_fan_delay} {
             buy tea 30;
         } {5};
     };
-    #action {Äã´Ó½­À´¸£ÄÇÀïÂòÏÂÁË%*ËÖÓÍ²è} {
+    #action {ä½ ä»æ±Ÿæ¥ç¦é‚£é‡Œä¹°ä¸‹äº†%*é…¥æ²¹èŒ¶} {
         #undelay {get_fan_delay};
         #class get.fan.inner kill;
         tmp_get_fan;
     };
     #alias {burden.check.done} {
-        #var cha_count @getburden{ËÖÓÍ²è};
+        #var cha_count @getburden{é…¥æ²¹èŒ¶};
         #if {${cha_count} > 50} {
-            #showme Äã´Ó½­À´¸£ÄÇÀïÂòÏÂÁËÁãÍëËÖÓÍ²è;
+            #showme ä½ ä»æ±Ÿæ¥ç¦é‚£é‡Œä¹°ä¸‹äº†é›¶ç¢—é…¥æ²¹èŒ¶;
         };
         #else {
-            gps.gt À´¸£ÔÓ»õ;
+            gps.gt æ¥ç¦æ‚è´§;
             on_there {
                 buy tea 30;
             };
@@ -167,21 +167,21 @@
     #var get_san_id -1;
     #var san_amount 0;
     #class get_san.inner open;
-    #action {^%d%sÇåĞÄÉ¢¡¼%*¡½} {
+    #action {^%d%sæ¸…å¿ƒæ•£ã€–%*ã€—} {
         #if {${san_amount} == 0 || %%3 > ${san_amount}} {
             #var san_amount %%3;
             #var get_san_id %%1;
         };
     };
-    #action {¹ñ×ÓÀï¿Õ¿ÕÈçÒ²£¬É¶Ò²Ã»ÓĞ£¡} {
+    #action {æŸœå­é‡Œç©ºç©ºå¦‚ä¹Ÿï¼Œå•¥ä¹Ÿæ²¡æœ‰ï¼} {
         #class get_san.inner kill;
-        notify ÇåĞÄÉ¢Ã»»õÁË;
+        notify æ¸…å¿ƒæ•£æ²¡è´§äº†;
     };
-    #action {^¹ñ×ÓÀïÄ¿Ç°´æ·ÅµÄÎïÆ·ÓĞ£º$} {
+    #action {^æŸœå­é‡Œç›®å‰å­˜æ”¾çš„ç‰©å“æœ‰ï¼š$} {
         #delay {get_san_delay} {
             #if {${get_san_id} == -1} {
                 #class get_san.inner kill;
-                notify ÇåĞÄÉ¢Ã»»õÁË;
+                notify æ¸…å¿ƒæ•£æ²¡è´§äº†;
             };
             #else {
                 getout ${get_san_id};
@@ -197,12 +197,12 @@
         } {1};
     };
 
-    #action {ÄãÃ»ÓĞÄÇÃ´¶àµÄÇåĞÄÉ¢} {
+    #action {ä½ æ²¡æœ‰é‚£ä¹ˆå¤šçš„æ¸…å¿ƒæ•£} {
         #class get_san.inner kill;
-        notify ÇåĞÄÉ¢Ã»»õÁË;
+        notify æ¸…å¿ƒæ•£æ²¡è´§äº†;
     };
 
-    #action {Äã¼ñÆğÒ»Ğ©ÇåĞÄÉ¢} {
+    #action {ä½ æ¡èµ·ä¸€äº›æ¸…å¿ƒæ•£} {
         #class get_san.inner kill;
         on_unbusy {
             tmp_get_san;
@@ -233,16 +233,16 @@
             };
         };
     };
-    #action {^%d%sÇåĞÄÉ¢¡¼%*¡½} {
+    #action {^%d%sæ¸…å¿ƒæ•£ã€–%*ã€—} {
         #if {${san_amount} == 0 || %%3 < ${san_amount}} {
             #var san_amount %%3;
             #var get_san_id %%1;
         };
     };
-    #action {¹ñ×ÓÀï¿Õ¿ÕÈçÒ²£¬É¶Ò²Ã»ÓĞ£¡} {
+    #action {æŸœå­é‡Œç©ºç©ºå¦‚ä¹Ÿï¼Œå•¥ä¹Ÿæ²¡æœ‰ï¼} {
         do_store_san;
     };
-    #action {^¹ñ×ÓÀïÄ¿Ç°´æ·ÅµÄÎïÆ·ÓĞ£º$} {
+    #action {^æŸœå­é‡Œç›®å‰å­˜æ”¾çš„ç‰©å“æœ‰ï¼š$} {
         #delay {get_san_delay} {
             #if {${get_san_id} == -1} {
                 do_store_san;
@@ -267,7 +267,7 @@
     #alias tmp_ask_san #cr;
     #alias tmp_ask_san %1;
     #class ask_san.inner open;
-    #action {´óÀÏ×Ó¸øÄãÒ»Ğ©ÇåĞÄÉ¢¡£} {
+    #action {å¤§è€å­ç»™ä½ ä¸€äº›æ¸…å¿ƒæ•£ã€‚} {
         tmp_ask_san;
         #class ask_san.inner kill;
     };
@@ -275,37 +275,37 @@
     on_there {
         tell gamester san;
     };
-    gt ĞÇËŞÅÉ´¢²ØÊÒ;
+    gt æ˜Ÿå®¿æ´¾å‚¨è—å®¤;
 };
 
 #alias get.gls get.guang_ling_san;
 #alias {get.guang_ling_san} {
     #class get.sibao.inner open;
-    #action {Äã´ÓÙşÀÏ°åÄÇÀïÂòÏÂÁËÒ»¸ö»¨µñ¾Æ´ü} {
+    #action {ä½ ä»å†¼è€æ¿é‚£é‡Œä¹°ä¸‹äº†ä¸€ä¸ªèŠ±é›•é…’è¢‹} {
         gt  2913;
         on_there {
             give qu jiudai;
         };
     };
-    #action {ÄãÒÆ¶¯ÁËÒ»À¦²ñ»ğ£¬Í»È»´Ó²ñ»ğÏÂÃæ¹ö³öÒ»¸öÈËÀ´¡£} {
-        gt ×íÏÉÂ¥¶şÂ¥;
+    #action {ä½ ç§»åŠ¨äº†ä¸€æ†æŸ´ç«ï¼Œçªç„¶ä»æŸ´ç«ä¸‹é¢æ»šå‡ºä¸€ä¸ªäººæ¥ã€‚} {
+        gt é†‰ä»™æ¥¼äºŒæ¥¼;
         on_there {
             buy jiudai;
         };
     };
-    #action {ÇúÑóËÀÁË¡£} {
+    #action {æ›²æ´‹æ­»äº†ã€‚} {
         gt 805;
         on_there {
-            ask ren about Áîºü³å;
+            ask ren about ä»¤ç‹å†²;
         };
     };
-    #action {ÈÎÓ¯Ó¯½»¸øÄãÒ»·âĞÅ¡£} {
-        gt Ë¼¹ıÑÂ;
+    #action {ä»»ç›ˆç›ˆäº¤ç»™ä½ ä¸€å°ä¿¡ã€‚} {
+        gt æ€è¿‡å´–;
         on_there {
             give letter to linghu;
         };
     };
-    #action {Äã¸øÁîºü³åÒ»·â¸øÁîºü³åµÄĞÅ} {
+    #action {ä½ ç»™ä»¤ç‹å†²ä¸€å°ç»™ä»¤ç‹å†²çš„ä¿¡} {
         gt xc;
         on_there {
             gt ny;
@@ -314,32 +314,32 @@
             };
         };
     };
-    #action {ÈÎÓ¯Ó¯Ò»ÏÂ×ÓÍ¶ÈëÁËÁîºü³åµÄ»³±§} {
-        ask ren about Çú³¤ÀÏ;
+    #action {ä»»ç›ˆç›ˆä¸€ä¸‹å­æŠ•å…¥äº†ä»¤ç‹å†²çš„æ€€æŠ±} {
+        ask ren about æ›²é•¿è€;
     };
 
-    #action {ÈÎÓ¯Ó¯ËµµÀ£º%*Õâ¾ßÑàÓï¹ÅÇÙ¾ÍËÍ¸øÄã×÷¸ö¼ÍÄî°É£¡} {
-        show_to_info ÄÃµ½...¹ÅÇÙ;
+    #action {ä»»ç›ˆç›ˆè¯´é“ï¼š%*è¿™å…·ç‡•è¯­å¤ç´å°±é€ç»™ä½ ä½œä¸ªçºªå¿µå§ï¼} {
+        show_to_info æ‹¿åˆ°...å¤ç´;
         #class get.sibao.inner kill;
     };
 
-    #action {ÈÎÓ¯Ó¯ËµµÀ£º%*Õâ±¾¡¶Ğ¦°Á½­ºş¡·¾ÍËÍ¸øÄã×÷¸ö¼ÍÄî°É£¡} {
-        show_to_info ÄÃµ½...¡¶Ğ¦°Á½­ºş¡·;
+    #action {ä»»ç›ˆç›ˆè¯´é“ï¼š%*è¿™æœ¬ã€Šç¬‘å‚²æ±Ÿæ¹–ã€‹å°±é€ç»™ä½ ä½œä¸ªçºªå¿µå§ï¼} {
+        show_to_info æ‹¿åˆ°...ã€Šç¬‘å‚²æ±Ÿæ¹–ã€‹;
         #class get.sibao.inner kill;
     };
 
-    #action {ÈÎÓ¯Ó¯¸øÄãÒ»±¾¡¶¹ãÁêÉ¢¡·} {
-        show_to_info ¹ãÁêÉ¢!;
+    #action {ä»»ç›ˆç›ˆç»™ä½ ä¸€æœ¬ã€Šå¹¿é™µæ•£ã€‹} {
+        show_to_info å¹¿é™µæ•£!;
         #class get.sibao.inner kill;
     };
 
-    #action {ÈÎÓ¯Ó¯ËµµÀ£º¡¸ÔõÃ´£¿ÄãÒ²ÖªµÀÇú³¤ÀÏµÄÊÂÂğ£¿¡¹} {
+    #action {ä»»ç›ˆç›ˆè¯´é“ï¼šã€Œæ€ä¹ˆï¼Ÿä½ ä¹ŸçŸ¥é“æ›²é•¿è€çš„äº‹å—ï¼Ÿã€} {
         give xiao ao jiang hu to ren;
     };
 
-    #action {Äã·­ÁË·­ÕâĞ©¿İÖ¦£¬½á¹ûÊ²Ã´Ò²Ã»·¢ÏÖ¡£} {
+    #action {ä½ ç¿»äº†ç¿»è¿™äº›æ¯æï¼Œç»“æœä»€ä¹ˆä¹Ÿæ²¡å‘ç°ã€‚} {
         #class get.sibao.inner kill;
-        show_to_info À´ÍíÁË;
+        show_to_info æ¥æ™šäº†;
     };
     #class get.sibao.inner close;
     gt 2913;
@@ -351,7 +351,7 @@
 #alias {get.shou_yin} {
     gt guiyun;
     on_there {
-        e;e;n;n;w;s;ask ren about ÊÖÓ¡;
+        e;e;n;n;w;s;ask ren about æ‰‹å°;
         #delay {1} {
             n;e;s;s;w;w;sd;sd;out;w;w;w;s;e;give shouyin to %1
         };
@@ -363,17 +363,17 @@
     #alias tmp_get_fenjiu %1;
     #class get.fenjiu.inner open;
 
-    #action {Äã´ÓÉòÇ§ÖÑÄÇÀïÂòÏÂÁË%*Ì³·Ú¾Æ} {
+    #action {ä½ ä»æ²ˆåƒç›…é‚£é‡Œä¹°ä¸‹äº†%*å›æ±¾é…’} {
         #class get.fenjiu.inner kill;
         tmp_get_fenjiu;
     };
     #alias {burden.check.done} {
-        #var fenjiu_count @getburden{·Ú¾Æ};
+        #var fenjiu_count @getburden{æ±¾é…’};
         #if {${fenjiu_count} > 5} {
-            #showme Äã´ÓÉòÇ§ÖÑÄÇÀïÂòÏÂÁËÁãÌ³·Ú¾Æ;
+            #showme ä½ ä»æ²ˆåƒç›…é‚£é‡Œä¹°ä¸‹äº†é›¶å›æ±¾é…’;
         };
         #else {
-            gps.gt ÑïÖİ¾Æµê;
+            gps.gt æ‰¬å·é…’åº—;
             on_there {
                 buy fenjiu 10;
             };
@@ -392,18 +392,18 @@
     #alias tmp_get_sheng_huo_ling %1;
 
     #class get.sheng_huo_ling.inner open;
-    #action {ÕÅÎŞ¼ÉËµµÀ£º¡¸ºÃ°É£¬Õâ¸öÊ¥»ğÁîÄãÄÃ»ØÈ¥ºÃºÃ±£¹Ü¡£¡¹} {
+    #action {å¼ æ— å¿Œè¯´é“ï¼šã€Œå¥½å§ï¼Œè¿™ä¸ªåœ£ç«ä»¤ä½ æ‹¿å›å»å¥½å¥½ä¿ç®¡ã€‚ã€} {
         tmp_get_sheng_huo_ling;
     };
     #class get.sheng_huo_ling.inner close;
-    gt Ã÷½Ì´óµî;
+    gt æ˜æ•™å¤§æ®¿;
     on_there {
-        ask zhang about Ê¥»ğÁî;
+        ask zhang about åœ£ç«ä»¤;
     };
 };
 
 #alias {get.42_1} {
-    gt ´ÈÄş¹¬;
+    gt æ…ˆå®å®«;
     on_there {
         on_truce {
             move bedding;
@@ -415,19 +415,19 @@
 };
 
 #alias {get.42_2} {
-    gt ÷¡°İÎÔ·¿;
+    gt é³Œæ‹œå§æˆ¿;
     #alias {tmp_do_search} {
         #ticker {search} {
             search;
         } {2};
     };
-    #action {ÄãÇ°²»¾Ã²ÅÀ´ÄÃ¹ı¶«Î÷£¬ÏÖÔÚÓÖÀ´ÄÃÌ«Ì°ĞÄÁË°É£¬ÖÁÉÙÒª¹ı¼¸Ìì} {
+    #action {ä½ å‰ä¸ä¹…æ‰æ¥æ‹¿è¿‡ä¸œè¥¿ï¼Œç°åœ¨åˆæ¥æ‹¿å¤ªè´ªå¿ƒäº†å§ï¼Œè‡³å°‘è¦è¿‡å‡ å¤©} {
         #unticker {search};
         on_unbusy {
             up;
         };
     };
-    #action {÷¡°İËÀÁË¡£} {
+    #action {é³Œæ‹œæ­»äº†ã€‚} {
         unbusy {move pi} {open door} down search;
     };
     on_there {
@@ -437,18 +437,18 @@
 
 #alias {get.42_3} {
     #alias {zlq_ask_wu} {
-        ask wu about ÉäÔÂ¹­;
+        ask wu about å°„æœˆå¼“;
         on_unbusy {
             give wu gong;
         };
     };
-    #action {ÎâÈı¹ğËµµÀ£º¡¸´óÏÀ¹ûÈ»³öÊÖ²»·²£¬ºÃ£¬ÇëÈëÎÒÃÜÊÒÒ»ÓÎ!¡¹} {
+    #action {å´ä¸‰æ¡‚è¯´é“ï¼šã€Œå¤§ä¾ æœç„¶å‡ºæ‰‹ä¸å‡¡ï¼Œå¥½ï¼Œè¯·å…¥æˆ‘å¯†å®¤ä¸€æ¸¸!ã€} {
         push desk;
         on_unbusy {
             d;light lampn;light lamps;light lampe;light lampw;d;break men;d;open cabinet;
         };
     };
-    #action {Äã´ÓÆ¼Ë®·êµÄÊ¬ÌåÉíÉÏËÑ³öÒ»ÕÅÉäÔÂ¹­} {
+    #action {ä½ ä»èæ°´é€¢çš„å°¸ä½“èº«ä¸Šæœå‡ºä¸€å¼ å°„æœˆå¼“} {
         gt 1987;
         on_there {
             zlq_ask_wu;
@@ -456,7 +456,7 @@
     };
     gt 1983;
     on_there {
-        ask ping about ÉäÔÂ¹­;
+        ask ping about å°„æœˆå¼“;
         kill ping;
         on_dead {
             corpse;

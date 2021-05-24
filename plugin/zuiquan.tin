@@ -21,11 +21,11 @@
         };
     } {60};
 
-    #action {你必须先prepare zui-quan才能使出醉拳的绝技。} {
+    #action {浣犲繀椤诲厛prepare zui-quan鎵嶈兘浣垮嚭閱夋嫵鐨勭粷鎶�銆倉 {
         bei zui-quan;
     };
 
-    #action {基本拳法没有 lingwu 这个武功招式。} {
+    #action {鍩烘湰鎷虫硶娌℃湁 lingwu 杩欎釜姝﹀姛鎷涘紡銆倉 {
         jifa cuff zui-quan;
     };
 

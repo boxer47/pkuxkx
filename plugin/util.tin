@@ -154,9 +154,9 @@
 #function {screenh} {#format result {%R}};
 #function {replace} {#var result %1;#replace result {%2} {%3}};
 #function {ctd} {
-    #var first_part Áã;
-    #var second_part Áã;
-    #regexp %1 {{.*}Íò{.*}} {#var first_part &1; #var second_part &2} {#var first_part nil};
+    #var first_part é›¶;
+    #var second_part é›¶;
+    #regexp %1 {{.*}ä¸‡{.*}} {#var first_part &1; #var second_part &2} {#var first_part nil};
     #if {"${first_part}" != "nil"} {
         #math result @ctd_inner{${first_part}} * 10000 + @ctd_inner{${second_part}};
     };
@@ -166,7 +166,7 @@
 };
 
 #function {ctd_inner} {
-    #math result {@replace{@replace{{0+@replace{@replace{@replace{@replace{@replace{@replace{@replace{@replace{@replace{@replace{@replace{@replace{@replace{@replace{%1;{Áã};{*0+}};{Ê®};{*10+}};{°Ù};{*100+}};{Ç§};{*1000+}};{Íò};{*10000+}};{Áù};{6}};{Ò»};{1}};{¶ş};{2}};{Èı};{3}};{ËÄ};{4}};{Îå};{5}};{Æß};{7}};{°Ë};{8}};{¾Å};{9}}+0};{++};{+}};{+*};{+}}}
+    #math result {@replace{@replace{{0+@replace{@replace{@replace{@replace{@replace{@replace{@replace{@replace{@replace{@replace{@replace{@replace{@replace{@replace{%1;{é›¶};{*0+}};{å};{*10+}};{ç™¾};{*100+}};{åƒ};{*1000+}};{ä¸‡};{*10000+}};{å…­};{6}};{ä¸€};{1}};{äºŒ};{2}};{ä¸‰};{3}};{å››};{4}};{äº”};{5}};{ä¸ƒ};{7}};{å…«};{8}};{ä¹};{9}}+0};{++};{+}};{+*};{+}}}
 };
 
 #list directions create {
@@ -178,7 +178,7 @@
     n;s;e;w;u;d;enter;out;ne;sw;nw;se;nd;su;nu;sd;eu;wd;ed;wu;
 };
 #list chinese_directions create {
-    ±±;ÄÏ;¶«;Î÷;ÉÏ;ÏÂ;Àï;Íâ;¶«±±;Î÷ÄÏ;Î÷±±;¶«ÄÏ;
+    åŒ—;å—;ä¸œ;è¥¿;ä¸Š;ä¸‹;é‡Œ;å¤–;ä¸œåŒ—;è¥¿å—;è¥¿åŒ—;ä¸œå—;
 };
 #list opposite_directions create {
     south;north;west;east;down;up;out;enter;southwest;northeast;southeast;northwest;southup;northdown;southdown;northup;westdown;eastup;westup;eastdown;

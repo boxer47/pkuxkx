@@ -1,13 +1,13 @@
 #class xiao open
 #alias {xiao.q} {
     ask xiao about job;
-    #action {Ïô°ëºÍËµµÀ£º%*} {
+    #action {è§åŠå’Œè¯´é“ï¼š%*} {
         show_to_quest %%0;
     };
 };
 
 #alias {xiao.bl} {
-    bl.start ĞÎ¼£¿ÉÒÉµÄ;
+    bl.start å½¢è¿¹å¯ç–‘çš„;
 };
 
 #alias {xiao.d} {

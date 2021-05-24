@@ -39,7 +39,7 @@
         #format {tmp_miss} {%-5s} {${${category}_miss}};
         #format {tmp_percent} {%s} {${stat_percent}%%};
         #if {${${category}_hit} != 0 || ${${category}_miss} != 0} {
-            #echo {${tmp_category}ÃüÖÐ:${tmp_hit}¶ªÊ§:${tmp_miss}ÃüÖÐÂÊ:${tmp_percent}};
+            #echo {${tmp_category}å‘½ä¸­:${tmp_hit}ä¸¢å¤±:${tmp_miss}å‘½ä¸­çŽ‡:${tmp_percent}};
         };
     };
     #buffer lock;

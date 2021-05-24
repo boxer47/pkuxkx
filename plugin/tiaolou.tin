@@ -3,11 +3,11 @@
     set brief 1;
     #class jump.inner open;
 
-    #action {»ù±¾Çá¹¦%*%d/%*} {
+    #action {åŸºæœ¬è½»åŠŸ%*%d/%*} {
         #var current_dodge %%2;
     };
 
-    #action {ÄãµÄ¼¼ÄÜµÈ¼¶×î¶àÄÜ´ïµ½%*¼¶} {
+    #action {ä½ çš„æŠ€èƒ½ç­‰çº§æœ€å¤šèƒ½è¾¾åˆ°%*çº§} {
         #var max_level @ctd{%%1};
     };
 
@@ -29,7 +29,7 @@
                 tl.stop;
             };
             #else {
-                show_to_quest ÌøÂ¥: ${current_dodge} -> ${max_level};
+                show_to_quest è·³æ¥¼: ${current_dodge} -> ${max_level};
             };
         };
     };
@@ -38,7 +38,7 @@
         check_dodge_level;
     } {60};
 
-    #action {ÄãÒÑÎÈÎÈµØÕ¾ÔÚµØÉÏ} {
+    #action {ä½ å·²ç¨³ç¨³åœ°ç«™åœ¨åœ°ä¸Š} {
         tl.watchdog.kick;
         on_unbusy {
             tl.jump;
@@ -47,18 +47,18 @@
 
     #class jump.inner close;
     on_there {
-        show_to_quest ÌøÂ¥¿ªÊ¼;
+        show_to_quest è·³æ¥¼å¼€å§‹;
         check_dodge_level;
         tl.jump;
     };
-    gt ÉÙÁÖÖÓÂ¥Ğ¡Ôº;
+    gt å°‘æ—é’Ÿæ¥¼å°é™¢;
 };
 
 #alias {tl.stop} {
     set brief 2;
     tl.watchdog.stop;
     #class jump.inner kill;
-    show_to_quest ÌøÂ¥½áÊø;
+    show_to_quest è·³æ¥¼ç»“æŸ;
 };
 
 #alias {tl.jump} {

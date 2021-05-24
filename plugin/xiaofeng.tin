@@ -33,16 +33,16 @@
 };
 
 #alias {xf.go} {
-    #if {"%1" == "É±"} {
+    #if {"%1" == "æ€"} {
         #var xf.type 1;
     };
-    #elseif {"%1" == "ÇÜ"} {
+    #elseif {"%1" == "æ“’"} {
         #var xf.type 2;
     };
-    #elseif {"%1" == "È°"} {
+    #elseif {"%1" == "åŠ"} {
         #var xf.type 3;
     };
-    #elseif {"%1" == "½µ"} {
+    #elseif {"%1" == "é™"} {
         #var xf.type 4;
     };
     #else {
@@ -59,7 +59,7 @@
         xf.bl;
     };
     on_not_there {
-        #var xf_fail_reason ·¿¼ä²»¿É´ï: ${xf.position};
+        #var xf_fail_reason æˆ¿é—´ä¸å¯è¾¾: ${xf.position};
         xf.f;
     };
 };
@@ -69,7 +69,7 @@
     bl.stop;
     #alias {xf_on_taopao} {
         #if {${xf.type} == 4} {
-            #var xf_fail_reason ´ò²»¹ı, ÅÜ;
+            #var xf_fail_reason æ‰“ä¸è¿‡, è·‘;
             xf.b;
         };
         #else {
@@ -81,20 +81,20 @@
     };
 
     #class xiaofeng.inner open;
-    #action {¶ÔÄã¶øÑÔÌ«ÖØÁË¡£} {
-        notify ÉíÉÏÎïÆ·Ì«¶à, ÎŞ·¨ get;
+    #action {å¯¹ä½ è€Œè¨€å¤ªé‡äº†ã€‚} {
+        notify èº«ä¸Šç‰©å“å¤ªå¤š, æ— æ³• get;
     };
 
-    #action {Á»³¤ÀÏ¿´µ½Äã´³½øÀ´£¬´óºÈÒ»Éù£ºÄã²»ÊÇØ¤°ïµÜ×Ó£¬¸øÎÒ¹ö³öÈ¥£¡} {
+    #action {ç²±é•¿è€çœ‹åˆ°ä½ é—¯è¿›æ¥ï¼Œå¤§å–ä¸€å£°ï¼šä½ ä¸æ˜¯ä¸å¸®å¼Ÿå­ï¼Œç»™æˆ‘æ»šå‡ºå»ï¼} {
         on_unbusy {
             xf.b;
         };
     };
 
-    #action {ÃÉÃæÉ±ÊÖ¸Ğµ½´ÎÕĞÓÃÒâ²»ÔÚÉËÈË£¬Ã¦Äı¾ÛÈ«Éí¹¦Á¦£¬È´×èµ²²»×¡ÄÚÁ¦·ÉĞ¹¶ø³ö£¡} {
+    #action {è’™é¢æ€æ‰‹æ„Ÿåˆ°æ¬¡æ‹›ç”¨æ„ä¸åœ¨ä¼¤äººï¼Œå¿™å‡èšå…¨èº«åŠŸåŠ›ï¼Œå´é˜»æŒ¡ä¸ä½å†…åŠ›é£æ³„è€Œå‡ºï¼} {
         #cr;
     } {2};
-    #action {%*È´×èµ²²»×¡ÄÚÁ¦·ÉĞ¹¶ø³ö£¡} {
+    #action {%*å´é˜»æŒ¡ä¸ä½å†…åŠ›é£æ³„è€Œå‡ºï¼} {
         xf.watchdog.kick;
         xf.teardown;
         follow none;
@@ -103,10 +103,10 @@
         };
     } {3};
 
-    #action {¿´À´¸ÃÕÒ»ú»áÌÓÅÜÁË...} {
+    #action {çœ‹æ¥è¯¥æ‰¾æœºä¼šé€ƒè·‘äº†...} {
         xf.watchdog.kick;
         #if {${xf.type} == 4} {
-            #var xf_fail_reason ´ò²»¹ı, ÅÜ;
+            #var xf_fail_reason æ‰“ä¸è¿‡, è·‘;
             xf.b;
         };
         #else {
@@ -118,17 +118,17 @@
         };
     };
 
-    #action {ÑÛ¼û²»»îÁË¡£} {
+    #action {çœ¼è§ä¸æ´»äº†ã€‚} {
         xf.watchdog.kick;
         #if {${xf.type} != 1} {
             #delay {xf_delay} {
-                #var xf_fail_reason Ê§ÊÖ´òËÀ: ${xf.type};
+                #var xf_fail_reason å¤±æ‰‹æ‰“æ­»: ${xf.type};
                 xf.b;
             } {3};
         };
     };
 
-    #action {Äã×ßÉÏÇ°È¥£¬ÊÔÍ¼È°·şÃÉÃæÉ±ÊÖ£¬µ«ÃÉÃæÉ±ÊÖ²»ÄÍ·³µÄ×ªÁË¸öÉí£¬²»Ô¸ÌıÄãËµÏÂÈ¥¡£} {
+    #action {ä½ èµ°ä¸Šå‰å»ï¼Œè¯•å›¾åŠæœè’™é¢æ€æ‰‹ï¼Œä½†è’™é¢æ€æ‰‹ä¸è€çƒ¦çš„è½¬äº†ä¸ªèº«ï¼Œä¸æ„¿å¬ä½ è¯´ä¸‹å»ã€‚} {
         xf.watchdog.kick;
         #delay {xf_delay} {
             #if {${xf.type} == 3} {
@@ -138,17 +138,17 @@
         } {3};
     };
 
-    #action {ÎÒ²»·ş£¬µÈÎÒĞİÏ¢Ò»ÏÂ£¬ÔÛÃÇÔÙ´ò¹ı£¡} {
+    #action {æˆ‘ä¸æœï¼Œç­‰æˆ‘ä¼‘æ¯ä¸€ä¸‹ï¼Œå’±ä»¬å†æ‰“è¿‡ï¼} {
         xf.watchdog.kick;
         #delay {xf_delay} {
             #if {${xf.type} == 4} {
-                #var xf_fail_reason Ã»ÓĞÒ»´ÎÕ½Ê¤;
+                #var xf_fail_reason æ²¡æœ‰ä¸€æ¬¡æˆ˜èƒœ;
                 xf.b;
             };
         } {3};
     };
 
-    #action {ÃÉÃæÉ±ÊÖËµµÀ£º¡¸´Ë´¦±ÈÎä¶àÓĞ²»±ã£¬ÄãÇÒËæÎÒÀ´£¡¡¹} {
+    #action {è’™é¢æ€æ‰‹è¯´é“ï¼šã€Œæ­¤å¤„æ¯”æ­¦å¤šæœ‰ä¸ä¾¿ï¼Œä½ ä¸”éšæˆ‘æ¥ï¼ã€} {
         xf.watchdog.kick;
         #delay {xf_delay} {
             xf.setup;
@@ -156,11 +156,11 @@
         } {3};
     };
 
-    #action {ÃÉÃæÉ±ÊÖ%*Âä»Ä¶øÌÓÁË¡£} {
+    #action {è’™é¢æ€æ‰‹%*è½è’è€Œé€ƒäº†ã€‚} {
         xf.watchdog.kick;
         #delay {xf_delay} {
             #if {${xf.type} == 4} {
-                #var xf_fail_reason Ã»ÓĞÒ»´ÎÕ½Ê¤, É±ÊÖÅÜÁË;
+                #var xf_fail_reason æ²¡æœ‰ä¸€æ¬¡æˆ˜èƒœ, æ€æ‰‹è·‘äº†;
                 xf.b;
             };
             #else {
@@ -170,11 +170,11 @@
         } {3};
     };
 
-    #action {ÄãÒ»Õ£ÑÛ¼ä£¬ÃÉÃæÉ±ÊÖÒÑ¾­²»ÖªÈ¥Ïò¡£} {
+    #action {ä½ ä¸€çœ¨çœ¼é—´ï¼Œè’™é¢æ€æ‰‹å·²ç»ä¸çŸ¥å»å‘ã€‚} {
         xf.watchdog.kick;
         #delay {xf_delay} {
             #if {${xf.type} == 4} {
-                #var xf_fail_reason Ã»ÓĞÒ»´ÎÕ½Ê¤, É±ÊÖÅÜÁË;
+                #var xf_fail_reason æ²¡æœ‰ä¸€æ¬¡æˆ˜èƒœ, æ€æ‰‹è·‘äº†;
                 xf.b;
             };
             #else {
@@ -184,8 +184,8 @@
         } {3};
     };
 
-    #action {%*Î÷ÏÄÒ»Æ·ÌÃ %*(%* %*)} {
-        #if {"%%2" == "ÃÉÃæÉ±ÊÖ"} {
+    #action {%*è¥¿å¤ä¸€å“å ‚ %*(%* %*)} {
+        #if {"%%2" == "è’™é¢æ€æ‰‹"} {
             #return;
         };
         #var xf.real_name %%2;
@@ -193,18 +193,18 @@
         #var xf.real_first_name @lower{%%3};
 
         #if {${xf.type} == 2} {
-            show_to_quest Ïô·å: ÇÜ»Ø: ${xf.real_name};
+            show_to_quest è§å³°: æ“’å›: ${xf.real_name};
 
             on_unbusy {
                 get ${xf.real_first_name};
             };
         };
         #if {${xf.type} == 4} {
-            show_to_quest Ïô·å: Õ½Ê¤: ${xf.real_name};
+            show_to_quest è§å³°: æˆ˜èƒœ: ${xf.real_name};
         };
     } {3};
 
-    #action {{Äã|ÃÉÃæÉ±ÊÖ}ÉíĞĞÏòºóÒ»Ô¾£¬Ìø³öÕ½È¦²»´òÁË¡£} {
+    #action {{ä½ |è’™é¢æ€æ‰‹}èº«è¡Œå‘åä¸€è·ƒï¼Œè·³å‡ºæˆ˜åœˆä¸æ‰“äº†ã€‚} {
         #if {"@getenv{xf_state}" != "STARTED"} {
             #return;
         };
@@ -221,7 +221,7 @@
             };
         };
     };
-    #action {½ĞÀÏ×ÓÈÏÊä£¿ºÙºÙ£¬Äã±ğ×öÃÎÁË£¡} {
+    #action {å«è€å­è®¤è¾“ï¼Ÿå˜¿å˜¿ï¼Œä½ åˆ«åšæ¢¦äº†ï¼} {
         #if {${xf.type} == 2} {
             #delay {xf_delay} {
                 hit shashou;
@@ -229,13 +229,13 @@
         };
     };
 
-    #action {^´Ó%*ÉíÉÏµôÁË³öÀ´Ò»¿Å%*{¡ò|¡î|¡ï}%*} {
+    #action {^ä»%*èº«ä¸Šæ‰äº†å‡ºæ¥ä¸€é¢—%*{â—|â˜†|â˜…}%*} {
         pack gem;
         gem.record %%2 %%3 %%4;
     };
 
-    #action {%*ÏòÏô·å´òÌıÓĞ¹Ø¡º%*¡»µÄÏûÏ¢} {
-        #if {"%%1" == "Äã"} {
+    #action {%*å‘è§å³°æ‰“å¬æœ‰å…³ã€%*ã€çš„æ¶ˆæ¯} {
+        #if {"%%1" == "ä½ "} {
             #var xf.requested 1;
             #var quest xf;
         };
@@ -244,18 +244,18 @@
         };
     };
 
-    #action {´«ÎÅÎ÷ÏÄÒ»Æ·ÌÃÅÉ³öÁËÈô¸ÉÃÉÃæÉ±ÊÖ£¬×î½ü³öÏÖÔÚ%*¸½½üµÄ%*¡£} {
+    #action {ä¼ é—»è¥¿å¤ä¸€å“å ‚æ´¾å‡ºäº†è‹¥å¹²è’™é¢æ€æ‰‹ï¼Œæœ€è¿‘å‡ºç°åœ¨%*é™„è¿‘çš„%*ã€‚} {
         #if {${xf.requested} == 1} {
             #var xf.target %%1:%%2;
             @setenv{xf_state;STARTED};
             #var xf.position %%1%%2;
             xf.watchdog.kick;
-            #if {"${xy_info}" == "on" && "%%1" == "ÏåÑô"} {
-                #var xf_fail_reason ±£ÎÀÆÚ¼ä: ${xf.target};
+            #if {"${xy_info}" == "on" && "%%1" == "è¥„é˜³"} {
+                #var xf_fail_reason ä¿å«æœŸé—´: ${xf.target};
                 xf.f;
             };
-            #elseif {"%%1" == "ÔÀÍõÄ¹"} {
-                #var xf_fail_reason ÔÀÍõÄ¹;
+            #elseif {"%%1" == "å²³ç‹å¢“"} {
+                #var xf_fail_reason å²³ç‹å¢“;
                 xf.f;
             };
             #else {
@@ -264,50 +264,50 @@
                     xf.bl;
                 };
                 on_not_there {
-                    #var xf_fail_reason ·¿¼ä²»¿É´ï: ${xf.position};
+                    #var xf_fail_reason æˆ¿é—´ä¸å¯è¾¾: ${xf.position};
                     xf.f;
                 };
             };
         };
     };
 
-    #action {ÄãÈ¥½«Ëû³ıµô£¬È¡ÆäÊ×¼¶»ØÀ´¡£} {
+    #action {ä½ å»å°†ä»–é™¤æ‰ï¼Œå–å…¶é¦–çº§å›æ¥ã€‚} {
         #if {${xf.requested} == 1} {
             #var xf.type 1;
             #math xf.job.1 ${xf.job.1}+1;
             @setenv{xf_type;1};
-            show_to_quest Ïô·å: É±ËÀ: ${xf.target};
+            show_to_quest è§å³°: æ€æ­»: ${xf.target};
         };
     };
 
-    #action {ÄãÈ¥½«ËûÇÜ»ØÕâÀï½»¸øÎÒ} {
+    #action {ä½ å»å°†ä»–æ“’å›è¿™é‡Œäº¤ç»™æˆ‘} {
         #if {${xf.requested} == 1} {
             #var xf.type 2;
             #math xf.job.2 ${xf.job.2}+1;
             @setenv{xf_type;2};
-            show_to_quest Ïô·å: ÇÜ»Ø: ${xf.target};
+            show_to_quest è§å³°: æ“’å›: ${xf.target};
         };
     };
 
-    #action {ÉĞ¿É½Ì»¯} {
+    #action {å°šå¯æ•™åŒ–} {
         #if {${xf.requested} == 1} {
             #var xf.type 3;
             #math xf.job.3 ${xf.job.3}+1;
             @setenv{xf_type;3};
-            show_to_quest Ïô·å: È°: ${xf.target};
+            show_to_quest è§å³°: åŠ: ${xf.target};
         };
     };
 
-    #action {ÈÃËûÈÏÊä¾ÍºÃ} {
+    #action {è®©ä»–è®¤è¾“å°±å¥½} {
         #if {${xf.requested} == 1} {
             #var xf.type 4;
             #math xf.job.4 ${xf.job.4}+1;
             @setenv{xf_type;4};
-            show_to_quest Ïô·å: Õ½Ê¤: ${xf.target};
+            show_to_quest è§å³°: æˆ˜èƒœ: ${xf.target};
         };
     };
 
-    #action {¡ºÃÉÃæÉ±ÊÖ(%*ÆøÑª:%*\%/%*\%)¡»} {
+    #action {ã€è’™é¢æ€æ‰‹(%*æ°”è¡€:%*\%/%*\%)ã€} {
         #undelay {xf_fight_delay};
         xf.watchdog.kick;
         #if {%%3 < 50 || %%4 < 50} {
@@ -323,12 +323,12 @@
         };
         #elseif {${xf.type} == 4} {
             #if {%%2 < 30 || %%3 < 30} {
-                ask shashou about ÈÏÊä;
+                ask shashou about è®¤è¾“;
             };
         };
     } {1};
 
-    #action {¿´À´É±ÊÖÓĞµãÅÂÄãÁË} {
+    #action {çœ‹æ¥æ€æ‰‹æœ‰ç‚¹æ€•ä½ äº†} {
         on_unbusy {
             on_halt {
                 quan;
@@ -336,43 +336,43 @@
         };
     };
 
-    #action {Äã½«%*·öÁËÆğÀ´±³ÔÚ±³ÉÏ} {
+    #action {ä½ å°†%*æ‰¶äº†èµ·æ¥èƒŒåœ¨èƒŒä¸Š} {
         @setenv{xf_state;ENDED};
-        #showme ÊÕ¹¤;
-        show_to_quest Ïô·å: ÒÑÇÜ»ñ ${xf.real_name};
+        #showme æ”¶å·¥;
+        show_to_quest è§å³°: å·²æ“’è· ${xf.real_name};
         on_truce {
             xf.b;
         };
     };
 
-    #action {Äã¼ñÆğÒ»¿Å%*µÄÊ×¼¶} {
+    #action {ä½ æ¡èµ·ä¸€é¢—%*çš„é¦–çº§} {
         @setenv{xf_state;ENDED};
-        #showme ÊÕ¹¤;
-        show_to_quest Ïô·å: ÒÑÉ±ËÀ;
+        #showme æ”¶å·¥;
+        show_to_quest è§å³°: å·²æ€æ­»;
         #delay {xf_delay} {
             xf.b;
         } {3};
     };
 
-    #action {Ó²ÉúÉúµÄ½«%*µÄÍ·Â­´ÓÊ¬ÌåÉÏ³¶ÁËÏÂÀ´£¬ÌáÔÚÊÖÖĞ£¡} {
+    #action {ç¡¬ç”Ÿç”Ÿçš„å°†%*çš„å¤´é¢…ä»å°¸ä½“ä¸Šæ‰¯äº†ä¸‹æ¥ï¼Œæåœ¨æ‰‹ä¸­ï¼} {
         @setenv{xf_state;ENDED};
-        #showme ÊÕ¹¤;
-        show_to_quest Ïô·å: ÒÑÉ±ËÀ;
+        #showme æ”¶å·¥;
+        show_to_quest è§å³°: å·²æ€æ­»;
         #delay {xf_delay} {
             xf.b;
         } {3};
     };
 
-    #action {½«ÑªÁÜÁÜµÄÊ×¼¶ÌáÔÚÊÖÖĞ} {
+    #action {å°†è¡€æ·‹æ·‹çš„é¦–çº§æåœ¨æ‰‹ä¸­} {
         @setenv{xf_state;ENDED};
-        #showme ÊÕ¹¤;
-        show_to_quest Ïô·å: ÒÑÉ±ËÀ;
+        #showme æ”¶å·¥;
+        show_to_quest è§å³°: å·²æ€æ­»;
         #delay {xf_delay} {
             xf.b;
         } {3};
     };
 
-    #action {ÑªÁÜÁÜµÄÊ×¼¶¹¾ààààµÄ¹öÂäÔÚµØ} {
+    #action {è¡€æ·‹æ·‹çš„é¦–çº§å’•å™œå™œçš„æ»šè½åœ¨åœ°} {
         on_unbusy {
             get shouji;
         };
@@ -381,7 +381,7 @@
         };
     };
 
-    #action {ÏÔÊÇÃÉÃæÉ±ÊÖĞÕÃû} {
+    #action {æ˜¾æ˜¯è’™é¢æ€æ‰‹å§“å} {
         @setenv{xf_state;BEATED};
         #class xf.fight.inner kill;
         #undelay {xf_delay};
@@ -400,23 +400,23 @@
         };
     } {1};
 
-    #action {ÃÉÃæÉ±ÊÖÉîÉîµØÌ¾ÁË¿ÚÆø} {
-        #unaction {¡ºÃÉÃæÉ±ÊÖ(%*ÆøÑª:%*\%/%*\%)¡»};
+    #action {è’™é¢æ€æ‰‹æ·±æ·±åœ°å¹äº†å£æ°”} {
+        #unaction {ã€è’™é¢æ€æ‰‹(%*æ°”è¡€:%*\%/%*\%)ã€};
         #undelay {xf_delay};
         #if {${xf.type} == 3} {
             @setenv{xf_state;ENDED};
-            #showme ÊÕ¹¤;
+            #showme æ”¶å·¥;
             raw;
-            show_to_quest Ïô·å: ÒÑ¾­È°·ş;
+            show_to_quest è§å³°: å·²ç»åŠæœ;
             on_truce {
                 xf.b;
             };
         };
         #elseif {${xf.type} == 4} {
             @setenv{xf_state;ENDED};
-            #showme ÊÕ¹¤;
+            #showme æ”¶å·¥;
             raw;
-            show_to_quest Ïô·å: ÒÑ¾­Õ½Ê¤;
+            show_to_quest è§å³°: å·²ç»æˆ˜èƒœ;
             on_truce {
                 xf.b;
             };
@@ -462,14 +462,14 @@
             xf.bl;
         } {10};
         #class xf.fight.inner open;
-        #action {ÃÉÃæÉ±ÊÖËµµÀ£º¡¸¾ÍÄãÒ²Åä¸úÎÒÌÖ½Ì¹¦·ò£¿£¡¡¹} {
+        #action {è’™é¢æ€æ‰‹è¯´é“ï¼šã€Œå°±ä½ ä¹Ÿé…è·Ÿæˆ‘è®¨æ•™åŠŸå¤«ï¼Ÿï¼ã€} {
             #undelay {xf_delay};
             #delay {xf.bl} {
                 bl.next;
             } {1};
         };
 
-        #action {Òª´ò±ã´ò} {
+        #action {è¦æ‰“ä¾¿æ‰“} {
             #undelay {xf_delay};
             xf.watchdog.kick;
             #if {${xf.type} != -1} {
@@ -478,24 +478,24 @@
             };
         };
 
-        #action {¿´ÆğÀ´ÃÉÃæÉ±ÊÖ²¢²»Ïë¸úÄã½ÏÁ¿¡£} {
+        #action {çœ‹èµ·æ¥è’™é¢æ€æ‰‹å¹¶ä¸æƒ³è·Ÿä½ è¾ƒé‡ã€‚} {
             xf.watchdog.kick;
             #delay {xf_delay} {
                 #if {${xf.type} == 4} {
-                    #var xf_fail_reason Ã»ÓĞÒ»´ÎÕ½Ê¤;
+                    #var xf_fail_reason æ²¡æœ‰ä¸€æ¬¡æˆ˜èƒœ;
                     xf.b;
                 };
             } {3};
         };
 
-        #action {ÕâÀïÃ»ÓĞ shashou¡£} {
+        #action {è¿™é‡Œæ²¡æœ‰ shashouã€‚} {
             #class xf.fight.inner kill;
             #delay {xf_delay} {
                 xf.bl;
             } {1};
         };
 
-        #action {ÕâÀïÃ»ÓĞÕâ¸öÈË¡£} {
+        #action {è¿™é‡Œæ²¡æœ‰è¿™ä¸ªäººã€‚} {
             #class xf.fight.inner kill;
             #delay {xf_delay} {
                 xf.bl;
@@ -533,7 +533,7 @@
     } {1};
 
     #alias {on_special_state} {
-        notify ÌØÊâ×´Ì¬, Î£ÏÕ!;
+        notify ç‰¹æ®ŠçŠ¶æ€, å±é™©!;
         xf.teardown;
 
         #if {${xf.type} == 1 || {xf.type} == 2} {
@@ -562,20 +562,20 @@
     } {1};
 
     #var is_dead 0;
-    #action {${char_name}±»ÃÉÃæÉ±ÊÖÉ±ËÀÁË¡£} {
+    #action {${char_name}è¢«è’™é¢æ€æ‰‹æ€æ­»äº†ã€‚} {
         xf.watchdog.stop;
         #var is_dead 1;
     };
 
-    #action {ÂıÂıµØÄãÖÕÓÚÓÖÓĞÁËÖª¾õ....} {
+    #action {æ…¢æ…¢åœ°ä½ ç»ˆäºåˆæœ‰äº†çŸ¥è§‰....} {
         #if {${is_dead} == 1} {
-            notify ¹ÒÁË;
+            notify æŒ‚äº†;
             quit_and_restart;
         };
         #else {
             #delay {xf_delay} {
                 #if {${xf.type} == 4} {
-                    #var xf_fail_reason ÔÎÁË;
+                    #var xf_fail_reason æ™•äº†;
                     xf.b;
                 };
                 #else {
@@ -588,20 +588,20 @@
         };
     };
 
-    #action {ÄãµÄ%*½ø²½ÁË£¡} {
+    #action {ä½ çš„%*è¿›æ­¥äº†ï¼} {
         #cr;
     };
 
-    #action {^%s%Sµã¾­Ñé£»} {
-        show_to_info Ïô·åÈÎÎñ(${xf.type}) Íê³É, @ctd{%%2} µã¾­Ñé;
+    #action {^%s%Sç‚¹ç»éªŒï¼›} {
+        show_to_info è§å³°ä»»åŠ¡(${xf.type}) å®Œæˆ, @ctd{%%2} ç‚¹ç»éªŒ;
     } {1};
 
-    #action {Ïô·åÀäÀäµÄ¶¢×ÅÄãµÀ£º¡¸ÄãÒÔÎªÈç´ËÅªĞé×÷¼ÙÄÜÂ÷µÃ¹ıÎÒÃ´£¿¡¹} {
+    #action {è§å³°å†·å†·çš„ç›¯ç€ä½ é“ï¼šã€Œä½ ä»¥ä¸ºå¦‚æ­¤å¼„è™šä½œå‡èƒ½ç’å¾—è¿‡æˆ‘ä¹ˆï¼Ÿã€} {
         xf.f;
     };
 
 
-    #action {¹ı%*ÔÙÀ´ÎÊ°É¡£} {
+    #action {è¿‡%*å†æ¥é—®å§ã€‚} {
         #if {${xf.requested} == 1} {
             #delay {xf_auto_delay} {
                 xf.q;
@@ -609,7 +609,7 @@
         };
     };
 
-    #action {^Ïô·åËµµÀ£º¡¸ÄãÏÈÃ¦ÍêÄãµÄÊÂÇé°É¡£¡¹} {
+    #action {^è§å³°è¯´é“ï¼šã€Œä½ å…ˆå¿™å®Œä½ çš„äº‹æƒ…å§ã€‚ã€} {
         #if {${xf.requested} == 1} {
             #delay {xf_auto_delay} {
                 xf.q;
@@ -617,7 +617,7 @@
         };
     } {1};
 
-    #action {^Ïô·å(xiao feng)¸æËßÄã£ºÄãÏÈÈ¥ÔÚ½­ºşÖĞÀúÁ·Ò»·¬°É¡£} {
+    #action {^è§å³°(xiao feng)å‘Šè¯‰ä½ ï¼šä½ å…ˆå»åœ¨æ±Ÿæ¹–ä¸­å†ç»ƒä¸€ç•ªå§ã€‚} {
         #if {${xf.requested} == 1} {
             #delay {xf_auto_delay} {
                 xf.q;
@@ -625,7 +625,7 @@
         };
     } {1};
 
-    #action {^Ïô·å(xiao feng)¸æËßÄã£ºÄãÏÈÏÂÈ¥ĞİÏ¢ĞİÏ¢°É¡£} {
+    #action {^è§å³°(xiao feng)å‘Šè¯‰ä½ ï¼šä½ å…ˆä¸‹å»ä¼‘æ¯ä¼‘æ¯å§ã€‚} {
         #if {${xf.requested} == 1} {
             #delay {xf_auto_delay} {
                 xf.q;
@@ -633,25 +633,25 @@
         };
     } {1};
 
-    #action {^Ïô·åËµµÀ£º%*¸Õ¸ÕÒÑ¾­ÓĞÈËÇ°È¥ÁË} {
+    #action {^è§å³°è¯´é“ï¼š%*åˆšåˆšå·²ç»æœ‰äººå‰å»äº†} {
         #if {${xf.requested} == 1} {
             #delay {xf_auto_delay} {
                 xf.q;
             } {3};
         };
     };
-    #action {^ÓÉÓÚ·ÅÆúÈÎÎñ} {
+    #action {^ç”±äºæ”¾å¼ƒä»»åŠ¡} {
         @setenv{xf_state;nil};
-        show_to_info Ïô·åÈÎÎñ(${xf.type})Ê§°Ü: ${xf_fail_reason};
-        show_to_quest Ïô·å: Ê§°Ü;
+        show_to_info è§å³°ä»»åŠ¡(${xf.type})å¤±è´¥: ${xf_fail_reason};
+        show_to_quest è§å³°: å¤±è´¥;
         xf.restart;
     };
-    #action {^ÄãÒÑ¾­Íê³ÉÁË} {
+    #action {^ä½ å·²ç»å®Œæˆäº†} {
         @setenv{xf_state;nil};
-        show_to_quest Ïô·å: Íê³É;
+        show_to_quest è§å³°: å®Œæˆ;
         xf.restart;
     };
-    #action {^Ïô·åËµµÀ£º¡¸ÄãÓÖÃ»ÓĞÈÎÎñ£¬ÈçºÎÇáÑÔ·ÅÆú£¡¡¹} {
+    #action {^è§å³°è¯´é“ï¼šã€Œä½ åˆæ²¡æœ‰ä»»åŠ¡ï¼Œå¦‚ä½•è½»è¨€æ”¾å¼ƒï¼ã€} {
         #if {${xf.requested} == 1} {
             @setenv{xf_state;nil};
             xf.restart;
@@ -675,7 +675,7 @@
     gt xf;
     on_there {
         xf.d;
-        show_to_quest Ïô·å: ×¼±¸;
+        show_to_quest è§å³°: å‡†å¤‡;
         on_health {
             xf.q;
         };
@@ -687,10 +687,10 @@
     log.stop;
     unset_last_quest;
     health.cancel;
-    #unaction {¸£Ã×Íê³É};
+    #unaction {ç¦ç±³å®Œæˆ};
     #undelay {xf_auto_delay};
     #class xf.auto.inner kill;
-    show_to_quest Ïô·å: ½áÊø;
+    show_to_quest è§å³°: ç»“æŸ;
     @clearenv{xf_type};
     @clearenv{xf_state};
 };
@@ -715,10 +715,10 @@
             give ${xf.real_first_name} to xiao;
         };
         #if {${xf.type} == 3} {
-            ask xiao feng about Íê³É;
+            ask xiao feng about å®Œæˆ;
         };
         #if {${xf.type} == 4} {
-            ask xiao feng about Íê³É;
+            ask xiao feng about å®Œæˆ;
         };
     };
     xf.f;
@@ -730,20 +730,20 @@
 
 #alias {xf.bl} {
     #class xf.bl.inner open;
-    #action {GPS: ±éÀúÍê³É} {
+    #action {GPS: éå†å®Œæˆ} {
         #class xf.bl.inner kill;
         #delay {xf_delay} {
-            #var xf_fail_reason Ã»ÓĞÕÒµ½É±ÊÖ @ ${xf.position};
+            #var xf_fail_reason æ²¡æœ‰æ‰¾åˆ°æ€æ‰‹ @ ${xf.position};
             #nop xf.b;
             notify ${xf_fail_reason};
         } {3};
     };
 
-    #action {ÕÒµ½Ä¿±ê} {
+    #action {æ‰¾åˆ°ç›®æ ‡} {
         xf.check;
     };
 
-    #action {%*Î÷ÏÄÒ»Æ·ÌÃ ÃÉÃæÉ±ÊÖ(Mengmian shashou)} {
+    #action {%*è¥¿å¤ä¸€å“å ‚ è’™é¢æ€æ‰‹(Mengmian shashou)} {
         #if {${xf.type} != -1} {
             xf.check;
         };

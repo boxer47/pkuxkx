@@ -142,13 +142,13 @@
     #alias tmp_reload #cr;
     #alias tmp_reload %0;
     #class reload_inner open;
-    #action {ÄãÔÚÎÒÕâÀï²¢Ã»ÓĞ±£´æÈÎºÎ×°±¸} {
+    #action {ä½ åœ¨æˆ‘è¿™é‡Œå¹¶æ²¡æœ‰ä¿å­˜ä»»ä½•è£…å¤‡} {
         #class reload_inner kill;
         #showme reloaded;
         tmp_reload;
     };
 
-    #action {ºÃÁË£¬Äã×ß°É} {
+    #action {å¥½äº†ï¼Œä½ èµ°å§} {
         #class reload_inner kill;
         remove all;
         #delay {3} {
@@ -163,7 +163,7 @@
         };
     };
     #class reload_inner close;
-    #nop gt ÃûÈËÌÃ;
+    #nop gt åäººå ‚;
     #send {reload};
 };
 

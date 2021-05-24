@@ -4,13 +4,13 @@
     #ticker {watch} {
         watch canju;
     } {3};
-    #action {你精力不够} {
+    #action {浣犵簿鍔涗笉澶焳 {
         yun jing;
     };
-    #action {内力不够} {
+    #action {鍐呭姏涓嶅} {
         dazuo 100;
     };
-    #action {发现残局对你太浅了} {
+    #action {鍙戠幇娈嬪眬瀵逛綘澶祬浜唥 {
         canju.stop;
     };
     #class canju.inner close;

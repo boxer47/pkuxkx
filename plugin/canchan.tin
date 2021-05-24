@@ -10,17 +10,17 @@
         canchan;
     } {180};
 
-    #action {你受到自身经验和悟性的影响，无法继续参禅了。} {
+    #action {浣犲彈鍒拌嚜韬粡楠屽拰鎮熸�х殑褰卞搷锛屾棤娉曠户缁弬绂呬簡銆倉 {
         cc.stop;
         #showme MISSION_COMPLETE: cc;
     };
 
-    #action {你的「禅宗心法」进步了！} {
+    #action {浣犵殑銆岀瀹楀績娉曘�嶈繘姝ヤ簡锛亇 {
         #math level_up ${level_up}+1;
-        show_to_info 禅宗心法 +${level_up};
+        show_to_info 绂呭畻蹇冩硶 +${level_up};
     };
 
-    #action {你修行完毕} {
+    #action {浣犱慨琛屽畬姣晑 {
         #delay {wd.done} {
             chifan;
             canchan;
@@ -28,9 +28,9 @@
     };
     #class canchan.inner close;
 
-    gt 禅院;
+    gt 绂呴櫌;
     on_there {
-        show_to_quest 参禅;
+        show_to_quest 鍙傜;
         canchan;
     };
 };
@@ -39,7 +39,7 @@
     #class canchan.inner kill;
     on_unbusy {
         unset_last_quest;
-        show_to_quest 参禅结束;
+        show_to_quest 鍙傜缁撴潫;
     };
 };
 

@@ -5,8 +5,8 @@
     #var mz_auto 1;
     #class mz.inner open;
     load menzhong_data;
-    #action {ÖÒ³Ï¶ÈÌá¸ßÁË%*µã¡£} {
-        show_to_info ÃÅÖÒ: @ctd{%%1} µã;
+    #action {å¿ è¯šåº¦æé«˜äº†%*ç‚¹ã€‚} {
+        show_to_info é—¨å¿ : @ctd{%%1} ç‚¹;
         #delay {3} {
             #if {${mz_auto} == 1} {
                 mz.q;
@@ -14,14 +14,14 @@
         };
     } {1};
 
-    #action {ËµµÀ%*Äã»¹Ã»} {
+    #action {è¯´é“%*ä½ è¿˜æ²¡} {
         mz.f;
         #if {${mz_auto} == 1} {
             mz.q;
         };
     } {1};
 
-    #action {ËµµÀ£º%*} {
+    #action {è¯´é“ï¼š%*} {
         #showme menzhong:%%1;
     };
 

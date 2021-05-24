@@ -23,11 +23,11 @@
         #unticker {xue};
     };
 
-    #action {你今天太累了} {
+    #action {浣犱粖澶╁お绱簡} {
         yun regenerate;
     };
 
-    #action {你的内力不够} {
+    #action {浣犵殑鍐呭姏涓嶅} {
         stop_ticker;
         #delay {xue_delay} {
             on_there {
@@ -40,7 +40,7 @@
         } {3};
     };
 
-    #action {{你的潜能已经发挥到极限了|没有办法学习这种技能|也许是缺乏实战经验|切磋}} {
+    #action {{浣犵殑娼滆兘宸茬粡鍙戞尌鍒版瀬闄愪簡|娌℃湁鍔炴硶瀛︿範杩欑鎶�鑳絴涔熻鏄己涔忓疄鎴樼粡楠寍鍒囩}} {
         xue.stop;
     };
     #class xue.inner close;
@@ -53,14 +53,14 @@
     #else {
         @setenv{xue_gongfu;${xue_gongfu}};
     };
-    show_to_quest 学习: ${shifu}/${xue_gongfu};
+    show_to_quest 瀛︿範: ${shifu}/${xue_gongfu};
     xue.restart;
 };
 
 #alias {xue.stop} {
     #class xue.inner kill;
     #unticker {xue};
-    show_to_quest 学习结束;
+    show_to_quest 瀛︿範缁撴潫;
     autoheal.on;
 };
 #class xue close;

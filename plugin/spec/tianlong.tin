@@ -20,15 +20,15 @@
 };
 
 #alias {map_goto_lingwu} {
-	map.go Ê¯±Ú;
+	map.go çŸ³å£;
 };
 
 #alias {map_goto_rest} {
-	map.go ¿Í·¿;
+	map.go å®¢æˆ¿;
 };
 
 #alias {map_goto_shifu} {
-	map.go ÈıÔª¹¬;
+	map.go ä¸‰å…ƒå®«;
 };
 
 #list my_weapons_to_wield create {staff; staff 2};

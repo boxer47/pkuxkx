@@ -1,27 +1,27 @@
 #class newbie_mj open
 #alias {liaowang.start} {
     #class liaowang.inner open;
-    #action {����˵���������������ҽ�һ���ؼ����ڣ���ȥ����(liaowang)ɽ�£��۲���ٰɡ���} {
+    #action {杨逍说道：「了望塔是我教一处关键所在，你去了望(liaowang)山下，观察敌踪吧。」} {
         #delay {3} {
             sd;sd;sd;sd;w;
             liaowang;
         };
     };
 
-    #action {����������񲻾ã���ȥ��Ϣһ��ɡ�} {
+    #action {你刚做完任务不久，先去休息一会吧。} {
         #delay {5} {
             ask yang about job;
         };
     };
 
-    #action {��վ����ϣ�������ʹ�������ɡ�} {
+    #action {你站岗完毕，回杨左使处复命吧。} {
         #delay {3} {
             e;nu;nu;nu;nu;
             ask yang about fuming;
         };
     };
 
-    #action {���ж�������ҿ��ˡ�} {
+    #action {杨逍对你道：幸苦了。} {
         #delay {3} {
             ask yang about job;
         };
@@ -34,52 +34,52 @@
     #class liaowang.inner kill;
 };
 
-#action {�������д����йء�job������Ϣ��} {
+#action {你向杨逍打听有关『job』的消息。} {
     load_map;
     #map goto 10;
 };
 
-#action {���������㱻�����ˣ�} {
+#action {完成任务后，你被奖励了：} {
     #delay {3} {
-        map.go �㳡;
+        map.go 广场;
         on_arrived {
             ask yang about job;
         };
     };
 };
 
-#action {����������񲻾ã���ȥ��Ϣһ��ɡ�} {
+#action {你刚做完任务不久，先去休息一会吧。} {
     #delay {10} {
         ask yang about job;
     };
 };
-#nop ӥ��
-#action {����˵���������ڰ�üӥ���������˰�æ����ȥ�����ɡ���} {
+#nop 鹰王
+#action {杨逍说道：「现在白眉鹰王正在找人帮忙，你去看看吧。」} {
     #delay {3} {
-        map.go ӥ����;
+        map.go 鹰王宫;
         on_arrived {
             ask yin about job;
         };
     };
 };
 
-#action {~��ȥ��������(zhao)һ��[1;%*m��%*[2;37;0mȥ�䳡} {
+#action {~你去练功房找(zhao)一件[1;%*m钢%*[2;37;0m去武场} {
     #var mo_color %1;
     #var mo_type %2;
-    #if {"${mo_type}" == "��"} {
+    #if {"${mo_type}" == "刀"} {
         #var mo_type_en blade;
     };
     #else {
         #var mo_type_en sword;
     };
-    map.go ������;
+    map.go 练功房;
     on_arrived {
         zhao;
     };
 };
 
-#action {~���ҵ�һ��[1;%*m��%*[2;37;0m��} {
-    #if {"%2" == "��"} {
+#action {~你找到一柄[1;%*m钢%*[2;37;0m。} {
+    #if {"%2" == "刀"} {
         #var tmp_type_en blade;
     };
     #else {
@@ -87,10 +87,10 @@
     };
 
     #if {${mo_color} == %1 && "${mo_type}" == "%2"} {
-        map.go �䳡;
+        map.go 武场;
         on_arrived {
             mo ${mo_type_en};
-            map.go ӥ����;
+            map.go 鹰王宫;
             on_arrived {
                 give ${mo_type_en} to yin;
             };
@@ -102,32 +102,32 @@
     };
 };
 
-#nop ʨ��
-#action {����˵���������ڽ�ëʨ���������˰�æ����ȥ�����ɡ���} {
+#nop 狮王
+#action {杨逍说道：「现在金毛狮王正在找人帮忙，你去看看吧。」} {
     #delay {3} {
-        map.go ����;
+        map.go 走廊;
         on_arrived {
             ask xie about job;
         };
     };
 };
 
-#action {ʥ��̳�����ҽ�һ�������ܣ������̴��enter�ͽ�ȥ�ˡ�} {
+#action {圣火坛可是我教一个大秘密，在明教大殿enter就进去了。} {
     #var jian_count 0;
     #delay {3} {
-        map.go ��ɽС·;
+        map.go 后山小路;
         #ticker {jian} {
             jian;
         } {3};
     };
 };
 
-#action {�������һ�θɲ�} {
+#action {你拣起了一段干柴！} {
     #math jian_count ${jian_count}+1;
     #if {${jian_count} > 10} {
         #unticker {jian};
         #delay {3} {
-            map.go ʥ��̳;
+            map.go 圣火坛;
             on_arrived {
                 kanshou;
             };
@@ -135,26 +135,26 @@
     };
 };
 
-#action {{����ȷ��|������ѽ|�ܱ�Ҫ������|���ȷ簡|������|Ҳ���Ͻ��ȷ�|�ȣ�|��Լ���Ƿ粻������|����Ͻ��ȷ�|��Լ�Ͻ��ȷ�|Ҳ�����Ƿ粻������| �б�Ҫ������| �Ͻ��ȷ�|��Լ�б�Ҫ������|Ӧ���б�Ҫ������|Ӧ�õ��Ƿ粻������|�ƺ��Ͻ��ȷ�|�ƺ��б�Ҫ������| ���Ƿ粻������|�ƺ����Ƿ粻������|�����б�Ҫ������|Ӧ�øϽ��ȷ�|���ܸϽ��ȷ�|���ܵ��Ƿ粻������|�����б�Ҫ������|�����Ƿ粻������|Ҳ���б�Ҫ������}} {
+#action {{快点扇风吧|马上扇呀|很必要用扇子|快扇风啊|扇扇扇|也许赶紧扇风|扇！|大约但是风不够大啦|好像赶紧扇风|大约赶紧扇风|也许但是风不够大啦| 有必要用扇子| 赶紧扇风|大约有必要用扇子|应该有必要用扇子|应该但是风不够大啦|似乎赶紧扇风|似乎有必要用扇子| 但是风不够大啦|似乎但是风不够大啦|好像有必要用扇子|应该赶紧扇风|可能赶紧扇风|可能但是风不够大啦|可能有必要用扇子|好像但是风不够大啦|也许有必要用扇子}} {
     shanfeng;
 };
 
-#action {{�ж��ٲ�𶼼ӽ�ȥ��|�����չ���|�����ӵ����|̫��Ҫ�Ӳ����|��ӵ����|��Լ���ϼӲ��|ʥ���ҪϨ����|�������ϼӲ��|Ҳ�����ϼӲ��|  ����Ҫ�Ӳ��|��Լ����Ҫ�Ӳ��| ���ϼӲ��|�ƺ����ϼӲ��|�ƺ�����Ҫ�Ӳ��|��Ӧ�����ϼӲ��| ����Ҫ�Ӳ��|��������Ҫ�Ӳ��|Ӧ������Ҫ�Ӳ��|��Լ����Ҫ�Ӳ��|�������Ҫ�Ӳ��|Ҳ������Ҫ�Ӳ��|Ҳ������Ҫ�Ӳ��|���ܺ���Ҫ�Ӳ��|�ƺ�����Ҫ�Ӳ��|Ӧ�ú���Ҫ�Ӳ��|��������Ҫ�Ӳ��| ����Ҫ�Ӳ��|�������ϼӲ��}} {
+#action {{有多少柴火都加进去吧|柴火快烧光了|好像快加点柴火吧|太需要加柴火了|快加点柴火吧|大约马上加柴火|圣火就要熄灭了|可能马上加柴火|也许马上加柴火|  很需要加柴火|大约很需要加柴火| 马上加柴火|似乎马上加柴火|似乎很需要加柴火|，应该马上加柴火| 有需要加柴火|好像有需要加柴火|应该有需要加柴火|大约有需要加柴火|好像很需要加柴火|也许有需要加柴火|也许很需要加柴火|可能很需要加柴火|似乎有需要加柴火|应该很需要加柴火|可能有需要加柴火| 很需要加柴火|好像马上加柴火}} {
     jiachai;
 };
 
-#action {���Ѿ��������㹻��ʱ���ʥ�𣬿��Ի�ʨ�����︴���ˡ�} {
+#action {你已经看守了足够久时间的圣火，可以会狮王那里复命了。} {
     #delay {3} {
-        map.go ����;
+        map.go 走廊;
         on_arrived {
             ask xie about fuming;
         };
     };
 };
-#nop ����
-#action {����˵������������ɼ�����������˰�æ����ȥ�����ɡ���} {
+#nop 龙王
+#action {杨逍说道：「现在紫杉龙王正在找人帮忙，你去看看吧。」} {
     #delay {3} {
-        map.go ��ˮ̶��;
+        map.go 碧水潭畔;
         on_arrived {
             drop guan;
             ask dai about job;
@@ -162,62 +162,62 @@
     };
 };
 
-#action {���˿����һ���߹�} {
+#action {黛绮丝给你一个瓦罐} {
     fill guan;
 };
 
-#action {�㽫�߹�װ����ˮ} {
+#action {你将瓦罐装满清水} {
     #delay {5} {
-        map.go ��԰;
+        map.go 后花园;
         on_arrived {
             dao gang;
         };
     };
 }
 
-#action {ˮ�׻��кܶ����} {
+#action {水缸还有很多空余} {
     #delay {5} {
-        map.go ��ˮ̶��;
+        map.go 碧水潭畔;
         on_arrived {
             fill guan;
         };
     };
 };
 
-#action {����Ի�ȥ�����������ˡ�} {
+#action {你可以回去和龙王复命了。} {
     #delay {5} {
-        map.go ��ˮ̶��;
+        map.go 碧水潭畔;
         on_arrived {
             ask dai about fuming;
         };
     };
 };
 
-#nop ����
-#action {����˵�������������������������˰�æ����ȥ�����ɡ���} {
+#nop 蝠王
+#action {杨逍说道：「现在青翼蝠王正在找人帮忙，你去看看吧。」} {
     #delay {3} {
-        map.go ����;
+        map.go 走廊;
         on_arrived {
             ask wei about job;
         };
     };
 };
 
-#action {�Һþ�û������Ѫ�ˣ���˵����������һ����%*�ļ�ϸ�������̸�������ȥ�����������ɡ�} {
+#action {我好久没有饮人血了，听说六大派派了一个叫%*的奸细来到明教附近，你去把他揪出来吧。} {
     #var jianxi_name %1;
-    show_to_info ��ϸ: ${jianxi_name};
+    show_to_info 奸细: ${jianxi_name};
     map_goto_start;
     on_arrived {
         bl.start ${jianxi_name};
     };
 };
 
-#action {�ҵ�Ŀ��} {
+#action {找到目标} {
     kill @py{${jianxi_name}};
 };
 
-#action {���Ի��������︴���ˡ�} {
-    map.go ����;
+#action {可以回蝠王那里复命了。} {
+    map.go 走廊;
     on_arrived {
         ask wei about fuming;
     };

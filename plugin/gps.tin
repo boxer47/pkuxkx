@@ -9,8 +9,8 @@ load gps_actions;
 #alias {on_there} {
     #alias tmp_there #cr;
     #alias tmp_there %0;
-    #action {GPS: µÖ´ïÄ¿µÄµØ} {
-        #unaction {GPS: µÖ´ïÄ¿µÄµØ};
+    #action {GPS: æŠµè¾¾ç›®çš„åœ°} {
+        #unaction {GPS: æŠµè¾¾ç›®çš„åœ°};
         on_unbusy {
             tmp_there;
         };
@@ -20,15 +20,15 @@ load gps_actions;
 #alias {on_not_there} {
     #alias tmp_not_there #cr;
     #alias tmp_not_there %0;
-    #action {GPS: Ä¿±ê·¿¼ä²»¿É´ï, ÎÞ·¨ÐÐ×ß} {
-        #unaction {GPS: Ä¿±ê·¿¼ä²»¿É´ï, ÎÞ·¨ÐÐ×ß};
+    #action {GPS: ç›®æ ‡æˆ¿é—´ä¸å¯è¾¾, æ— æ³•è¡Œèµ°} {
+        #unaction {GPS: ç›®æ ‡æˆ¿é—´ä¸å¯è¾¾, æ— æ³•è¡Œèµ°};
         on_unbusy {
             tmp_not_there;
         };
     };
 };
 
-#action {^ÄãµÄ¶¯×÷»¹Ã»ÓÐÍê³É£¬²»ÄÜÒÆ¶¯¡£} {
+#action {^ä½ çš„åŠ¨ä½œè¿˜æ²¡æœ‰å®Œæˆï¼Œä¸èƒ½ç§»åŠ¨ã€‚} {
     gps.watchdog.kick;
 };
 
@@ -67,7 +67,7 @@ load gps_actions;
             #var gps_gt_check_count 0;
             gt.stop;
             #delay {1} {
-                #showme {GPS: µÖ´ïÄ¿µÄµØ};
+                #showme {GPS: æŠµè¾¾ç›®çš„åœ°};
             };
         };
         #else {
@@ -75,7 +75,7 @@ load gps_actions;
             #if {${gps_gt_check_count} >= 20} {
                 #var gps_gt_check_count 0;
                 gt.stop;
-                #showme {GPS: µÖ´ïÄ¿µÄµØ};
+                #showme {GPS: æŠµè¾¾ç›®çš„åœ°};
             };
             #else {
                 #if {${gps_stop} == 0} {
@@ -124,7 +124,7 @@ load gps_actions;
         #var src_roomno ${gps.roomno};
         #if {${gps.roomno} == -1} {
             #delay {1} {
-                #showme {GPS: µ±Ç°·¿¼äÎ´¼ÇÂ¼, ÎÞ·¨ÐÐ×ß};
+                #showme {GPS: å½“å‰æˆ¿é—´æœªè®°å½•, æ— æ³•è¡Œèµ°};
                 taopao {
                     gps_gt;
                 };
@@ -142,21 +142,21 @@ load gps_actions;
             #if {${dst_roomno} == ${src_roomno}} {
                 gt.stop;
                 #delay {1} {
-                    #showme {GPS: µÖ´ïÄ¿µÄµØ};
+                    #showme {GPS: æŠµè¾¾ç›®çš„åœ°};
                 };
             };
             #else {
                 #format {epoch_from} {%T};
-                #showme {GPS: ÕýÔÚÑ°Â·: ${src_roomno} -> ${dst_roomno}};
+                #showme {GPS: æ­£åœ¨å¯»è·¯: ${src_roomno} -> ${dst_roomno}};
                 gps.get_path ${src_roomno} ${dst_roomno};
                 #format {epoch_to} {%T};
-                #showme {GPS: Íê³ÉÑ°Â·, ºÄÊ±: @eval{$epoch_to-$epoch_from} Ãë};
+                #showme {GPS: å®Œæˆå¯»è·¯, è€—æ—¶: @eval{$epoch_to-$epoch_from} ç§’};
                 #var gps_path_index 1;
                 #list gps_path size gps_path_size;
                 #if {${gps_path_size} == 0} {
                     #delay {1} {
-                        #showme GPS: Ä¿±ê·¿¼ä²»¿É´ï, ÎÞ·¨ÐÐ×ß;
-                        notify GPS: Ä¿±ê·¿¼ä²»¿É´ï, ÎÞ·¨ÐÐ×ß: ${gps_gt_dest};
+                        #showme GPS: ç›®æ ‡æˆ¿é—´ä¸å¯è¾¾, æ— æ³•è¡Œèµ°;
+                        notify GPS: ç›®æ ‡æˆ¿é—´ä¸å¯è¾¾, æ— æ³•è¡Œèµ°: ${gps_gt_dest};
                     };
                     on_there {
                         #cr;
@@ -178,8 +178,8 @@ load gps_actions;
 #alias {on_reachable} {
     #alias tmp_there #cr;
     #alias tmp_there %0;
-    #action {GPS: Ä¿±ê·¿¼ä¿É´ï} {
-        #unaction {GPS: Ä¿±ê·¿¼ä¿É´ï};
+    #action {GPS: ç›®æ ‡æˆ¿é—´å¯è¾¾} {
+        #unaction {GPS: ç›®æ ‡æˆ¿é—´å¯è¾¾};
         on_unbusy {
             tmp_there;
         };
@@ -189,8 +189,8 @@ load gps_actions;
 #alias {on_unreachable} {
     #alias tmp_not_there #cr;
     #alias tmp_not_there %0;
-    #action {GPS: Ä¿±ê·¿¼ä²»¿É´ï} {
-        #unaction {GPS: Ä¿±ê·¿¼ä²»¿É´ï};
+    #action {GPS: ç›®æ ‡æˆ¿é—´ä¸å¯è¾¾} {
+        #unaction {GPS: ç›®æ ‡æˆ¿é—´ä¸å¯è¾¾};
         on_unbusy {
             tmp_not_there;
         };
@@ -206,7 +206,7 @@ load gps_actions;
     #alias {gps_check_room_done} {
         #var src_roomno ${gps.roomno};
         #if {${gps.roomno} == -1} {
-            #showme GPS: Ä¿±ê·¿¼ä¿É´ï;
+            #showme GPS: ç›®æ ‡æˆ¿é—´å¯è¾¾;
         };
         #else {
             #if {@isdigit{${gps_gt_dest}}} {
@@ -218,16 +218,16 @@ load gps_actions;
             };
 
             #if {${dst_roomno} == ${src_roomno}} {
-                #showme GPS: Ä¿±ê·¿¼ä¿É´ï;
+                #showme GPS: ç›®æ ‡æˆ¿é—´å¯è¾¾;
             };
             #else {
                 gps.get_path ${src_roomno} ${dst_roomno};
                 #list gps_path size gps_path_size;
                 #if {${gps_path_size} == 0} {
-                    #showme GPS: Ä¿±ê·¿¼ä²»¿É´ï;
+                    #showme GPS: ç›®æ ‡æˆ¿é—´ä¸å¯è¾¾;
                 };
                 #else {
-                    #showme GPS: Ä¿±ê·¿¼ä¿É´ï;
+                    #showme GPS: ç›®æ ‡æˆ¿é—´å¯è¾¾;
                 };
             };
         };
@@ -278,7 +278,7 @@ load gps_actions;
             };
             #elseif {"${gps.run.mode}" == "TRAVERSE"} {
                 bl.stop;
-                #showme {GPS: ±éÀúÍê³É};
+                #showme {GPS: éåŽ†å®Œæˆ};
                 #unaction {${gps_traverse_target}};
             };
         } {1};
@@ -293,7 +293,7 @@ load gps_actions;
 #alias {gps.traverse.continue} {
     #action {${gps_traverse_target}} {
         #unaction {${gps_traverse_target}};
-        #showme ÕÒµ½Ä¿±ê: ${gps_traverse_target};
+        #showme æ‰¾åˆ°ç›®æ ‡: ${gps_traverse_target};
         bl.stop;
     } {1};
 
@@ -329,13 +329,13 @@ load gps_actions;
     #alias {gps_check_room_done} {
         #action {${gps_traverse_target}} {
             #unaction {${gps_traverse_target}};
-            #showme ÕÒµ½Ä¿±ê: ${gps_traverse_target};
+            #showme æ‰¾åˆ°ç›®æ ‡: ${gps_traverse_target};
             bl.stop;
         } {1};
 
         #if {${gps.roomno} == -1} {
             #delay {gps_check_delay} {
-                #showme {GPS: µ±Ç°·¿¼äÎ´¼ÇÂ¼, ÎÞ·¨±éÀú};
+                #showme {GPS: å½“å‰æˆ¿é—´æœªè®°å½•, æ— æ³•éåŽ†};
                 taopao {
                     gps.traverse ${traverse_tmp} ${mode};
                 };
@@ -361,7 +361,7 @@ load gps_actions;
 };
 
 #alias {gps.get_path} {
-    #nop about type: 1. gps.clear 2. gps.guohe 3. gps.delay 4. gps.zuoche 5. gps.goto_bt 6. gps.long_delay 7. shudong 8. ½­ºÓ;
+    #nop about type: 1. gps.clear 2. gps.guohe 3. gps.delay 4. gps.zuoche 5. gps.goto_bt 6. gps.long_delay 7. shudong 8. æ±Ÿæ²³;
     #nop weight > 0: there is a weight;
     #nop weight = 0: there is no weight;
     #nop weight < 0: the path is disabled;
@@ -419,7 +419,7 @@ load gps_actions;
         };
         #if {${gps.roomno} == -1} {
             #delay {1} {
-                #show {GPS: ·¿¼äÎ´¼ÇÂ¼, ÎÞ·¨¼ì²éÁ¬½Ó};
+                #show {GPS: æˆ¿é—´æœªè®°å½•, æ— æ³•æ£€æŸ¥è¿žæŽ¥};
             };
         };
         #else {
@@ -438,7 +438,7 @@ load gps_actions;
     #alias {gps_check_room_done} {
         #if {${gps.roomno} == -1} {
             #delay {1} {
-                #show {GPS: ·¿¼äÎ´¼ÇÂ¼, ÎÞ·¨²åÈëÁ¬½Ó};
+                #show {GPS: æˆ¿é—´æœªè®°å½•, æ— æ³•æ’å…¥è¿žæŽ¥};
             };
         };
         #else {

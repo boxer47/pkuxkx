@@ -33,15 +33,15 @@
 };
 
 #alias {goto_lingwu} {
-    gt Ã÷½ÌÁ·¹¦·¿;
+    gt æ˜æ•™ç»ƒåŠŸæˆ¿;
 };
 
 #alias {goto_rest} {
-    gt Ã÷½ÌĞİÏ¢ÊÒ;
+    gt æ˜æ•™ä¼‘æ¯å®¤;
 };
 
 #alias {goto_shifu} {
-    gt Ã÷½Ì´óµî;
+    gt æ˜æ•™å¤§æ®¿;
 };
 
 #alias {tisha} {
@@ -78,7 +78,7 @@
 
 #list my_weapons_to_wield create {dagger; dagger 2};
 
-#var shortcut F2: Òõ·ç F3: ¶á F4: ½î¶· F5: ·ÙĞÄ;
+#var shortcut F2: é˜´é£ F3: å¤º F4: ç­‹æ–— F5: ç„šå¿ƒ;
 
 #macro {\eOQ} {
     yinfeng;

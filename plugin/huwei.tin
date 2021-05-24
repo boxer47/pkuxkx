@@ -1,6 +1,6 @@
 #class huwei open;
 #alias {hw.q} {
-    ask sao about »¤ÎÀ;
+    ask sao about æŠ¤å«;
 };
 
 #alias {hw.f} {
@@ -15,62 +15,62 @@
     huwei;
 };
 
-#action {Äã¸Ï¿ìÈ¥%1»¤ÎÀÒ»ÏÂ°É} {
-    #if {"%1" == "ÏÉ³îÃÅ"} {
+#action {ä½ èµ¶å¿«å»%1æŠ¤å«ä¸€ä¸‹å§} {
+    #if {"%1" == "ä»™æ„é—¨"} {
         hw;
     };
-    #elseif {"%1" == "°ÙÕÉ½§"} {
+    #elseif {"%1" == "ç™¾ä¸ˆæ¶§"} {
         zou tiesuo;
         #delay {8} {
             s;
             hw;
         };
     };
-    #elseif {"%1" == "¶Ï»êÑÂ"} {
+    #elseif {"%1" == "æ–­é­‚å´–"} {
         zou tiesuo;
         #delay {8} {
             s; sd;
             hw;
         };
     };
-    #elseif {"%1" == "çÎç¿·åÉ½½Å"} {
+    #elseif {"%1" == "ç¼¥ç¼ˆå³°å±±è„š"} {
         zou tiesuo;
         #delay {8} {
             s; sd; sd;
             hw;
         };
     };
-    #elseif {"%1" == "Ğ¡Â·"} {
+    #elseif {"%1" == "å°è·¯"} {
         zou tiesuo;
         #delay {8} {
             s; sd; sd; s;
             hw;
         };
     };
-    #elseif {"%1" == "É½Â·"} {
+    #elseif {"%1" == "å±±è·¯"} {
         nw;
         hw;
     };
-    #elseif {"%1" == "ÇàÊ¯´óµÀ"} {
+    #elseif {"%1" == "é’çŸ³å¤§é“"} {
         nw;ne;nu;nu;
         hw;
     };
-    #elseif {"%1" == "ËÉÁÖ"} {
+    #elseif {"%1" == "æ¾æ—"} {
         nw;ne;nu;
         hw;
     };
 };
 
-#action {ÄãÔÚ%1À´»Ø×ß¶¯} {
+#action {ä½ åœ¨%1æ¥å›èµ°åŠ¨} {
     #delay {hw} {hw;} {5};
 };
 
-#action {»¤ÎÀÊ±¼äÒÑ¾­µ½ÁË} {
-    show_to_info »¤ÎÀÍê³É
+#action {æŠ¤å«æ—¶é—´å·²ç»åˆ°äº†} {
+    show_to_info æŠ¤å«å®Œæˆ
 }
 
-#action {ÄãµÄÎäÁÖÉùÍûÉÏÉıÁË%1} {
-    show_to_info ÉùÍû:+%1
+#action {ä½ çš„æ­¦æ—å£°æœ›ä¸Šå‡äº†%1} {
+    show_to_info å£°æœ›:+%1
 }
 
 #alias {ts} {

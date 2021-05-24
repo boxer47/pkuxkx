@@ -9,7 +9,7 @@
     #alias tmp_tn #cr;
     #alias tmp_tn %1;
     #class tn.full.inner open;
-    #action {你的精力增加了} {
+    #action {浣犵殑绮惧姏澧炲姞浜唥 {
         tn.rest;
     };
     #ticker {tn} {
@@ -32,7 +32,7 @@
     #alias tmp_tn #cr;
     #alias tmp_tn %1;
     #class tn.full.inner open;
-    #action {你现在精不够} {
+    #action {浣犵幇鍦ㄧ簿涓嶅} {
         heal 1;
     };
     #class tn.full.inner close;
@@ -67,7 +67,7 @@
         #unticker {tn};
     };
 
-    #action {你现在精不足} {
+    #action {浣犵幇鍦ㄧ簿涓嶈冻} {
         stop_ticker;
         sleep;
         on_wakeup {
@@ -75,12 +75,12 @@
         };
     };
 
-    #action {你的精力修为已经达到了瓶颈} {
+    #action {浣犵殑绮惧姏淇负宸茬粡杈惧埌浜嗙摱棰坿 {
         tn.stop;
-        show_to_quest 精力到达瓶颈: ${hpbrief_max_jl} => ${max_jingli};
+        show_to_quest 绮惧姏鍒拌揪鐡堕: ${hpbrief_max_jl} => ${max_jingli};
     };
 
-    #action {你的精力上限增加} {
+    #action {浣犵殑绮惧姏涓婇檺澧炲姞} {
         #math tn_total_count ${tn_total_count}+1;
         show_to_info energy +${tn_total_count};
         #send {jifa};
@@ -109,16 +109,16 @@
     #if {${max_jingli} < ${hpbrief_max_jl}} {
         tn.stop;
         #showme MISSION_COMPLETE: tn;
-        show_to_quest 精力到达瓶颈: ${hpbrief_max_jl} => ${max_jingli};
+        show_to_quest 绮惧姏鍒拌揪鐡堕: ${hpbrief_max_jl} => ${max_jingli};
     };
     #else {
-        #if {@getburden{酥油茶} < 30} {
+        #if {@getburden{閰ユ补鑼秨 < 30} {
             tn.stop;
             chain get.qian get.fan tn.start;
             #return;
         };
         start_ticker;
-        show_to_quest 吐纳: ${hpbrief_max_jl} => ${max_jingli};
+        show_to_quest 鍚愮撼: ${hpbrief_max_jl} => ${max_jingli};
     };
 };
 
@@ -126,7 +126,7 @@
     unset_last_quest;
     autoheal.on;
     stop_ticker;
-    show_to_quest 吐纳完毕;
+    show_to_quest 鍚愮撼瀹屾瘯;
     #class tn.inner kill;
 };
 #class tuna close

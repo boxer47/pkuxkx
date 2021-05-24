@@ -1,11 +1,11 @@
 #class dummy open;
 #list dummy_list create {};
 
-#action {%*¸æËß%*dummy%*} {
+#action {%*å‘Šè¯‰%*dummy%*} {
     #line gag;
 } {2};
 
-#action {^%S(%*)¸æËßÄã£ºdummy.action: %*} {
+#action {^%S(%*)å‘Šè¯‰ä½ ï¼šdummy.action: %*} {
     #line gag;
     #var dummy @lower{%2};
     #var dummy_action %3;

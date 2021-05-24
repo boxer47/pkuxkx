@@ -8,12 +8,12 @@
         xi pool;
     } {300};
 
-    #action {ÄãµÄ¡¸×¤ÑÕÊõ¡¹½ø²½ÁË£¡} {
+    #action {ä½ çš„ã€Œé©»é¢œæœ¯ã€è¿›æ­¥äº†ï¼} {
         #math level_up ${level_up}+1;
-        show_to_info ×¤ÑÕÊõ +${level_up};
+        show_to_info é©»é¢œæœ¯ +${level_up};
     };
 
-    #action {Äã°ÑÒÂ·ş´ò¿ª} {
+    #action {ä½ æŠŠè¡£æœæ‰“å¼€} {
         #delay {1} {
             eat guo;
             drink tea;
@@ -21,9 +21,9 @@
         };
     };
     #class xi.inner close;
-    gt Ï´Ïó³Ø±ß;
+    gt æ´—è±¡æ± è¾¹;
     on_there {
-        show_to_quest Ï´Ôè;
+        show_to_quest æ´—æ¾¡;
         xi pool;
     };
 };
@@ -31,7 +31,7 @@
 #alias {xz.stop} {
     #class xi.inner kill;
     on_unbusy {
-        show_to_quest Ï´Ôè½áÊø;
+        show_to_quest æ´—æ¾¡ç»“æŸ;
         unset_last_quest;
     };
 };

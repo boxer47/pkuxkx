@@ -36,32 +36,32 @@
 
 #alias {i} {
     #send {i %0};
-    lock ÄãÉíÉÏ´øÖøÏÂÁĞ;
+    lock ä½ èº«ä¸Šå¸¦è‘—ä¸‹åˆ—;
 };
 
 #alias {sc} {
     #send {sc %0};
-    lock ÄãÊÇÒ»Î»;
+    lock ä½ æ˜¯ä¸€ä½;
 };
 
 #alias {st} {
     #send {status_me};
-    lock ¡Ô©¥¡ò;
+    lock â‰¡â”â—;
 };
 
 #alias {hp} {
     #send {hp};
-    lock ¡Ô©¥©¥©¥©¥;
+    lock â‰¡â”â”â”â”;
 };
 
 #alias {sk} {
     #send {sk};
-    lock ÄãÄ¿Ç°ËùÑ§¹ıµÄ¼¼ÄÜ;
+    lock ä½ ç›®å‰æ‰€å­¦è¿‡çš„æŠ€èƒ½;
 };
 
 #alias {jifa} {
     #send {jifa %0};
-    lock ÒÔÏÂÊÇÄãÄ¿Ç°Ê¹ÓÃÖĞµÄÌØÊâ¼¼ÄÜ;
+    lock ä»¥ä¸‹æ˜¯ä½ ç›®å‰ä½¿ç”¨ä¸­çš„ç‰¹æ®ŠæŠ€èƒ½;
 };
 
 #alias {lock} {
@@ -88,8 +88,8 @@
     #alias tmp_special_repair #cr;
     #alias tmp_special_repair %1;
     #if {${special_min_naijiu} < 100} {
-        #action {µÖ´ïÄ¿µÄµØ} {
-            #unaction {µÖ´ïÄ¿µÄµØ};
+        #action {æŠµè¾¾ç›®çš„åœ°} {
+            #unaction {æŠµè¾¾ç›®çš„åœ°};
             #delay {2} {
                 #foreach {${my_special_weapons}[%*]} {weapon} {
                     fix ${weapon};
@@ -99,7 +99,7 @@
                 };
             };
         };
-        gt ·¢´ôÊÒ;
+        gt å‘å‘†å®¤;
     };
     #else {
         tmp_special_repair;
@@ -107,7 +107,7 @@
 };
 
 #alias {iall} {
-    #echo {¡Ô©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥¡Ô};
+    #echo {â‰¡â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â‰¡};
     #send {i ring};
     #send {i necklace};
     #send {i spear};
@@ -124,9 +124,9 @@
     #send {i boots};
     #send {i wrists};
     #send {i surcoat};
-    #action {ÄãÉíÉÏidÎªsurcoatµÄ¶«Î÷ÓĞÏÂÃæÕâĞ©} {
+    #action {ä½ èº«ä¸Šidä¸ºsurcoatçš„ä¸œè¥¿æœ‰ä¸‹é¢è¿™äº›} {
         #delay {0.5} {
-            #echo {¡Ô©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥¡Ô};
+            #echo {â‰¡â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â‰¡};
             #buffer lock;
         };
     };
@@ -154,28 +154,28 @@
         } {150};
         #class pp.inner open;
 
-        #action {¸æËßÄã£º¡¾%*(%*)¡¿Ä¿Ç°ÔÚ¡¾{\S+?}µÄ%*¡¿,¿ìÈ¥ŞôËÀËü°É!} {
+        #action {å‘Šè¯‰ä½ ï¼šã€%*(%*)ã€‘ç›®å‰åœ¨ã€{\S+?}çš„%*ã€‘,å¿«å»æ‘æ­»å®ƒå§!} {
             #class pp.inner kill;
             #undelay {pp_delay};
             #unticker {pp};
             show_to_info %%1(%%2) @ %%4;
             tmp_auto_pp %%4;
         } {1};
-        #action {¸æËßÄã£º¡¾%*(%*)¡¿Ä¿Ç°ÔÚ¡¾%*¡¿,¿ìÈ¥ŞôËÀËü°É!} {
+        #action {å‘Šè¯‰ä½ ï¼šã€%*(%*)ã€‘ç›®å‰åœ¨ã€%*ã€‘,å¿«å»æ‘æ­»å®ƒå§!} {
             #class pp.inner kill;
             #undelay {pp_delay};
             #unticker {pp};
             show_to_info %%1(%%2) @ %%3;
             tmp_auto_pp %%3;
         } {2};
-        #action {ÌÒ°×°×%*¸æËßÄã£º¡¾%*¡¿²¢²»´æÔÚ} {
+        #action {æ¡ƒç™½ç™½%*å‘Šè¯‰ä½ ï¼šã€%*ã€‘å¹¶ä¸å­˜åœ¨} {
             #cr;
         } {1}
-        #action {¸æËßÄã£º¡¾%*¡¿²¢²»´æÔÚ} {
+        #action {å‘Šè¯‰ä½ ï¼šã€%*ã€‘å¹¶ä¸å­˜åœ¨} {
             #class pp.inner kill;
             #undelay {pp_delay};
             #unticker {pp};
-            show_to_info %%1 @ ²»´æÔÚ;
+            show_to_info %%1 @ ä¸å­˜åœ¨;
             tmp_auto_pp nil;
         } {2};
         #class pp.inner close;
@@ -213,11 +213,11 @@
     #alias tmp_halt %0;
 
     #class halt.inner open;
-    #gag {ÄãÏÖÔÚ²»Ã¦};
+    #gag {ä½ ç°åœ¨ä¸å¿™};
     #ticker {halt_ticker} {
         #10 halt;
     } {0.5};
-    #action {ÄãÏÖÔÚ²»Ã¦} {
+    #action {ä½ ç°åœ¨ä¸å¿™} {
         #class halt.inner kill;
         #delay {tmp_halt_delay} {
             tmp_halt;
@@ -230,8 +230,8 @@
 #alias {on_hit} {
     #alias tmp_hit #cr;
     #alias tmp_hit %0;
-    #action {ÄãÕ½Ê¤ÁË} {
-        #unaction {ÄãÕ½Ê¤ÁË};
+    #action {ä½ æˆ˜èƒœäº†} {
+        #unaction {ä½ æˆ˜èƒœäº†};
         #delay {2} {
             halt;
             tmp_hit;
@@ -242,8 +242,8 @@
 #alias {on_dead} {
     #alias tmp_dead #cr;
     #alias tmp_dead %0;
-    #action {ËÀÁË} {
-        #unaction {ËÀÁË};
+    #action {æ­»äº†} {
+        #unaction {æ­»äº†};
         #delay {2} {
             halt;
             tmp_dead;
@@ -276,7 +276,7 @@
     };
     #class half_life.inner close;
     #if {${eff_qx_percent} > 50} {
-        gt ÑïÖİ³ÇÖª¸®´óÌÃ;
+        gt æ‰¬å·åŸçŸ¥åºœå¤§å ‚;
         on_there {
             start_chat;
         };
@@ -332,12 +332,12 @@
         };
     };
 
-    #action {ÒÑ¾­ÊÜÉË¹ıÖØ£¬¾­ÊÜ²»ÆğÄãµÄÕæÆøÕğµ´} {
+    #action {å·²ç»å—ä¼¤è¿‡é‡ï¼Œç»å—ä¸èµ·ä½ çš„çœŸæ°”éœ‡è¡} {
         health.cancel;
         on_severe_wound;
      };
 
-     #action {ÄãÒÑ¾­ÊÜÉË¹ıÖØ£¬Ö»ÅÂÒ»ÔËÕæÆø±ãÓĞÉúÃüÎ£ÏÕ£¡} {
+     #action {ä½ å·²ç»å—ä¼¤è¿‡é‡ï¼Œåªæ€•ä¸€è¿çœŸæ°”ä¾¿æœ‰ç”Ÿå‘½å±é™©ï¼} {
          health.cancel;
         on_severe_wound;
     };
@@ -358,17 +358,17 @@
     #alias tmp_wakeup #cr;
     #alias tmp_wakeup %0;
     #class on_wakeup.inner open;
-    #action {·­À´¸²È¥ÎŞ·¨ÈëÃß!} {
+    #action {ç¿»æ¥è¦†å»æ— æ³•å…¥çœ !} {
         #delay {sleep} {
             sleep;
         } {10};
     };
-    #action {Ë¯¹ıÒ»¾õ} {
+    #action {ç¡è¿‡ä¸€è§‰} {
         #delay {sleep} {
             sleep;
         } {10};
     };
-    #action {ÄãÒ»¾õĞÑÀ´} {
+    #action {ä½ ä¸€è§‰é†’æ¥} {
         #class on_wakeup.inner kill;
         #delay {wakeup} {
             tmp_wakeup;
@@ -394,7 +394,7 @@
 } {300};
 
 #var xy_ended 0;
-#action {±£ÎÀÏåÑôÈÎÎñÈ«²¿½áÊø£¡} {
+#action {ä¿å«è¥„é˜³ä»»åŠ¡å…¨éƒ¨ç»“æŸï¼} {
     #var xy_ended 1;
 };
 
@@ -442,7 +442,7 @@
     gt wm;
     on_there {
         u;
-        ask jin about ²Î¹Û½ÙÄÑ;
+        ask jin about å‚è§‚åŠ«éš¾;
     };
 };
 
@@ -514,12 +514,12 @@ walk_to east;
 
     #alias {sell_other} {
         #class sell_other.inner open;
-        #action {ÄãÉíÉÏÃ»ÓĞputi zi} {
+        #action {ä½ èº«ä¸Šæ²¡æœ‰puti zi} {
             #ticker {sell_other} {
                 sell baicao dan;
             } {1};
         };
-        #action {ÄãÉíÉÏÃ»ÓĞbaicao dan} {
+        #action {ä½ èº«ä¸Šæ²¡æœ‰baicao dan} {
             #class sell_other.inner kill;
             #unticker {sell_other};
             #delay {3} {
@@ -532,7 +532,7 @@ walk_to east;
                 sell puti zi;
             } {1};
         };
-        gt ÑïÖİµ±ÆÌ;
+        gt æ‰¬å·å½“é“º;
     };
     sell_weapon;
 };
@@ -541,8 +541,8 @@ walk_to east;
     #alias tmp_repair #cr;
     #alias tmp_repair %1;
     #if {${min_naijiu} < 350} {
-        #action {µÖ´ïÄ¿µÄµØ} {
-            #unaction {µÖ´ïÄ¿µÄµØ};
+        #action {æŠµè¾¾ç›®çš„åœ°} {
+            #unaction {æŠµè¾¾ç›®çš„åœ°};
             e;ne;
             #delay {2} {
                 #foreach {${my_weapons}[%*]} {weapon} {
@@ -586,10 +586,10 @@ walk_to east;
             };
         } {3};
     };
-    #action {ÄÍ¾Ã¶È:%*/%*} {
+    #action {è€ä¹…åº¦:%*/%*} {
         do_check_naijiu %%1;
     } {2};
-    #action {ÄÍ¾Ã¶È:%*} {
+    #action {è€ä¹…åº¦:%*} {
         do_check_naijiu %%1;
     } {3};
     #class check.naijiu.inner close;
@@ -600,12 +600,12 @@ walk_to east;
 
 #var special_min_naijiu 10000;
 #alias {check_special_naijiu} {
-    #action {ÄÍ¾Ã¶È:%*/%*} {
+    #action {è€ä¹…åº¦:%*/%*} {
         #if {${tmp_min_naijiu} > %%1} {
             #var tmp_min_naijiu %%1;
         };
         #delay {d} {
-            #unaction {ÄÍ¾Ã¶È:%*/%*};
+            #unaction {è€ä¹…åº¦:%*/%*};
             #if {${tmp_min_naijiu} != 10000} {
                 #var special_min_naijiu ${tmp_min_naijiu};
             };
@@ -641,7 +641,7 @@ walk_to east;
 #list kaimen_actions create {open;push;pull;break};
 #list kaimen_names create {door;gate;men;stone};
 #alias {kaimen} {
-    #gag Ê²Ã´£¿;
+    #gag ä»€ä¹ˆï¼Ÿ;
     #foreach {${kaimen_actions}[%*]} {kaimen_action} {
         #foreach {${kaimen_names}[%*]} {kaimen_name} {
             #show ${kaimen_action} ${kaimen_name};
@@ -649,7 +649,7 @@ walk_to east;
         };
     };
     #delay {1} {
-        #ungag Ê²Ã´£¿;
+        #ungag ä»€ä¹ˆï¼Ÿ;
     };
 };
 
@@ -688,72 +688,72 @@ walk_to east;
     #action {^%* - $} {
         #var record_state 1;
         #var current_room %%1;
-        #if {"${current_room}" == "º£ÖĞ"} {
+        #if {"${current_room}" == "æµ·ä¸­"} {
             get_exits_done;
         };
-        #elseif {"${current_room}" == "Âí³µ"} {
+        #elseif {"${current_room}" == "é©¬è½¦"} {
             get_exits_done;
             xia;
         };
-        #elseif {"${current_room}" == "Ã©²Ş"} {
+        #elseif {"${current_room}" == "èŒ…å•"} {
             get_exits_done;
         };
     } {1};
 
-    #action {Äã¿ÉÒÔ¿´¿´(look):} {
+    #action {ä½ å¯ä»¥çœ‹çœ‹(look):} {
         #delay {look_delay} {
             get_exits_done;
         } {1};
     } {6};
 
-    #action {    ¡¸%*¡¹: %*} {
+    #action {    ã€Œ%*ã€: %*} {
         #delay {look_delay} {
             #var exits_list  {};
             get_exits_done;
         } {1};
     } {6};
-    #action {ÕâÀïÃ»ÓĞÈÎºÎÃ÷ÏÔµÄ³öÂ·¡£} {
+    #action {è¿™é‡Œæ²¡æœ‰ä»»ä½•æ˜æ˜¾çš„å‡ºè·¯ã€‚} {
         #var exits_list  {};
         get_exits_done;
     } {7};
 
-    #action {ÕâÀïÎ¨Ò»µÄ³ö¿ÚÊÇ %w¡£} {
+    #action {è¿™é‡Œå”¯ä¸€çš„å‡ºå£æ˜¯ %wã€‚} {
         #var exits_list  {%%1;};
         get_exits_done;
     } {7};
 
-    #action {ÕâÀïÃ÷ÏÔµÄ³ö¿ÚÊÇ %w ºÍ %w¡£} {
+    #action {è¿™é‡Œæ˜æ˜¾çš„å‡ºå£æ˜¯ %w å’Œ %wã€‚} {
         #var exits_list {%%1;%%2;};
         get_exits_done;
     } {7};
 
-    #action {ÕâÀïÃ÷ÏÔµÄ³ö¿ÚÊÇ %w¡¢%w ºÍ %w¡£} {
+    #action {è¿™é‡Œæ˜æ˜¾çš„å‡ºå£æ˜¯ %wã€%w å’Œ %wã€‚} {
         #var exits_list {%%1;%%2;%%3;};
         get_exits_done;
     } {7};
 
-    #action {ÕâÀïÃ÷ÏÔµÄ³ö¿ÚÊÇ %w¡¢%w¡¢%w ºÍ %w¡£} {
+    #action {è¿™é‡Œæ˜æ˜¾çš„å‡ºå£æ˜¯ %wã€%wã€%w å’Œ %wã€‚} {
         #var exits_list {%%1;%%2;%%3;%%4;};
         get_exits_done;
     } {7};
 
-    #action {ÕâÀïÃ÷ÏÔµÄ³ö¿ÚÊÇ %w¡¢%w¡¢%w¡¢%w ºÍ %w¡£} {
+    #action {è¿™é‡Œæ˜æ˜¾çš„å‡ºå£æ˜¯ %wã€%wã€%wã€%w å’Œ %wã€‚} {
         #var exits_list {%%1;%%2;%%3;%%4;%%5;};
         get_exits_done;
     } {7};
 
-    #action {ÕâÀïÃ÷ÏÔµÄ³ö¿ÚÊÇ %w¡¢%w¡¢%w¡¢%w¡¢%w ºÍ %w¡£} {
+    #action {è¿™é‡Œæ˜æ˜¾çš„å‡ºå£æ˜¯ %wã€%wã€%wã€%wã€%w å’Œ %wã€‚} {
         #var exits_list {%%1;%%2;%%3;%%4;%%5;%%6;};
         get_exits_done;
     } {7};
 
-    #action {ÕâÀïÃ÷ÏÔµÄ³ö¿ÚÊÇ %w¡¢%w¡¢%w¡¢%w¡¢%w¡¢%w ºÍ %w¡£} {
+    #action {è¿™é‡Œæ˜æ˜¾çš„å‡ºå£æ˜¯ %wã€%wã€%wã€%wã€%wã€%w å’Œ %wã€‚} {
         #var exits_list {%%1;%%2;%%3;%%4;%%5;%%6;%%7;};
         get_exits_done;
     } {7};
 
     #nop max 7 exits;
-    #action {ÕâÀïÃ÷ÏÔµÄ³ö¿ÚÊÇ %w¡¢%w¡¢%w¡¢%w¡¢%w¡¢%w¡¢%w} {
+    #action {è¿™é‡Œæ˜æ˜¾çš„å‡ºå£æ˜¯ %wã€%wã€%wã€%wã€%wã€%wã€%w} {
         #var exits_list {%%1;%%2;%%3;%%4;%%5;%%6;%%7;};
         get_exits_done;
     } {7};
@@ -787,17 +787,17 @@ walk_to east;
     #alias tmp_get_area %1;
     #var pos.area {};
     #class record.inner open;
-    #action {ÕâÀïÔİÊ±Ã»ÓĞµØÍ¼¡£} {
+    #action {è¿™é‡Œæš‚æ—¶æ²¡æœ‰åœ°å›¾ã€‚} {
         #class record.inner kill;
         #var pos.area {};
         tmp_get_area;
     };
-    #action {¡¾%*µØÍ¼¡¿} {
+    #action {ã€%*åœ°å›¾ã€‘} {
         #class record.inner kill;
         #var pos.area %%1;
         tmp_get_area;
     };
-    #action {¡¾%*µØÍ¼£­%*¡¿} {
+    #action {ã€%*åœ°å›¾ï¼%*ã€‘} {
         #class record.inner kill;
         #var pos.area %%1%%2;
         tmp_get_area;
@@ -825,22 +825,22 @@ walk_to east;
     #alias tmp_on_fullme #cr;
     #alias tmp_on_fullme %0;
     #class fullme_inner open;
-    #action {¸£Ã×Íê³É} {
+    #action {ç¦ç±³å®Œæˆ} {
         #class fullme_inner kill;
         #undelay {fullme_delay};
         tmp_on_fullme;
     };
-    #action {¸£Ã×Ã»µ½Ê±¼äÄØ} {
+    #action {ç¦ç±³æ²¡åˆ°æ—¶é—´å‘¢} {
         #class fullme_inner kill;
         #undelay {fullme_delay};
     };
-    #action {¸£Ã×Ê§°Ü} {
+    #action {ç¦ç±³å¤±è´¥} {
         #class fullme_inner kill;
         #undelay {fullme_delay};
     };
     #delay {fullme_delay} {
         #class fullme_inner kill;
-        notify ¸£Ã×³¬Ê±;
+        notify ç¦ç±³è¶…æ—¶;
         on_fullme_timeout;
     } {1200};
     #class fullme_inner close;
@@ -851,12 +851,12 @@ walk_to east;
             tmp_on_fullme;
         };
         #else {
-            xmpp.status ¸£Ã×;
-            notify ¸£Ã×;
+            xmpp.status ç¦ç±³;
+            notify ç¦ç±³;
         };
     };
     #else {
-        #showme Ò²ĞíÊÇÉÏÌì´¹ÇàÓÚÄãµÄÇÚ·ÜºÍÅ¬Á¦°É£¬Ò»¸öĞ¡Ê±Ö®ÄÚÄã²»ÓÃµ£ĞÄ±»ÅĞÎª»úÆ÷ÈË¡£;
+        #showme ä¹Ÿè®¸æ˜¯ä¸Šå¤©å‚é’äºä½ çš„å‹¤å¥‹å’ŒåŠªåŠ›å§ï¼Œä¸€ä¸ªå°æ—¶ä¹‹å†…ä½ ä¸ç”¨æ‹…å¿ƒè¢«åˆ¤ä¸ºæœºå™¨äººã€‚;
     };
 };
 
@@ -902,7 +902,7 @@ walk_to east;
 
 #alias {quit_and_restart} {
     #class quit.inner.open;
-    #action {Äã¶ªÏÂ} {
+    #action {ä½ ä¸¢ä¸‹} {
         #class quit.inner kill;
         #end;
     };
@@ -948,16 +948,16 @@ walk_to east;
 #alias {cure} {
     #alias tmp_cure #cr;
     #alias tmp_cure %1;
-    gt ÑïÖİÒ©ÆÌ;
+    gt æ‰¬å·è¯é“º;
     on_there {
         ask ping about cure;
     };
     #class cure.inner open;
-    #action {%*£º%*Á½»Æ½ğ¡£} {
+    #action {%*ï¼š%*ä¸¤é»„é‡‘ã€‚} {
         give ping @ctd{%%2} gold;
         #class cure.inner kill;
     };
-    #action {Æ½Ò»Ö¸ËµµÀ£º¡¸²î²»¶àÁË£¬ÔÙ·¢×÷Ò»´Î¾Í»áºÃÁË¡£¡¹} {
+    #action {å¹³ä¸€æŒ‡è¯´é“ï¼šã€Œå·®ä¸å¤šäº†ï¼Œå†å‘ä½œä¸€æ¬¡å°±ä¼šå¥½äº†ã€‚ã€} {
         #class cure.inner kill;
         tmp_cure;
     };
@@ -992,7 +992,7 @@ walk_to east;
     };
 
     #class on_severe_wound.inner close;
-    gt ÑïÖİÒ©ÆÌ;
+    gt æ‰¬å·è¯é“º;
     on_there {
         start_keyao;
     };
@@ -1028,12 +1028,12 @@ walk_to east;
     };
 };
 
-#gag {Äã²»Ã¦};
+#gag {ä½ ä¸å¿™};
 #alias {on_unbusy_inner} {
     #alias tmp_unbusy #cr;
     #alias tmp_unbusy %0;
     #class unbusy.inner open;
-    #action {Äã²»Ã¦} {
+    #action {ä½ ä¸å¿™} {
         #class unbusy.inner kill;
         #undelay {delay_unbusy};
         tmp_unbusy;
@@ -1053,75 +1053,75 @@ walk_to east;
 };
 
 @mapcreate{menpai};
-@mapset{menpai;³¯Í¢;chaoting};
-@mapset{menpai;»ªÉ½ÅÉ;huashan};
-@mapset{menpai;¹ÅÄ¹ÅÉ;gumu};
-@mapset{menpai;Îäµ±ÅÉ;wudang};
-@mapset{menpai;ÉÙÁÖÅÉ;shaolin};
-@mapset{menpai;ĞÇËŞÅÉ;xingxiu};
-@mapset{menpai;´óÂÖËÂ;dalun};
-@mapset{menpai;Ø¤°ï;gaibang};
-@mapset{menpai;¶ëÃ¼ÅÉ;emei};
-@mapset{menpai;È«ÕæÅÉ;quanzhen};
-@mapset{menpai;ÈÕÔÂÉñ½Ì;riyue};
-@mapset{menpai;Ã÷½Ì;mingjiao};
-@mapset{menpai;ÌÒ»¨µº;taohua};
-@mapset{menpai;ÌìÁúËÂ;tianlong};
+@mapset{menpai;æœå»·;chaoting};
+@mapset{menpai;åå±±æ´¾;huashan};
+@mapset{menpai;å¤å¢“æ´¾;gumu};
+@mapset{menpai;æ­¦å½“æ´¾;wudang};
+@mapset{menpai;å°‘æ—æ´¾;shaolin};
+@mapset{menpai;æ˜Ÿå®¿æ´¾;xingxiu};
+@mapset{menpai;å¤§è½®å¯º;dalun};
+@mapset{menpai;ä¸å¸®;gaibang};
+@mapset{menpai;å³¨çœ‰æ´¾;emei};
+@mapset{menpai;å…¨çœŸæ´¾;quanzhen};
+@mapset{menpai;æ—¥æœˆç¥æ•™;riyue};
+@mapset{menpai;æ˜æ•™;mingjiao};
+@mapset{menpai;æ¡ƒèŠ±å²›;taohua};
+@mapset{menpai;å¤©é¾™å¯º;tianlong};
 
 #alias {get_char_info} {
-    #show INFO: »ñÈ¡½ÇÉ«ĞÅÏ¢;
+    #show INFO: è·å–è§’è‰²ä¿¡æ¯;
     #alias get_char_info_action #cr;
     #alias get_char_info_action %1;
 
     #class get_char_info.inner open;
-    #action {¡¾%*¡¿%*(%*)} {
+    #action {ã€%*ã€‘%*(%*)} {
         #var char_id @lower{%%3};
     };
-    #gag ÄãÊÇ³¯Í¢µÚ;
-    #action {ÄãÊÇ³¯Í¢%*} {
-        #showme ÄãÊÇ³¯Í¢µÚ;
+    #gag ä½ æ˜¯æœå»·ç¬¬;
+    #action {ä½ æ˜¯æœå»·%*} {
+        #showme ä½ æ˜¯æœå»·ç¬¬;
     };
-    #action {ÄãÊÇ%*µÚ} {
+    #action {ä½ æ˜¯%*ç¬¬} {
         #var char_menpai_zh %%1;
         #var char_menpai @mapget{menpai;%%1};
         load spec/${char_menpai};
         #var weapons_to_wield ${my_weapons_to_wield};
     };
-    #action {¡Ô©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥¡ò%*ÏÀ¿ÍĞĞ¡ò©¥©¥¡Ô} {
+    #action {â‰¡â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â—%*ä¾ å®¢è¡Œâ—â”â”â‰¡} {
         #class get_char_info.inner kill;
 
         #class get_name.inner open;
-        #action {ĞÕ    Ãû£º	%*} {
+        #action {å§“    åï¼š	%*} {
             #var real_char_name %%%1;
         };
         #class get_name.inner close;
 
         #class get_st.inner open;
-        #action {¡¡ĞÕÃû£º¡¡%S%s ¡¡£É£Ä} {
+        #action {ã€€å§“åï¼šã€€%S%s ã€€ï¼©ï¼¤} {
             #var char_name %%%1;
             update_status;
             get_char_info_action;
         };
-        #action {ĞÕÃû:%*%sID:%S} {
+        #action {å§“å:%*%sID:%S} {
             #var char_name %%%1;
             update_status;
             get_char_info_action;
         };
-        #action {ÄÚÁ¦»Ö¸´  ¡¡%d.%d  } {
+        #action {å†…åŠ›æ¢å¤  ã€€%d.%d  } {
             #var char_nl_recovery %%%1;
         };
-        #action {ÄÚÁ¦»Ö¸´£º+%* } {
+        #action {å†…åŠ›æ¢å¤ï¼š+%* } {
             #var char_nl_recovery %%%1;
         } {3};
-        #action {ÄÚÁ¦»Ö¸´£º+%*.%* } {
+        #action {å†…åŠ›æ¢å¤ï¼š+%*.%* } {
             #var char_nl_recovery %%%1;
         } {2};
-        #action {ÏµÍ³´­ÆøÖĞ} {
+        #action {ç³»ç»Ÿå–˜æ°”ä¸­} {
             #delay {10} {
                 #send {status_me};
             };
         };
-        #action {¡Ô©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥¡ò%*ÏÀ¿ÍĞĞ¡ò©¥©¥¡Ô} {
+        #action {â‰¡â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â—%*ä¾ å®¢è¡Œâ—â”â”â‰¡} {
             #class get_st.inner kill;
         };
         #class get_st.inner close;
@@ -1137,50 +1137,50 @@ walk_to east;
 };
 
 #alias {startup} {
-    #action {ÕÅ ÈıË«ÊÖ±§È­£¬¶Ô×Å%*${char_name}×÷ÁË¸öÒ¾µÀ} {
-        notify ÕÅÈı;
+    #action {å¼  ä¸‰åŒæ‰‹æŠ±æ‹³ï¼Œå¯¹ç€%*${char_name}ä½œäº†ä¸ªæ–é“} {
+        notify å¼ ä¸‰;
     };
-    #action {${char_name}(damage:%*ÆøÑª:%*)} {
+    #action {${char_name}(damage:%*æ°”è¡€:%*)} {
         #if {${fighting} == 0} {
             war;
         };
     };
-    #show INFO: ¼ì²é¸ºÖØ;
+    #show INFO: æ£€æŸ¥è´Ÿé‡;
     #send {i};
     #send {hpbrief};
     #send {time};
     init_set;
     xmpp.start;
-    #show INFO: ¼ì²é±£ÎÀ;
+    #show INFO: æ£€æŸ¥ä¿å«;
     check_baowei;
-    #show INFO: ¼ì²é»·¾³±äÁ¿;
+    #show INFO: æ£€æŸ¥ç¯å¢ƒå˜é‡;
     update_env;
-    #show INFO: ¼ì²éÆøÑª;
+    #show INFO: æ£€æŸ¥æ°”è¡€;
     check_health;
     #delay {3} {
         #send {uptime};
         check_fm;
-        #show INFO: ¼ì²éÎäÆ÷;
+        #show INFO: æ£€æŸ¥æ­¦å™¨;
         weapons.check;
     };
     #delay {4} {
         #if {${need_reload} == 1} {
-            #show INFO: ĞèÒªÖØĞÂ¼ÓÔØÎäÆ÷;
+            #show INFO: éœ€è¦é‡æ–°åŠ è½½æ­¦å™¨;
         };
         #else {
             #showme reloaded;
-            #show INFO: ×°±¸ÎäÆ÷²¢¼ì²éÄÍ¾Ã;
+            #show INFO: è£…å¤‡æ­¦å™¨å¹¶æ£€æŸ¥è€ä¹…;
             wi;
             we;
             check_naijiu;
         };
-        #show INFO: ¼ì²éÌØ¼¼;
+        #show INFO: æ£€æŸ¥ç‰¹æŠ€;
         pfm_special;
-        #show INFO: ¼ì²éÎä¹¦ÉèÖÃ;
+        #show INFO: æ£€æŸ¥æ­¦åŠŸè®¾ç½®;
         #send {jifa};
         reborn;
         #delay {2} {
-            #showme INFO: ×Ô¶¯ login Íê³É;
+            #showme INFO: è‡ªåŠ¨ login å®Œæˆ;
             show.init;
             on_unbusy {
                 post_login;
@@ -1225,18 +1225,18 @@ walk_to east;
             #loop 1 ${tmp_count} i {
                 put %%0 in xiang;
             };
-            chat ${char_name}½«${tmp_count}¸ö${donate_item}·Å½ø¹¦µÂÏä;
+            chat ${char_name}å°†${tmp_count}ä¸ª${donate_item}æ”¾è¿›åŠŸå¾·ç®±;
         };
     };
     #alias {burden.check.done} {
-        donate »ğÁúµ¤;
-        donate Å®æ´Ê¯;
-        donate ÄõÁúµ¤;
-        donate Ç§Äê»ğÁúµ¤;
-        donate Öì¾¦±ùó¸;
-        donate Áú ÑÀ;
-        donate Áú ÁÛ;
-        donate Áú ĞÄ;
+        donate ç«é¾™ä¸¹;
+        donate å¥³å¨²çŸ³;
+        donate å­½é¾™ä¸¹;
+        donate åƒå¹´ç«é¾™ä¸¹;
+        donate æœ±ç›å†°èŸ¾;
+        donate é¾™ ç‰™;
+        donate é¾™ é³;
+        donate é¾™ å¿ƒ;
         #delay {donate_delay} {
             tmp_donate;
         } {1};
@@ -1260,7 +1260,7 @@ walk_to east;
 
 #alias {pfm_special} {
     #class pfm_special.inner open;
-    #action {ÄãÏÖÔÚ»áÒÔÏÂÕâĞ©ÌØ¼¼£º} {
+    #action {ä½ ç°åœ¨ä¼šä»¥ä¸‹è¿™äº›ç‰¹æŠ€ï¼š} {
         #action {%S(%S)} {
             #if {"%%%2" == "might"} {
                 might;
@@ -1297,7 +1297,7 @@ walk_to east;
 };
 
 #alias {on_server_reboot} {
-    #showme INFO: ·şÎñÆ÷ÖØÆô!;
+    #showme INFO: æœåŠ¡å™¨é‡å¯!;
     @clearenv{hb_state};
     @clearenv{hb_mixin_lunci};
     @clearenv{hb_lunci};

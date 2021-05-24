@@ -2,11 +2,11 @@
 #var jiali_count 5;
 #var hb_max_path_size 60;
 
-#action {·Ú¾ÆÒÑ¾­±»ºÈµÃÒ»µÎÒ²²»Ê£ÁË} {
+#action {æ±¾é…’å·²ç»è¢«å–å¾—ä¸€æ»´ä¹Ÿä¸å‰©äº†} {
     drop fenjiu;
 };
 
-#action {ÈçºÎÊ¹ÓÃ¡¸°ËÏÉ×í´ò¡¹Ñ½} {
+#action {å¦‚ä½•ä½¿ç”¨ã€Œå…«ä»™é†‰æ‰“ã€å‘€} {
     drink fenjiu;
 };
 
@@ -152,11 +152,11 @@
 };
 
 #alias {goto_lingwu} {
-    gt ´ïÄ¦Ôº¶şÂ¥;
+    gt è¾¾æ‘©é™¢äºŒæ¥¼;
 };
 
 #alias {goto_rest} {
-    gt ºÍÉĞÔºÎå²¿;
+    gt å’Œå°šé™¢äº”éƒ¨;
 };
 
 #var need_ask_for_damo 1;
@@ -164,13 +164,13 @@
     #if {${need_ask_for_damo} == 1} {
         #var need_ask_for_damo 0;
         on_there {
-            ask dashi about ´ïÄ¦ÀÏ×æ;
-            gt ´ïÄ¦ìø·¿;
+            ask dashi about è¾¾æ‘©è€ç¥–;
+            gt è¾¾æ‘©ç¦…æˆ¿;
         };
-        gt ·½ÕÉÊÒ;
+        gt æ–¹ä¸ˆå®¤;
     };
     #else {
-        gt ´ïÄ¦ìø·¿;
+        gt è¾¾æ‘©ç¦…æˆ¿;
     };
 };
 
@@ -211,7 +211,7 @@
 #list my_weapons_to_wield create {spear;spear 2};
 #list special_whip create {qixing};
 
-#var shortcut F1:¾ªÄ§ F2:²ø F3:ÂŞºº F4:·÷Ñ¨;
+#var shortcut F1:æƒŠé­” F2:ç¼  F3:ç½—æ±‰ F4:æ‹‚ç©´;
 
 #macro {\eOP} {
     jingmo;
@@ -259,8 +259,8 @@
     wi;
 };
 
-stat.register ¾ªÄ§ hit ĞØÇ°´óÑ¨±»ÄãÖ¸Á¦µãÖĞ£¬È«Éí¶¯µ¯²»µÃ;
-stat.register ¾ªÄ§ miss ¿´ÆÆÁËÄãµÄÆóÍ¼£¬²àÉí±Ü¹ıÖ¸Á¦;
+stat.register æƒŠé­” hit èƒ¸å‰å¤§ç©´è¢«ä½ æŒ‡åŠ›ç‚¹ä¸­ï¼Œå…¨èº«åŠ¨å¼¹ä¸å¾—;
+stat.register æƒŠé­” miss çœ‹ç ´äº†ä½ çš„ä¼å›¾ï¼Œä¾§èº«é¿è¿‡æŒ‡åŠ›;
 
 #var shifu laozu;
 #var menzhong dizi;

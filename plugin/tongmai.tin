@@ -1,7 +1,7 @@
 #class tongmai open
 #alias {tm.start} {
     #class tm.inner open;
-    #action {Äã½«É¢Èë¾­ÂöµÄÕæÆøÊÕ»Øµ¤Ìï} {
+    #action {ä½ å°†æ•£å…¥ç»è„‰çš„çœŸæ°”æ”¶å›ä¸¹ç”°} {
         dz;
     };
 
@@ -9,26 +9,26 @@
         dz;
     } {300};
 
-    #action {ÄãµÄÄÚÁ¦Ôö¼ÓÁË} {
+    #action {ä½ çš„å†…åŠ›å¢åŠ äº†} {
         dz;
     };
 
-    #action {ÄãµÄÄÚÁ¦ĞŞÎªËÆºõÒÑ¾­´ïµ½ÁËÆ¿¾±} {
+    #action {ä½ çš„å†…åŠ›ä¿®ä¸ºä¼¼ä¹å·²ç»è¾¾åˆ°äº†ç“¶é¢ˆ} {
         dz;
     };
 
-    #action {ÄãµÄÈÎ¶½¶şÂöÒÑ¾­±»´òÍ¨ÁË} {
+    #action {ä½ çš„ä»»ç£äºŒè„‰å·²ç»è¢«æ‰“é€šäº†} {
         tm.stop;
-        show_to_quest ÒÑ¾­´òÍ¨ÈÎ¶½¶şÂö;
+        show_to_quest å·²ç»æ‰“é€šä»»ç£äºŒè„‰;
         #showme tongmai done;
     };
     #class tm.inner close;
-    show_to_quest Í¨Âö¿ªÊ¼;
+    show_to_quest é€šè„‰å¼€å§‹;
     dz;
 };
 
 #alias {tm.stop} {
     #class tm.inner kill;
-    show_to_quest Í¨Âö½áÊø;
+    show_to_quest é€šè„‰ç»“æŸ;
 }
 #class tongmai close

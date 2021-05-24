@@ -1,62 +1,62 @@
 #class liandu open
 #alias {ld.start} {
     #var ld_count 0;
-    show_to_quest Á¶¶¾: ${ld_count};
+    show_to_quest ç‚¼æ¯’: ${ld_count};
     #class ld.inner open;
 
-    #action {Á¶¶¾Ê±ĞèÒªË«ÊÖµÄÅäºÏ£¬ËùÒÔÄã×îºÃ»¹ÊÇ²»ÒªÄÃÎäÆ÷} {
+    #action {ç‚¼æ¯’æ—¶éœ€è¦åŒæ‰‹çš„é…åˆï¼Œæ‰€ä»¥ä½ æœ€å¥½è¿˜æ˜¯ä¸è¦æ‹¿æ­¦å™¨} {
         unwi;
         liandu;
     };
 
-    #action {Äã¸Õ¸ÕÁ¶¶¾Íê³É²»¾Ã£¬Æµ·±Á¶¶¾»áÓĞÉúÃüÎ£ÏÕµÄ£¡} {
+    #action {ä½ åˆšåˆšç‚¼æ¯’å®Œæˆä¸ä¹…ï¼Œé¢‘ç¹ç‚¼æ¯’ä¼šæœ‰ç”Ÿå‘½å±é™©çš„ï¼} {
         #delay {ld} {
             unwi;
             liandu;
         } {10};
     };
 
-    #action {ÄãÉíÉÏÃ»ÓĞ corpse ÕâÑù¶«Î÷¡£} {
+    #action {ä½ èº«ä¸Šæ²¡æœ‰ corpse è¿™æ ·ä¸œè¥¿ã€‚} {
         #unticker {give_corpse};
-        ask piaoran about Á¶¶¾;
+        ask piaoran about ç‚¼æ¯’;
     };
 
-    #action {Äã¸øÆ®È»×ÓÒ»¾ß%*µÄÊ¬Ìå} {
+    #action {ä½ ç»™é£˜ç„¶å­ä¸€å…·%*çš„å°¸ä½“} {
         #unticker {give_corpse};
     };
 
-    #action {Æ®È»×Ó²»ÏëÒª%*µÄÊ¬Ìå£¬Äã¾Í×Ô¸öÁô×Å°É¡£} {
+    #action {é£˜ç„¶å­ä¸æƒ³è¦%*çš„å°¸ä½“ï¼Œä½ å°±è‡ªä¸ªç•™ç€å§ã€‚} {
         #delay {give_corpse} {
             give piaoran corpse;
         } {10};
     };
 
-    #action {ÕâÒ»Ë²¼ä£¬Äã·¢¾õÄÇÖÁÒõµÄ¶¾ÆøºÍ×Ô¼ºÌåÄÚÔ­±¾µÄ¶¾ÆøÏà»¥ÈÚºÏ£¬Ò»Í¬¹éÄÉ½øÁËÆøº££¡} {
+    #action {è¿™ä¸€ç¬é—´ï¼Œä½ å‘è§‰é‚£è‡³é˜´çš„æ¯’æ°”å’Œè‡ªå·±ä½“å†…åŸæœ¬çš„æ¯’æ°”ç›¸äº’èåˆï¼Œä¸€åŒå½’çº³è¿›äº†æ°”æµ·ï¼} {
         #math ld_count ${ld_count}+1;
-        show_to_quest Á¶¶¾: ${ld_count};
+        show_to_quest ç‚¼æ¯’: ${ld_count};
         #delay {3} {
             chifan;
             dz.full {
                 tn.full {
-                    ask piaoran about Á¶¶¾;
+                    ask piaoran about ç‚¼æ¯’;
                 };
             };
         };
     };
 
-    #action {Æ®È»×Ó¶Ô×ÅÄãºÙºÙÒ»Ğ¦£º¡°ÏëÁ·¶¾ÊÇ°É£¿ÏÈÈ¥¸øÄã×Ô¼ºÕÒ¾ßÓĞÓÃµÄÊ¬ÌåÀ´} {
+    #action {é£˜ç„¶å­å¯¹ç€ä½ å˜¿å˜¿ä¸€ç¬‘ï¼šâ€œæƒ³ç»ƒæ¯’æ˜¯å§ï¼Ÿå…ˆå»ç»™ä½ è‡ªå·±æ‰¾å…·æœ‰ç”¨çš„å°¸ä½“æ¥} {
         #delay {delay} {
             ld.get_corpse;
         } {2};
     };
 
-    #action {ÄãµÄÊÖÕÆ¸Õ¸ÕÉì³ö£¬È´±»Ò»¹ÉÎŞĞÎµÄ´óÁ¦¸øÕğÁË»ØÀ´¡£} {
+    #action {ä½ çš„æ‰‹æŒåˆšåˆšä¼¸å‡ºï¼Œå´è¢«ä¸€è‚¡æ— å½¢çš„å¤§åŠ›ç»™éœ‡äº†å›æ¥ã€‚} {
         #ticker {give_corpse} {
             give piaoran corpse;
         } {20};
     };
 
-    #action {Æ®È»×ÓËµµÀ£º¡¸ºÃ°É£¬ÄãÀ´ÊÔ×ÅÁ·Ï°(liandu)Ò»ÏÂ¶¾¼¼°É¡£¡¹} {
+    #action {é£˜ç„¶å­è¯´é“ï¼šã€Œå¥½å§ï¼Œä½ æ¥è¯•ç€ç»ƒä¹ (liandu)ä¸€ä¸‹æ¯’æŠ€å§ã€‚ã€} {
         #unticker {give_corpse};
         unwi;
         liandu;
@@ -64,13 +64,13 @@
 
     #class ld.inner close;
     load_map;
-    map.go É½¶´;
+    map.go å±±æ´;
     on_truce {
         #action {zuan ok} {
             #unaction {zuan ok};
             dz.full {
                 tn.full {
-                    ask piaoran about Á¶¶¾;
+                    ask piaoran about ç‚¼æ¯’;
                 };
             };
         };
@@ -80,7 +80,7 @@
 
 #alias {ld.stop} {
     #class ld.innder kill;
-    show_to_quest Á¶¶¾½áÊø;
+    show_to_quest ç‚¼æ¯’ç»“æŸ;
 };
 
 #alias {ld.get_corpse} {
@@ -92,7 +92,7 @@
     #action {zuan ok} {
         #unaction {zuan ok};
         on_truce {
-            map.go ¾ŞÑÒ;
+            map.go å·¨å²©;
             #delay {5} {
                 kill_somebody;
             };
@@ -105,17 +105,17 @@
 
 #alias {kill_somebody} {
     #class kill_somebody.inner open;
-    #action {^    ĞÇËŞÅÉ¹ÄÊÖ} {
+    #action {^    æ˜Ÿå®¿æ´¾é¼“æ‰‹} {
         #delay {kill} {
             kill gushou;
         } {3};
     };
-    #action {^    ĞÇËŞÅÉºÅÊÖ} {
+    #action {^    æ˜Ÿå®¿æ´¾å·æ‰‹} {
         #delay {kill} {
             kill haoshou;
         } {3};
     };
-    #action {^    ĞÇËŞÅÉîàÊÖ} {
+    #action {^    æ˜Ÿå®¿æ´¾é’¹æ‰‹} {
         #delay {kill} {
             kill boshou;
         } {3};
@@ -123,16 +123,16 @@
     #ticker {l} {
         l;
     } {105};
-    #action {Äã½«×ÔÉí¾«Á¦ÄÚÁ¦¹à×¢Èë%*µÄÊ¬Ìå} {
+    #action {ä½ å°†è‡ªèº«ç²¾åŠ›å†…åŠ›çŒæ³¨å…¥%*çš„å°¸ä½“} {
         #delay {3} {
             get corpse;
         };
     };
-    #action {Äã½«%*Ê¬Ìå·öÁËÆğÀ´±³ÔÚ±³ÉÏ} {
+    #action {ä½ å°†%*å°¸ä½“æ‰¶äº†èµ·æ¥èƒŒåœ¨èƒŒä¸Š} {
         #class kill_somebody.inner kill;
         #undelay {move};
         #delay {1} {
-            map.go É½¶´;
+            map.go å±±æ´;
             on_truce {
                 #action {zuan ok} {
                     #unaction {zuan ok};
@@ -147,7 +147,7 @@
             };
         };
     };
-    #action {ĞÇËŞÅÉ%*ËÀÁË} {
+    #action {æ˜Ÿå®¿æ´¾%*æ­»äº†} {
         zhishi corpse;
     } {1};
     #delay {move} {
@@ -159,12 +159,12 @@
 
 #alias {zuan_dong} {
     #class zuan.inner open;
-    #action {ÄãÈ¡³ö»ğÕÛ£¬ÓÃ»ğÊ¯°ÑËüµã×Å¡£} {
+    #action {ä½ å–å‡ºç«æŠ˜ï¼Œç”¨ç«çŸ³æŠŠå®ƒç‚¹ç€ã€‚} {
         #delay {1} {
             use fire;
         };
     };
-    #action {ÄãµãÈ¼ÁË»ğÕÛ£¬·¢ÏÖ%*Ê¯±Ú%*Ò»µÀÁÑ·ì} {
+    #action {ä½ ç‚¹ç‡ƒäº†ç«æŠ˜ï¼Œå‘ç°%*çŸ³å£%*ä¸€é“è£‚ç¼} {
         #delay {1} {
             #send {zuan};
             #showme zuan ok;

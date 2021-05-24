@@ -107,7 +107,7 @@
     };
 };
 
-#var shortcut F1:²ø F2:ÎŞÓ° F3:Á¬×Ö¾÷ F4:¸ÕÈá;
+#var shortcut F1:ç¼  F2:æ— å½± F3:è¿å­—è¯€ F4:åˆšæŸ”;
 #macro {\eOQ} {
     wuying;
 };
@@ -188,15 +188,15 @@
     unwi;
     jiali ${jiali_count};
     perform taiji-quan.gangrou;
-    #action {Ì§ÊÖ¾Í·â×¡ÁËÄãÕâÒ»ÕÆ£¡} {
-        #unaction {Ì§ÊÖ¾Í·â×¡ÁËÄãÕâÒ»ÕÆ£¡};
+    #action {æŠ¬æ‰‹å°±å°ä½äº†ä½ è¿™ä¸€æŒï¼} {
+        #unaction {æŠ¬æ‰‹å°±å°ä½äº†ä½ è¿™ä¸€æŒï¼};
         #delay {delay_gangrou} {
             #var gangrou_ing 0;
             jiali none;
         } {5};
     };
     #delay {delay_gangrou} {
-        #unaction {Ì§ÊÖ¾Í·â×¡ÁËÄãÕâÒ»ÕÆ£¡};
+        #unaction {æŠ¬æ‰‹å°±å°ä½äº†ä½ è¿™ä¸€æŒï¼};
     };
     wi;
 };
@@ -206,15 +206,15 @@
 };
 
 #alias {goto_lingwu} {
-    gt {¾²ĞŞ¸ó};
+    gt {é™ä¿®é˜};
 };
 
 #alias {goto_rest} {
-    gt {Îäµ±É½¿Í·¿};
+    gt {æ­¦å½“å±±å®¢æˆ¿};
 };
 
 #alias {goto_shifu} {
-    gt {Îäµ±É½Ğ¡Îİ};
+    gt {æ­¦å½“å±±å°å±‹};
 };
 
 #list my_weapons_to_wield create {spear;spear 2;};
@@ -233,8 +233,8 @@
     bei cuff claw;
 };
 
-stat.register ²ø miss Ö»ÌıµÃ¡¸ï£¡¹Ò»ÉùÇåÏì£¬¾çÁÒÅö×²Ö®ÏÂÄã½£¾÷ÎªµĞËùÆÆ£¬ÎŞÒÔÎª¼Ì£¬±»ÆÈ³·½£ÊÕÕĞ¡£;
-stat.register ²ø hit Ö»ÄÜ¼ûÕĞ²ğÕĞ£¬Æ£ÓÚÓ¦¶Ô£¬²»¾õÒÑÉîÏİÌ«¼«½£ÒâÖ®ÖĞ£¬ÎŞ·¨³öÕĞ¡£;
+stat.register ç¼  miss åªå¬å¾—ã€Œé“®ã€ä¸€å£°æ¸…å“ï¼Œå‰§çƒˆç¢°æ’ä¹‹ä¸‹ä½ å‰‘è¯€ä¸ºæ•Œæ‰€ç ´ï¼Œæ— ä»¥ä¸ºç»§ï¼Œè¢«è¿«æ’¤å‰‘æ”¶æ‹›ã€‚;
+stat.register ç¼  hit åªèƒ½è§æ‹›æ‹†æ‹›ï¼Œç–²äºåº”å¯¹ï¼Œä¸è§‰å·²æ·±é™·å¤ªæå‰‘æ„ä¹‹ä¸­ï¼Œæ— æ³•å‡ºæ‹›ã€‚;
 
 #var menzhong zhang;
 #var menzhong_didian ht;

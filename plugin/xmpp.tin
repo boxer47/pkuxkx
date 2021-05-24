@@ -27,9 +27,9 @@
 
 #alias {status} {
     #alias {report_status} {
-        xmpp.notify Î»ÖÃ: ${pos.room} @ ${pos.area};
-        xmpp.notify ÈÎÎñ: ${last_quest};
-        xmpp.notify ×´Ì¬: Æø: ${qx_percent} Éñ: ${js_percent} ÄÚ: ${nl_percent} ¾«: ${jl_percent} ¾­Ñé: ${hpbrief_exp};
+        xmpp.notify ä½ç½®: ${pos.room} @ ${pos.area};
+        xmpp.notify ä»»åŠ¡: ${last_quest};
+        xmpp.notify çŠ¶æ€: æ°”: ${qx_percent} ç¥: ${js_percent} å†…: ${nl_percent} ç²¾: ${jl_percent} ç»éªŒ: ${hpbrief_exp};
     };
     chain get_area get_pos report_status;
 };

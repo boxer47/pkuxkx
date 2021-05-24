@@ -1,8 +1,8 @@
 #class hsz open;
 
 #var hsz.requested 0;
-#nop ÕâÊ±£¬ÄãÕ¹¿ªÁË¾«ÐÄ»æÖÆµÄµØÇøµØÍ¼£¬ÕÒµ½ÁËÒì×å¼éÏ¸µÄÐÐ¼£¡£;
-#nop ÄãË²¼ä¸Ðµ½ÁËÎ£ÏÕÁÙ½ü£¬¼éÏ¸¾ÍÔÚ¸½½ü£¡;
+#nop è¿™æ—¶ï¼Œä½ å±•å¼€äº†ç²¾å¿ƒç»˜åˆ¶çš„åœ°åŒºåœ°å›¾ï¼Œæ‰¾åˆ°äº†å¼‚æ—å¥¸ç»†çš„è¡Œè¿¹ã€‚;
+#nop ä½ çž¬é—´æ„Ÿåˆ°äº†å±é™©ä¸´è¿‘ï¼Œå¥¸ç»†å°±åœ¨é™„è¿‘ï¼;
 
 #alias {hsz.start} {
     hsz.setup;
@@ -18,39 +18,39 @@
 
 #alias {hsz.setup} {
     #class hsz.inner open;
-    #action {ÄãÐÄÖÐ°µµÀ£º¾ÍÊÇÕâÀïÁË£¬ÓÚÊÇ½ô¸ú×Å¼¸¸öÐÎ¼£¿ÉÒÉµÄÈË×ßÈ¥¡£} {
+    #action {ä½ å¿ƒä¸­æš—é“ï¼šå°±æ˜¯è¿™é‡Œäº†ï¼ŒäºŽæ˜¯ç´§è·Ÿç€å‡ ä¸ªå½¢è¿¹å¯ç–‘çš„äººèµ°åŽ»ã€‚} {
         #ticker {hsz_walk} {
             e;
         } {3};
     };
 
-    #action {ÕâÊ±£¬ÄãÕ¹¿ªÁË¾«ÐÄ»æÖÆµÄµØÇøµØÍ¼£¬ÕÒµ½ÁËÒì×å¼éÏ¸µÄÐÐ¼£} {
+    #action {è¿™æ—¶ï¼Œä½ å±•å¼€äº†ç²¾å¿ƒç»˜åˆ¶çš„åœ°åŒºåœ°å›¾ï¼Œæ‰¾åˆ°äº†å¼‚æ—å¥¸ç»†çš„è¡Œè¿¹} {
         #unticker {hsz_walk};
     };
 
-    #action {ÄãÀë¿ªÁËÕâÒ»Æ¬¼éÏ¸³öÃ»µÄÇøÓò} {
+    #action {ä½ ç¦»å¼€äº†è¿™ä¸€ç‰‡å¥¸ç»†å‡ºæ²¡çš„åŒºåŸŸ} {
         hsz.b;
     };
 
-    #action {ÄãÒÑ¾­Íê³ÉÁË%*Çå³ýÒì×å¼éÏ¸µÄ¹¤×÷} {
+    #action {ä½ å·²ç»å®Œæˆäº†%*æ¸…é™¤å¼‚æ—å¥¸ç»†çš„å·¥ä½œ} {
         hsz.teardown;
-        show_to_quest º«ÊÀÖÒ: Íê³É;
+        show_to_quest éŸ©ä¸–å¿ : å®Œæˆ;
     };
 
-    #action {º«ÊÀÖÒ(han shizhong)¸æËßÄã£ºÄãÈ¥ÐÝÏ¢ÐÝÏ¢£¬¹ý¶ÎÊ±¼äÔÙÀ´°É¡£} {
+    #action {éŸ©ä¸–å¿ (han shizhong)å‘Šè¯‰ä½ ï¼šä½ åŽ»ä¼‘æ¯ä¼‘æ¯ï¼Œè¿‡æ®µæ—¶é—´å†æ¥å§ã€‚} {
         #delay {hsz_delay} {
             hsz.q;
         } {10};
     } {1};
 
-    #action {º«ÊÀÖÒËµµÀ£º%*¸Õ¸ÕÒÑ¾­ÓÐÈËÇ°È¥ÁË} {
+    #action {éŸ©ä¸–å¿ è¯´é“ï¼š%*åˆšåˆšå·²ç»æœ‰äººå‰åŽ»äº†} {
         #delay {hsz_delay} {
             hsz.q;
         } {3};
     };
 
-    #action {%*Ïòº«ÊÀÖÒ´òÌýÓÐ¹Ø¡ºjob¡»µÄÏûÏ¢} {
-        #if {"%%1" == "Äã"} {
+    #action {%*å‘éŸ©ä¸–å¿ æ‰“å¬æœ‰å…³ã€Žjobã€çš„æ¶ˆæ¯} {
+        #if {"%%1" == "ä½ "} {
             #var hsz.requested 1;
             #var quest hsz;
         };
@@ -59,9 +59,9 @@
         };
     };
 
-    #action {º«ÊÀÖÒËµµÀ£º¡¸ÎÒÌýËµÓÐÒ»ÈºÒì×å¼éÏ¸ÔÚ%*µÄ%*¸½½ü³öÃ»} {
+    #action {éŸ©ä¸–å¿ è¯´é“ï¼šã€Œæˆ‘å¬è¯´æœ‰ä¸€ç¾¤å¼‚æ—å¥¸ç»†åœ¨%*çš„%*é™„è¿‘å‡ºæ²¡} {
         #if {${hsz.requested} == 1} {
-            show_to_quest º«ÊÀÖÒ: %%1: %%2;
+            show_to_quest éŸ©ä¸–å¿ : %%1: %%2;
             gt %%1%%2;
             on_there {
                 datan;

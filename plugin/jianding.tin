@@ -1,24 +1,24 @@
 #class jianding open
 @mapcreate{jianding};
-@mapset{jianding;¸«;axe};
-@mapset{jianding;Ø°;dagger};
-@mapset{jianding;½£;sword};
-@mapset{jianding;µ¶;blade};
-@mapset{jianding;ÕÈ;staff};
-@mapset{jianding;±Ş;whip};
-@mapset{jianding;Ç¹;spear};
-@mapset{jianding;´¸;hammer};
-@mapset{jianding;îø¼×;armor};
-@mapset{jianding;¿ø;head};
-@mapset{jianding;Ñü´ø;waist};
-@mapset{jianding;Ñ¥;boots};
-@mapset{jianding;ÏîÁ´;necklace};
-@mapset{jianding;½äÖ¸;ring};
-@mapset{jianding;Åû·ç;surcoat};
-@mapset{jianding;ÅÛ;cloth};
-@mapset{jianding;»¤Íó;wrists};
-@mapset{jianding;ÊÖÌ×;hands};
-@mapset{jianding;¶Ü;shield};
+@mapset{jianding;æ–§;axe};
+@mapset{jianding;åŒ•;dagger};
+@mapset{jianding;å‰‘;sword};
+@mapset{jianding;åˆ€;blade};
+@mapset{jianding;æ–;staff};
+@mapset{jianding;é­;whip};
+@mapset{jianding;æª;spear};
+@mapset{jianding;é”¤;hammer};
+@mapset{jianding;é“ ç”²;armor};
+@mapset{jianding;ç›”;head};
+@mapset{jianding;è…°å¸¦;waist};
+@mapset{jianding;é´;boots};
+@mapset{jianding;é¡¹é“¾;necklace};
+@mapset{jianding;æˆ’æŒ‡;ring};
+@mapset{jianding;æŠ«é£;surcoat};
+@mapset{jianding;è¢;cloth};
+@mapset{jianding;æŠ¤è…•;wrists};
+@mapset{jianding;æ‰‹å¥—;hands};
+@mapset{jianding;ç›¾;shield};
 
 @mapcreate{jd_value};
 @mapset{jd_value;sword;200};
@@ -65,11 +65,11 @@
     #alias tmp_jd #cr;
     #alias tmp_jd %1;
     #class jd.inner open;
-    #action {Äã´Ó°ü¸¤ÖĞÄÃ³ö%*Ö®%*¡£} {
+    #action {ä½ ä»åŒ…è¢±ä¸­æ‹¿å‡º%*ä¹‹%*ã€‚} {
         #var jd_item @mapget{jianding;%%2};
         @stackpush{tmp;${jd_item}};
     };
-    #action {Ö®%*(+%*)} {
+    #action {ä¹‹%*(+%*)} {
         #var jd_item @mapget{jianding;%%1};
         #var jd_current_value %%2;
         #nop #var required_value @mapget{jd_value;${jd_item}};
@@ -79,11 +79,11 @@
         #if {"@jd_get_type{${jd_item}}" == "weapon"} {
             #delay {3} {
                 #if {${required_value} <= ${jd_current_value}} {
-                    notify µô×°±¸: ${jd_item}:${jd_current_value};
+                    notify æ‰è£…å¤‡: ${jd_item}:${jd_current_value};
                     put ${jd_item} in bao;
                 };
                 #else {
-                    #showme Âôµô: ${jd_item}:${jd_current_value};
+                    #showme å–æ‰: ${jd_item}:${jd_current_value};
                     sell ${jd_item};
                 };
                 on_unbusy {
@@ -129,9 +129,9 @@
     };
 };
 
-#action {^ÄãÅõ×Å%*Ö®%*ÉÏÉÏÏÂÏÂ×Ğ×ĞÏ¸Ï¸µÄ´òÁ¿ÁËÒ»±é¡£} {
-    #action {¿ÉËÜĞÔ:%*(%d)} {
-        #unaction {¿ÉËÜĞÔ:%*(%d)};
+#action {^ä½ æ§ç€%*ä¹‹%*ä¸Šä¸Šä¸‹ä¸‹ä»”ä»”ç»†ç»†çš„æ‰“é‡äº†ä¸€éã€‚} {
+    #action {å¯å¡‘æ€§:%*(%d)} {
+        #unaction {å¯å¡‘æ€§:%*(%d)};
         #if {"%%2" != "0"} {
             #return;
         };
@@ -141,7 +141,7 @@
         #if {"${group_type}" == "jewel"} {
             #if {${kong} > 1} {
                 put ${type} in bao;
-                notify µô×°±¸: ${kong} ¿× ${type};
+                notify æ‰è£…å¤‡: ${kong} å­” ${type};
             };
         };
         #elseif {"${group_type}" == "weapon"} {
@@ -150,17 +150,17 @@
         #else {
             #if {${kong} > 2} {
                 put ${type} in bao;
-                notify µô×°±¸: ${kong} ¿× ${type};
+                notify æ‰è£…å¤‡: ${kong} å­” ${type};
             };
         };
     };
 
-    #action {Äã½«Ò»%*Ö®%*·Å½ø°ü¸¤} {
+    #action {ä½ å°†ä¸€%*ä¹‹%*æ”¾è¿›åŒ…è¢±} {
         #cr;
     };
 };
 
-#action {ÉíÉÏµôÁË³öÀ´Ò»%*Ö®%*} {
+#action {èº«ä¸Šæ‰äº†å‡ºæ¥ä¸€%*ä¹‹%*} {
     jianding @mapget{jianding;%2}
 };
 

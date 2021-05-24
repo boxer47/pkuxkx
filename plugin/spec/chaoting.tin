@@ -107,15 +107,15 @@
 };
 
 #alias {goto_lingwu} {
-	gt ÁÙ°²¸®Ñ§ÌÃ;
+	gt ä¸´å®‰åºœå­¦å ‚;
 };
 
 #alias {goto_rest} {
-	gt ÁÙ°²¸®Ïá·¿;
+	gt ä¸´å®‰åºœåŽ¢æˆ¿;
 };
 
 #alias {goto_shifu} {
-	gt ¶¼Í¤æä;
+	gt éƒ½äº­é©¿;
 };
 
 #alias {chan} {
@@ -127,7 +127,7 @@
 #list my_weapons_to_wield create {staff};
 
 #var shifu meng;
-#var shortcut F1:²ø F2:±À F3:»¢Ð¥ F4:×óÊÖ F5:ÆßÐÇ;
+#var shortcut F1:ç¼  F2:å´© F3:è™Žå•¸ F4:å·¦æ‰‹ F5:ä¸ƒæ˜Ÿ;
 #var char_menpai_position hz;
 
 #alias {reborn} {

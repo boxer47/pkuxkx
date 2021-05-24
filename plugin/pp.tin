@@ -8,11 +8,11 @@
     #var pp_ing 0;
     #alias {pp.not_found} {
         #if {"${pp_caller}" != "pass" && "${pp_caller}" != "nil"} {
-            tell ${pp_caller} ¡¾${pp_target}¡¿ÎÒÕÒ²»µ½,Çë¿´ÆäËûµÄ»Ø¸´;
+            tell ${pp_caller} ã€${pp_target}ã€‘æˆ‘æ‰¾ä¸åˆ°,è¯·çœ‹å…¶ä»–çš„å›å¤;
         };
     };
 
-    #action {¡¾ÇóÖú¡¿%*(%*): find %*} {
+    #action {ã€æ±‚åŠ©ã€‘%*(%*): find %*} {
         #var tmp_caller @lower{%%2};
         #var tmp_target %%3;
 
@@ -28,12 +28,12 @@
         };
     };
 
-    #action {{Äã·ÑÁË°ëÌìµÄÁ¦Æø£¬¾ÍÊÇ¸ĞÓ¦²»³ö|Äã·ÑÁË°ëÌì¾¢£¬¾ÍÊÇÎŞ·¨¸ĞÓ¦Õâ¸öÈËÔÚÄÄÀï}} {
+    #action {{ä½ è´¹äº†åŠå¤©çš„åŠ›æ°”ï¼Œå°±æ˜¯æ„Ÿåº”ä¸å‡º|ä½ è´¹äº†åŠå¤©åŠ²ï¼Œå°±æ˜¯æ— æ³•æ„Ÿåº”è¿™ä¸ªäººåœ¨å“ªé‡Œ}} {
         pp.not_found;
         pp.next;
     };
 
-    #action {ÄãµÄ¾«Á¦²»¹»£¬ÎŞ·¨¸ĞÓ¦±ğÈËµÄÎ»ÖÃ¡£} {
+    #action {ä½ çš„ç²¾åŠ›ä¸å¤Ÿï¼Œæ— æ³•æ„Ÿåº”åˆ«äººçš„ä½ç½®ã€‚} {
         pp.not_found;
 
         pp.stop;
@@ -42,11 +42,11 @@
         };
     };
 
-    #action {ÄãËµµÀ£º¡¸É¾³ı¶ÔÏó¡¾%*¡¿¡¾%*¡¿¡¹} {
+    #action {ä½ è¯´é“ï¼šã€Œåˆ é™¤å¯¹è±¡ã€%*ã€‘ã€%*ã€‘ã€} {
         #cr;
     } {1};
 
-    #action {¡¸É¾³ı¶ÔÏó¡¾%*¡¿¡¾%*¡¿¡¹} {
+    #action {ã€Œåˆ é™¤å¯¹è±¡ã€%*ã€‘ã€%*ã€‘ã€} {
         #var caller %%1;
         #var target %%2;
         #list stack_pp_caller size stack_size;
@@ -62,12 +62,12 @@
         };
     };
 
-    #action {ÄãÆşÖ¸Ò»Ëã£¬¸Ğ¾õ%*(%*)ÏÖÔÚºÃÏóÔÚ%*Ò»´ø»î¶¯¡£} {
+    #action {ä½ ææŒ‡ä¸€ç®—ï¼Œæ„Ÿè§‰%*(%*)ç°åœ¨å¥½è±¡åœ¨%*ä¸€å¸¦æ´»åŠ¨ã€‚} {
         #if {"${pp_caller}" != "pass" && "${pp_caller}" != "nil"} {
-            #if {"%%3" != "Î´ÖªÇøÓò"} {
-                say É¾³ı¶ÔÏó¡¾${pp_caller}¡¿¡¾${pp_target}¡¿;
-                tell ${pp_caller} ¡¾%%1(%%2)¡¿Ä¿Ç°ÔÚ¡¾%%3¡¿,¿ìÈ¥ŞôËÀËü°É!;
-                show_to_info Äã¸æËß ${pp_caller}: ¡¾%%1(%%2)¡¿Ä¿Ç°ÔÚ¡¾%%3¡¿,¿ìÈ¥ŞôËÀËü°É!;
+            #if {"%%3" != "æœªçŸ¥åŒºåŸŸ"} {
+                say åˆ é™¤å¯¹è±¡ã€${pp_caller}ã€‘ã€${pp_target}ã€‘;
+                tell ${pp_caller} ã€%%1(%%2)ã€‘ç›®å‰åœ¨ã€%%3ã€‘,å¿«å»æ‘æ­»å®ƒå§!;
+                show_to_info ä½ å‘Šè¯‰ ${pp_caller}: ã€%%1(%%2)ã€‘ç›®å‰åœ¨ã€%%3ã€‘,å¿«å»æ‘æ­»å®ƒå§!;
             };
             #else {
                 pp.not_found;
@@ -76,10 +76,10 @@
         pp.next;
     };
 
-    #action {ÏÖÔÚÃ»Õâ¸öÈË¡£} {
+    #action {ç°åœ¨æ²¡è¿™ä¸ªäººã€‚} {
         #if {"${pp_caller}" != "pass" && "${pp_caller}" != "nil"} {
-            say É¾³ı¶ÔÏó¡¾${pp_caller}¡¿¡¾${pp_target}¡¿;
-            tell ${pp_caller} ¡¾${pp_target}¡¿²¢²»´æÔÚ;
+            say åˆ é™¤å¯¹è±¡ã€${pp_caller}ã€‘ã€${pp_target}ã€‘;
+            tell ${pp_caller} ã€${pp_target}ã€‘å¹¶ä¸å­˜åœ¨;
         };
         pp.next;
     };
@@ -139,10 +139,10 @@
 #alias {pp.start} {
     set_last_quest pp;
 
-    gt Ï´Ïó³Ø±ß;
+    gt æ´—è±¡æ± è¾¹;
     on_there {
         pp.setup;
-        show_to_quest finder ¿ªÊ¼;
+        show_to_quest finder å¼€å§‹;
         pp.next;
     };
 };
@@ -151,7 +151,7 @@
     unset_last_quest;
     pp.teardown;
     #unticker {pp};
-    show_to_quest finder ½áÊø;
+    show_to_quest finder ç»“æŸ;
 };
 
 #class pp close;

@@ -4,60 +4,60 @@
 
 #alias {mr.start} {
     #class mr.inner open;
-    #action {%*µãÊµÕ½¾­Ñé} {
-        show_to_info @ctd{%%1} µã¾­Ñé;
+    #action {%*ç‚¹å®æˆ˜ç»éªŒ} {
+        show_to_info @ctd{%%1} ç‚¹ç»éªŒ;
     } {1};
 
-    #action {¹ÃËÕÄ½ÈİÅÑÍ½%*ÆøÑª} {
+    #action {å§‘è‹æ…•å®¹å›å¾’%*æ°”è¡€} {
         #class mr.bl.inner kill;
         #undelay {mr_fight_delay};
     } {1};
 
-    #action {Ò»½ÅÌßÏòÄãµÄÆ¨¹É} {
+    #action {ä¸€è„šè¸¢å‘ä½ çš„å±è‚¡} {
         mr.f;
     };
 
-    #action {ÓÉÓÚÄãÃ»ÓĞÕÒ»Ø´óÑà´«¹úÓñçô} {
+    #action {ç”±äºä½ æ²¡æœ‰æ‰¾å›å¤§ç‡•ä¼ å›½ç‰çº} {
         on_health {
             mr.q;
         };
     };
 
-    #action {ÄãÉíÉÏÃ»ÓĞ xi ÕâÑù¶«Î÷¡£} {
+    #action {ä½ èº«ä¸Šæ²¡æœ‰ xi è¿™æ ·ä¸œè¥¿ã€‚} {
         mr.f;
     };
 
-    #action {ÓÉÓÚÄã³É¹¦µÄÕÒ»Ø´óÑà´«¹úÓñçô} {
-        show_to_quest Ä½ÈİÈÎÎñ: Íê³É;
+    #action {ç”±äºä½ æˆåŠŸçš„æ‰¾å›å¤§ç‡•ä¼ å›½ç‰çº} {
+        show_to_quest æ…•å®¹ä»»åŠ¡: å®Œæˆ;
         mr.q;
     };
 
-    #action {´óÑà´«¹úÓñçôÔÚÒÔÏÂµØµã¸½½ü³öÏÖ} {
+    #action {å¤§ç‡•ä¼ å›½ç‰çºåœ¨ä»¥ä¸‹åœ°ç‚¹é™„è¿‘å‡ºç°} {
         #unticker {mr_q_ticker};
-        show_to_quest Ä½ÈİÈÎÎñ: Î´Öª;
+        show_to_quest æ…•å®¹ä»»åŠ¡: æœªçŸ¥;
     };
 
-    #action {Ä½Èİ¸´ËµµÀ£º´óÑà´«¹úÓñçôÔÚ¡º%*¡»¸½½ü³öÏÖ£¬¿ìÈ¥°É£¡} {
+    #action {æ…•å®¹å¤è¯´é“ï¼šå¤§ç‡•ä¼ å›½ç‰çºåœ¨ã€%*ã€é™„è¿‘å‡ºç°ï¼Œå¿«å»å§ï¼} {
         #unticker {mr_q_ticker};
-        show_to_quest Ä½ÈİÈÎÎñ: %%1;
+        show_to_quest æ…•å®¹ä»»åŠ¡: %%1;
         mr.check %%1;
     } {1};
 
-    #action {Ä½Èİ¸´Ã¦×ÅÄØ} {
+    #action {æ…•å®¹å¤å¿™ç€å‘¢} {
         #delay {2} {
             mr.d;
         };
     };
 
-    #action {¹ÃËÕÄ½ÈİÅÑÍ½%*ËÀÁË¡£} {
+    #action {å§‘è‹æ…•å®¹å›å¾’%*æ­»äº†ã€‚} {
         #class mr.bl.inner kill;
         on_unbusy {
             get all from corpse;
         };
     } {1};
 
-    #action {Äã´Ó¹ÃËÕÄ½Èİ%*ËÑ³öÒ»¿éÓñçô¡£} {
-        show_to_quest Ä½ÈİÈÎÎñ: ÊÕ¹¤;
+    #action {ä½ ä»å§‘è‹æ…•å®¹%*æœå‡ºä¸€å—ç‰çºã€‚} {
+        show_to_quest æ…•å®¹ä»»åŠ¡: æ”¶å·¥;
         #delay {mr_delay} {
             mr.b;
         } {3};
@@ -87,7 +87,7 @@
 #alias {mr.stop} {
     #class mr.inner kill;
     #unticker {mr_q_ticker};
-    show_to_quest Ä½ÈİÈÎÎñ½áÊø;
+    show_to_quest æ…•å®¹ä»»åŠ¡ç»“æŸ;
 };
 
 #alias {mr.q} {
@@ -114,16 +114,16 @@
 
 #alias {mr.bl} {
     #class mr.bl.inner open;
-    #action {ÕÒµ½Ä¿±ê} {
+    #action {æ‰¾åˆ°ç›®æ ‡} {
         mr.fight;
     };
 
-    #action {GPS: ±éÀúÍê³É} {
+    #action {GPS: éå†å®Œæˆ} {
         #class mr.bl.inner kill;
         mr.b;
     };
     #class mr.bl.inner close;
-    bl.start ${char_name}%*ÅÑÍ½;
+    bl.start ${char_name}%*å›å¾’;
 };
 
 #alias {mr.b} {
@@ -137,7 +137,7 @@
 };
 
 #alias {mr.f} {
-    show_to_quest Ä½ÈİÈÎÎñ: Ê§°Ü;
+    show_to_quest æ…•å®¹ä»»åŠ¡: å¤±è´¥;
     ask murong about fail;
 };
 

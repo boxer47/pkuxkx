@@ -5,10 +5,10 @@
 #alias {bj.start} {
     set_last_quest bj;
     #class bj.inner open;
-    #action {ÄãµÄ¾«²»¹»} {
+    #action {ä½ çš„ç²¾ä¸å¤Ÿ} {
         yun regenerate;
     };
-    #action {ÄÚÁ¦²»¹»} {
+    #action {å†…åŠ›ä¸å¤Ÿ} {
         #unticker {bj};
         #delay {rest} {
             chifan;
@@ -20,7 +20,7 @@
         } {3};
     };
     #class bj.inner close;
-    gt ´ó³Éµî;
+    gt å¤§æˆæ®¿;
     on_there {
         #ticker {bj} {
             baiji xiang;
